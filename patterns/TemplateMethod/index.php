@@ -5,6 +5,10 @@ function say($i)
 }
 
 // template method 
+/**
+ * 処理の流れの法則性と具体的な実装を分けることで汎用性を持たせる
+ * 
+ */
 
 
 abstract class AbstractAction
@@ -25,10 +29,15 @@ abstract class AbstractAction
   // 実処理
   abstract function doMain();
 
-  // 入力値を検証してエラーページに遷移するか
-  // 実処理を行うかを処理
-  // この部分がテンプレートメソッド
-  // doActionとdomainを呼び出すという手順はまとめている
+  /**
+   *
+   * 入力値を検証してエラーページに遷移するか
+   * 実処理を行うかを処理
+   * この部分がテンプレートメソッド
+   * validateして、その結果から
+   * エラーを投げるかdomainを呼び出すという手順はまとめている
+   * @return void
+   */
 
   public function doAction()
   {
