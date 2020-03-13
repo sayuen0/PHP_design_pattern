@@ -270,4 +270,4 @@ echo $user->name;
 
 ?>
 
-<a href="/design_patterns/docs/templatemethod.md">説明へ</a>
+<a href="/docs/templatemethod.md">説明へ</a>
