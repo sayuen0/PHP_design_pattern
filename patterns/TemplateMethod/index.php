@@ -268,7 +268,6 @@ echo $user->name;
 
 // 大事なのは、doActionとすればvalidateしてdomainが呼び出されることが共通化されている点。
 
-
 ?>
 
-<a href="./index.md">説明へ</a>
+<a href="/design_patterns/docs/templatemethod.md">説明へ</a>
