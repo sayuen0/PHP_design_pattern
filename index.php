@@ -8,10 +8,11 @@
     <li><a href="patterns/Builder/">Builderパターン</a></li>
     <li><a href="patterns/Command/">Commandパターン</a></li>
     <li><a href="patterns/Proxy/">Proxyパターン</a></li>
-    <li><a href="patterns/TemplateMethod/">TemplateMethodパターン</a></li>  
+    <li><a href="patterns/TemplateMethod/">TemplateMethodパターン</a></li>
   </ol>
 
 
+  <img src="assets/images/mickey.jpg" alt="test">
 </body>
 
 </html>
