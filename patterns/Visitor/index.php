@@ -73,7 +73,7 @@ class BusinessMan  implements Visitor
    */
   public function visitRadioStation($acceptor)
   {
-    print $acceptor . "を訪問して色々やります";
+    print $acceptor . "を訪問して色々やります<br>";
     $acceptor->next->accept($this);
   }
 
@@ -82,7 +82,7 @@ class BusinessMan  implements Visitor
    */
   public function visitRadioStation_News($acceptor)
   {
-    print $acceptor . "を訪問して色々やります";
+    print $acceptor . "を訪問して色々やります<br>";
   }
 }
 
