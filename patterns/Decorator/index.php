@@ -35,7 +35,7 @@ class Inner
  */
 
 
-class Outer  extends  Inner
+class Outer extends Inner
 {
   private $inner = null;
 
