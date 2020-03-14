@@ -11,11 +11,10 @@ ini_set("display_errors", "1");
 
 
 /**
- * 実ファクトリを用いて 
+ * 実ファクトリを用いて
  * 一貫性のあるプロパティを設定することを目的としたパターン
- * 
  * 依存性注入によってお株を奪われつつあるらしい
- * 
+ *
  */
 
 
@@ -37,9 +36,6 @@ interface FashionFactory
  * ファクトリを使ってプロパティを設定される対象
  * 服
  */
-
-
-
 class Fashion
 {
   private $tops = null;
@@ -91,6 +87,7 @@ class JapaneseFashionFactory implements FashionFactory
   {
   }
 
+  // singleton?
   public static function getInstance()
   {
     if (self::$instance == null) {
@@ -162,6 +159,8 @@ $foreignFactory = ForeignFashionFactory::getInstance();
 
 
 
+
+// どちらが作ろうがcreate****という呼び出しになっているのがミソ
 // 服に和服工場のトップスとボトムズを設定
 $jpFashion = new Fashion();
 $jpFashion->setTops($jpFactory->createTops());

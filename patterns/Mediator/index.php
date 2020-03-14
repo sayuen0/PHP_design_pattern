@@ -7,7 +7,6 @@ ini_set("display_errors", 1);
  * Mediatorを通じて操作させる
  * 相手が実際に誰であるか実際は何をしているかは知らせない
  * お互いの平和を守る
- * 
  */
 
 /**
@@ -35,7 +34,7 @@ interface Colleague
 }
 
 
-class Hero  implements Mediator
+class Hero implements Mediator
 {
   private $colleagues = array();
   /**

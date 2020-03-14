@@ -30,6 +30,7 @@ interface DocumentBuilder
 
 
 // Director 中身を作る
+// レポート書きたい人
 
 class ReportDirector
 {
@@ -220,5 +221,8 @@ print($mr->build());
 $hd = new DiaryDirector(new HtmlBuilder());
 $md = new DiaryDirector(new MarkdownBuilder());
 
-echo $hd->build();
+
+echo $hd->build();//directorがbuildするのではなくてプロパティのbuilderが手順に従ってbuildしてくれる
 echo $md->build();
+
+

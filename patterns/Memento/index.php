@@ -110,7 +110,7 @@ class ArticleMemento
 
 
 
-// CareTaker: メメントを記憶するやつ
+// CareTaker: メメントを保持するやつ
 
 class ArticleCaretaker
 {

@@ -117,4 +117,3 @@ $radio->add(new Listenter("Gates"));
 $radio->add(new Listenter("Jobs"));
 $radio->broadCast("SHIELD TRIGGER! ~クロック8枚~");
 $radio->talk();
-

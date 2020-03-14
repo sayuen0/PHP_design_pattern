@@ -53,7 +53,8 @@ class XMLFileReader  implements Reader
    * @return void
    */
 
-  public function display()  {
+  public function display()
+  {
     foreach ($this->handler->artist as $artist) {
       echo "<b>" . $this->convert($artist['name']) . "</b>";
       echo "<ul>";

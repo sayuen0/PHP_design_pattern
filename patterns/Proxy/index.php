@@ -58,7 +58,7 @@ class ProxyPie  implements IPie
 
 /**
  * 本物のパイ
- * 
+ * 生成に時間がかかる
  */
 
 class RealPie  implements IPie
