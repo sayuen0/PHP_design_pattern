@@ -23,4 +23,10 @@
 やり方はわかる。親と子に同じ振る舞いを持たせるだけ。
 
 
+## その他
+
+### 更新の仕方
+
+- ドキュメントを書く
+-  `npm run-script build  && npm run-script deploy`
 
