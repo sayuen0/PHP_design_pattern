@@ -7,7 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "gitbook init",
+    "start": "gitbook serve",
+    "build": "gitbook build",
+    "publish": "gh-pages -d _book -m 'Auto publish book'"
   },
   "repository": {
     "type": "git",
