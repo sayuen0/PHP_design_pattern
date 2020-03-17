@@ -1,0 +1,27 @@
+{
+  "name": "design_patterns",
+  "version": "1.0.0",
+  "description": "[でざぱたん公式Webページ \\| TOP](http://www.dezapatan.com/#download)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sayuen0/PHP_design_pattern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sayuen0/PHP_design_pattern/issues"
+  },
+  "homepage": "https://github.com/sayuen0/PHP_design_pattern#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gitbook-cli": "^2.3.2"
+  }
+}
