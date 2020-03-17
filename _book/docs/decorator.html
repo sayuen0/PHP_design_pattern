@@ -1,0 +1,571 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Decorator · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="DI.html" />
+    
+    
+    <link rel="prev" href="COR.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Docs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="abstractFactory.html">
+            
+                <a href="abstractFactory.html">
+            
+                    
+                    Abstract Factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="adapter.html">
+            
+                <a href="adapter.html">
+            
+                    
+                    Adapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="bridge.html">
+            
+                <a href="bridge.html">
+            
+                    
+                    Bridge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="builder.html">
+            
+                <a href="builder.html">
+            
+                    
+                    Builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="composite.html">
+            
+                <a href="composite.html">
+            
+                    
+                    Composite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="COR.html">
+            
+                <a href="COR.html">
+            
+                    
+                    COR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="decorator.html">
+            
+                <a href="decorator.html">
+            
+                    
+                    Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="DI.html">
+            
+                <a href="DI.html">
+            
+                    
+                    DI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="facade.html">
+            
+                <a href="facade.html">
+            
+                    
+                    Facade
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="factoryMethod.html">
+            
+                <a href="factoryMethod.html">
+            
+                    
+                    Factory Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="flyweight.html">
+            
+                <a href="flyweight.html">
+            
+                    
+                    Flyweight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="interpreter.html">
+            
+                <a href="interpreter.html">
+            
+                    
+                    Interpreter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="iterator.html">
+            
+                <a href="iterator.html">
+            
+                    
+                    Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="mediator.html">
+            
+                <a href="mediator.html">
+            
+                    
+                    Mediator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="memento.html">
+            
+                <a href="memento.html">
+            
+                    
+                    Memento
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="observer.html">
+            
+                <a href="observer.html">
+            
+                    
+                    Observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="prototype.html">
+            
+                <a href="prototype.html">
+            
+                    
+                    Prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="proxy.html">
+            
+                <a href="proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="singleton.html">
+            
+                <a href="singleton.html">
+            
+                    
+                    Singleton
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="state.html">
+            
+                <a href="state.html">
+            
+                    
+                    State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="templateMethod.html">
+            
+                <a href="templateMethod.html">
+            
+                    
+                    Template Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="visitor.html">
+            
+                <a href="visitor.html">
+            
+                    
+                    Visitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Decorator</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="decorator&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Decorator&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
+<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<p>&#x3044;&#x308F;&#x3086;&#x308B;&#x30E9;&#x30C3;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;</p>
+<p>&#x672C;&#x8CEA;&#x90E8;&#x5206;&#x3092;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x6301;&#x3063;&#x3066;&#x3001;&#x59D4;&#x8B72;&#x3059;&#x308C;&#x3070;&#x826F;&#x3057;</p>
+<h2 id="&#x4ED6;&#x306E;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3068;&#x306E;&#x95A2;&#x9023;">&#x4ED6;&#x306E;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3068;&#x306E;&#x95A2;&#x9023;</h2>
+<h3 id="adapter">Adapter</h3>
+<p>&#x76EE;&#x7684;&#x304C;&#x9055;&#x3046;</p>
+<ul>
+<li>Adapter&#x306F;&#x300C;&#x53F3;&#x3068;&#x5DE6;&#x306E;&#x7AEF;&#x5B50;&#x306E;&#x5F62;&#x5F0F;&#x304C;&#x9055;&#x3046;&#x304B;&#x3089;&#x3001;&#x305D;&#x308C;&#x3089;&#x3092;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x304C;&#x5FC5;&#x8981;&#x300D;&#x3068;&#x3044;&#x3046;&#x610F;&#x56F3;</li>
+<li>Decorator&#x306F;&#x300C;&#x5DE6;&#x53F3;&#x306E;&#x7AEF;&#x5B50;&#x304C;&#x3042;&#x3063;&#x3066;&#x3044;&#x308B;&#x3068;&#x3053;&#x308D;&#x306B;&#x3001;&#x305D;&#x308C;&#x3068;&#x540C;&#x3058;&#x5F62;&#x306E;&#x7AEF;&#x5B50;&#x3092;&#x4ED8;&#x3051;&#x305F;&#x88C5;&#x7F6E;&#x3092;&#x3092;&#x5272;&#x308A;&#x8FBC;&#x307E;&#x305B;&#x308B;&#x300D;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="COR.html" class="navigation navigation-prev " aria-label="Previous page: COR">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="DI.html" class="navigation navigation-next " aria-label="Next page: DI">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Decorator","level":"1.2.8","depth":2,"next":{"title":"DI","level":"1.2.9","depth":2,"path":"docs/DI.md","ref":"docs/DI.md","articles":[]},"previous":{"title":"COR","level":"1.2.7","depth":2,"path":"docs/COR.md","ref":"docs/COR.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/decorator.md","mtime":"2020-03-14T07:06:30.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-17T01:43:17.898Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
