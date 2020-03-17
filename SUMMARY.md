@@ -13,7 +13,6 @@
   * [Facade](docs/facade.md)
   * [Factory Method](docs/factoryMethod.md)
   * [Flyweight](docs/flyweight.md)
-  * [Index](docs/index.md)
   * [Interpreter](docs/interpreter.md)
   * [Iterator](docs/iterator.md)
   * [Mediator](docs/mediator.md)
