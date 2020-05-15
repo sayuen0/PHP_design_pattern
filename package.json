@@ -26,6 +26,7 @@
   "dependencies": {
     "npm": ">=6.13.4",
     "lodash": ">=4.17.12",
+    "minimist": ">=0.2.1",
     "express": "^4.17.1",
     "gitbook-cli": "^2.3.2"
   },
