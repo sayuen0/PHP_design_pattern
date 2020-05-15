@@ -1,0 +1,6 @@
+# ignore self
+.bookignore
+
+# ignore npm files
+yarn.lock
+package.json
