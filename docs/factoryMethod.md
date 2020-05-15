@@ -16,9 +16,11 @@
 オブジェクト生成の方法に注目したパターン
 
 
+単純な生成クラスではなくテンプレートメソッド的なオブジェクト準備の過程をabsractメソッドに定義して、**オブジェクト生成と準備を抽象化**
 
-単純な生成クラスではなくテンプレートメソッド的なオブジェクト準備の過程をabsractメソッドに定義して、オブジェクト生成と準備を抽象化多様なインスタンス生成を請け負うオブジェクト生成は強い依存を生むので、切り離すだけでも大きなメリットがある
+多様なインスタンス生成を請け負うオブジェクト生成は強い依存を生むので、切り離すだけでも大きなメリットがある
 
+つまり、**インスタンス生成時に決まった手順でhogehogeする**を抽象クラスから強制できる
 
 
 復習:
@@ -134,8 +136,6 @@ ini_set("display_errors", "1");
  */
 
 
-
-
 abstract class ModelFactoryBase
 {
   private static $instances = array();
@@ -167,7 +167,6 @@ abstract class ModelFactoryBase
 
 class ModelFactoryA extends ModelFactoryBase
 {
-
   public function setProperties($obj)
   {
     $obj->setName("FromA");
@@ -175,7 +174,6 @@ class ModelFactoryA extends ModelFactoryBase
 }
 class ModelFactoryB extends ModelFactoryBase
 {
-
   public function setProperties($obj)
   {
     $obj->setName("FromB");
