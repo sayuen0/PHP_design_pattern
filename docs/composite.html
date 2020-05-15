@@ -480,6 +480,108 @@
 </ul>
 <h2 id="&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;</h2>
 <h3 id="html&#x306E;&#x69CB;&#x6587;&#x89E3;&#x6790;">HTML&#x306E;&#x69CB;&#x6587;&#x89E3;&#x6790;</h3>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);
+ini_set(<span class="hljs-string">&quot;safe_mode&quot;</span>, <span class="hljs-number">1</span>);
+<span class="hljs-comment">/**
+ * composite: &#x8907;&#x5408;
+ * &#x5165;&#x308C;&#x5B50;&#x69CB;&#x9020;&#x306B;&#x540C;&#x3058;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;
+ * &#x540C;&#x4E00;&#x306B;&#x6271;&#x3046;
+ * 
+ */</span>
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Removable</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">()</span></span>;
+}
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RemovableDirectory</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Removable</span>
+</span>{
+
+  <span class="hljs-keyword">private</span> $path;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($path)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (!is_dir($path)) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&quot;</span>);
+    }
+    $this-&gt;path = preg_replace(<span class="hljs-string">&quot;#/$#&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, $path);
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getList</span><span class="hljs-params">()</span>
+  </span>{
+    $result = <span class="hljs-keyword">array</span>();
+    $d = opendir($this-&gt;path);
+    <span class="hljs-keyword">while</span> ($f = readdir($d)) {
+      <span class="hljs-keyword">if</span> (preg_match(<span class="hljs-string">&quot;#^\.+$#&quot;</span>, $f)) {
+        <span class="hljs-keyword">continue</span>;
+      }
+      $path = $this-&gt;path . <span class="hljs-string">&quot;/&quot;</span> . $f;
+      <span class="hljs-keyword">if</span> (is_file($path)) {
+        $result[] = <span class="hljs-keyword">new</span> File($path);
+      } <span class="hljs-keyword">elseif</span> (is_dir($path)) {
+        $result[] = <span class="hljs-keyword">new</span> RemovableDirectory($path);
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3067;&#x3082;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3067;&#x3082;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&quot;</span>);
+      }
+    }
+    <span class="hljs-keyword">return</span> $result;
+  }
+
+<span class="hljs-comment">/**
+ * getList(&quot;tmp/composite&quot;)
+ *  opendir(&quot;tmp/composite&quot;)
+ *   $f = tmp/composite/hoge
+ *   $f = tmp/composite/hoge
+ *
+ * <span class="hljs-doctag">@return</span> void
+ */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">()</span>
+  </span>{
+    $result = <span class="hljs-keyword">array</span>();
+    var_dump($this-&gt;getList());
+    <span class="hljs-keyword">foreach</span> ($this-&gt;getList() <span class="hljs-keyword">as</span> $obj) {<span class="hljs-comment">//$obj = RemovableDirectory()</span>
+      <span class="hljs-keyword">foreach</span> ($obj-&gt;remove() <span class="hljs-keyword">as</span> $log) {
+        $result[] = $log;
+      }
+      $result[] = <span class="hljs-string">&quot;D=&gt;&quot;</span> . $this-&gt;path;
+      rmdir($this-&gt;path);
+      <span class="hljs-keyword">return</span> $result;
+    }
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeDirectory</span><span class="hljs-params">($name)</span>
+  </span>{
+    mkdir($this-&gt;path . <span class="hljs-string">&quot;/&quot;</span> . $name);
+  }
+}
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">File</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Removable</span>
+</span>{
+  <span class="hljs-keyword">private</span> $path;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($path)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (!is_file($path)) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&quot;</span>);
+    }
+    $this-&gt;path = preg_replace(<span class="hljs-string">&quot;#/$#&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, $path);
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">()</span>
+  </span>{
+    unlink($this-&gt;path);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;F=&gt;&quot;</span> . $this-&gt;path);
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">saveFile</span><span class="hljs-params">($name, $data)</span>
+  </span>{
+    file_put_contents($this-&gt;path . <span class="hljs-string">&quot;/&quot;</span> . $name, $data);
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -523,7 +625,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Composite","level":"1.2.6","depth":2,"next":{"title":"COR","level":"1.2.7","depth":2,"path":"docs/COR.md","ref":"docs/COR.md","articles":[]},"previous":{"title":"Command","level":"1.2.5","depth":2,"path":"docs/command.md","ref":"docs/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/composite.md","mtime":"2020-03-14T07:34:14.350Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Composite","level":"1.2.6","depth":2,"next":{"title":"COR","level":"1.2.7","depth":2,"path":"docs/COR.md","ref":"docs/COR.md","articles":[]},"previous":{"title":"Command","level":"1.2.5","depth":2,"path":"docs/command.md","ref":"docs/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/composite.md","mtime":"2020-05-15T13:44:44.546Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -531,10 +633,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

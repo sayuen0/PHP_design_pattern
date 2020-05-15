@@ -476,6 +476,117 @@
 <li>Adapter&#x306F;&#x300C;&#x53F3;&#x3068;&#x5DE6;&#x306E;&#x7AEF;&#x5B50;&#x306E;&#x5F62;&#x5F0F;&#x304C;&#x9055;&#x3046;&#x304B;&#x3089;&#x3001;&#x305D;&#x308C;&#x3089;&#x3092;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x304C;&#x5FC5;&#x8981;&#x300D;&#x3068;&#x3044;&#x3046;&#x610F;&#x56F3;</li>
 <li>Decorator&#x306F;&#x300C;&#x5DE6;&#x53F3;&#x306E;&#x7AEF;&#x5B50;&#x304C;&#x3042;&#x3063;&#x3066;&#x3044;&#x308B;&#x3068;&#x3053;&#x308D;&#x306B;&#x3001;&#x305D;&#x308C;&#x3068;&#x540C;&#x3058;&#x5F62;&#x306E;&#x7AEF;&#x5B50;&#x3092;&#x4ED8;&#x3051;&#x305F;&#x88C5;&#x7F6E;&#x3092;&#x3092;&#x5272;&#x308A;&#x8FBC;&#x307E;&#x305B;&#x308B;&#x300D;</li>
 </ul>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">/**
+ * &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x91CD;&#x306D;&#x7740;&#x3067;&#x6A5F;&#x80FD;&#x306E;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x3092;&#x7121;&#x9650;&#x5927;&#x306B;
+ * &#x300C;&#x59D4;&#x8B72;&#x306B;&#x3088;&#x308B;&#x7D99;&#x627F;&#x300D;
+ */</span>
+
+
+<span class="hljs-comment">/**
+ * &#x5358;&#x306B;&#x7D99;&#x627F;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x306F;&#x306A;&#x304F;
+ * &#x7D99;&#x627F;&#x5143;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x5185;&#x5305;&#x3057;&#x3066;
+ * &#x5358;&#x306B;super&#x3092;&#x547C;&#x3076;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;
+ * &#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x3092;&#x81EA;&#x7531;&#x306B;&#x5909;&#x3048;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;
+ */</span>
+
+
+<span class="hljs-comment">/**
+ * &#x62E1;&#x5F35;&#x5BFE;&#x8C61;&#x30AF;&#x30E9;&#x30B9;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Inner</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+  </span>{
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">__CLASS__</span>;
+  }
+}
+
+<span class="hljs-comment">/**
+ * &#x4E00;&#x756A;&#x5185;&#x5074;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x62E1;&#x5F35;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Outer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Inner</span>
+</span>{
+  <span class="hljs-keyword">private</span> $inner = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(Inner $inner)</span>
+  </span>{
+    $this-&gt;inner = $inner;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span>
+  </span>{
+    $name = $this-&gt;inner-&gt;getName();
+    <span class="hljs-keyword">return</span> $name . <span class="hljs-string">&quot; in Outer&quot;</span>;
+  }
+}
+
+<span class="hljs-comment">/**
+ * &#x3055;&#x3089;&#x306B;&#x62E1;&#x5F35;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OuterOfOuter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Outer</span>
+</span>{
+  <span class="hljs-keyword">private</span> $inner;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($inner)</span>
+  </span>{
+    $this-&gt;inner = $inner;
+  }
+
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span>
+  </span>{
+    $name = $this-&gt;inner-&gt;getName();
+    <span class="hljs-keyword">return</span> $name . <span class="hljs-string">&quot; in OuterOfOuter&quot;</span>;
+  }
+}
+
+
+<span class="hljs-comment">/**
+ * &#x3055;&#x3089;&#x306B;&#x3055;&#x3089;&#x306B;&#x62E1;&#x5F35;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SuperOuterOfOuter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">OuterOfOuter</span>
+</span>{
+  <span class="hljs-keyword">private</span> $inner;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($inner)</span>
+  </span>{
+    $this-&gt;inner = $inner;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span>
+  </span>{
+    $name = $this-&gt;inner-&gt;getName();
+    <span class="hljs-keyword">return</span> $name . <span class="hljs-string">&quot; in SuperOuterOfOuter&quot;</span>;
+  }
+}
+
+
+$obj = <span class="hljs-keyword">new</span> OuterOfOuter(<span class="hljs-keyword">new</span> Outer(<span class="hljs-keyword">new</span> Inner()));
+<span class="hljs-keyword">print</span> $obj-&gt;getName();
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;
+
+$obj = <span class="hljs-keyword">new</span> SuperOuterOfOuter(<span class="hljs-keyword">new</span> Outer(<span class="hljs-keyword">new</span> Inner()));
+<span class="hljs-keyword">print</span> $obj-&gt;getName();
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;
+
+$obj = <span class="hljs-keyword">new</span> Outer(<span class="hljs-keyword">new</span> SuperOuterOfOuter(<span class="hljs-keyword">new</span> Outer(<span class="hljs-keyword">new</span> SuperOuterOfOuter(<span class="hljs-keyword">new</span> Inner()))));
+<span class="hljs-keyword">print</span> $obj-&gt;getName();
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;
+</code></pre>
 
                                 
                                 </section>
@@ -519,7 +630,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Decorator","level":"1.2.8","depth":2,"next":{"title":"DI","level":"1.2.9","depth":2,"path":"docs/DI.md","ref":"docs/DI.md","articles":[]},"previous":{"title":"COR","level":"1.2.7","depth":2,"path":"docs/COR.md","ref":"docs/COR.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/decorator.md","mtime":"2020-03-14T07:06:30.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Decorator","level":"1.2.8","depth":2,"next":{"title":"DI","level":"1.2.9","depth":2,"path":"docs/DI.md","ref":"docs/DI.md","articles":[]},"previous":{"title":"COR","level":"1.2.7","depth":2,"path":"docs/COR.md","ref":"docs/COR.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/decorator.md","mtime":"2020-05-15T13:51:16.066Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -527,10 +638,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -483,6 +483,179 @@
 <h2 id="&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;</h2>
 <h3 id="git">Git</h3>
 <p>&#x300C;&#x30B9;&#x30CA;&#x30C3;&#x30D7;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x300D;&#x304C;&#x305D;&#x306E;&#x307E;&#x307E;&#x30E1;&#x30E1;&#x30F3;&#x30C8;&#x3060;&#x3057;&#x3001;&#x30AA;&#x30EA;&#x30B8;&#x30CD;&#x30A4;&#x30BF;&#x30FC;&#x306F;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x672C;&#x4F53;&#x3002;&#x672C;&#x4F53;&#x306E;&#x30D0;&#x30C3;&#x30AF;&#x30A2;&#x30C3;&#x30D7;&#x3067;&#x306F;&#x306A;&#x304F;&#x5727;&#x7E2E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x53D6;&#x3063;&#x3066;&#x304A;&#x3044;&#x3066;&#x3001;&#x597D;&#x304D;&#x306A;&#x3068;&#x3053;&#x308D;&#x307E;&#x3067;&#x5DFB;&#x304D;&#x623B;&#x3057;&#x3092;&#x884C;&#x3048;&#x308B;&#x3002;</p>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">/**
+ * &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;undo&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;
+ * 
+ * memento&#x3068;&#x306F;&#x300C;&#x5FD8;&#x308C;&#x5F62;&#x898B;&#x300D;
+ * &#x51E6;&#x7406;&#x524D;&#x306E;&#x60C5;&#x5831;&#x3092;&#x6B8B;&#x3057;&#x3066;&#x304A;&#x3044;&#x3066;&#x305D;&#x308C;&#x3092;&#x518D;&#x73FE;&#x3059;&#x308B;&#x3068;&#x3044;&#x3063;&#x305F;&#x3068;&#x3053;&#x308D;&#x3060;&#x308D;&#x3046;&#x304B;
+ * Command&#x3088;&#x308A;&#x5E73;&#x6613;&#x306A;&#x5B9F;&#x88C5;
+ */</span>
+
+<span class="hljs-comment">/**
+ * &#x30AA;&#x30EA;&#x30B8;&#x30CD;&#x30A4;&#x30BF;&#x30FC;&#xFF1A;&#x64CD;&#x4F5C;&#x5BFE;&#x8C61;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;
+ * &#x30B1;&#x30A2;&#x30C6;&#x30A4;&#x30AB;&#x30FC;&#xFF1A;&#x30E1;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x8A18;&#x61B6;&#x3059;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;
+ * &#x30E1;&#x30E1;&#x30F3;&#x30C8;&#xFF1A;&#x72B6;&#x614B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;
+ */</span>
+
+
+<span class="hljs-comment">//  Originator</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Article</span>
+</span>{
+  <span class="hljs-keyword">private</span> $subject = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $body = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $datetime = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setSubject</span><span class="hljs-params">($s)</span>
+  </span>{
+    $this-&gt;subject = $s;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBody</span><span class="hljs-params">($s)</span>
+  </span>{
+    $this-&gt;body = $s;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setDatetime</span><span class="hljs-params">($d)</span>
+  </span>{
+    $this-&gt;datetime = $d;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSubject</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;subject;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBody</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;body;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDatetime</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;datetime;
+  }
+
+  <span class="hljs-comment">// memento&#x4F5C;&#x6210;</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMemento</span><span class="hljs-params">()</span>
+  </span>{
+    $obj = <span class="hljs-keyword">new</span> ArticleMemento();
+    $obj-&gt;setSubject($this-&gt;getSubject());
+    $obj-&gt;setBody($this-&gt;getBody());
+    $obj-&gt;setDatetime($this-&gt;getDatetime());
+    <span class="hljs-keyword">return</span> $obj;
+  }
+
+  <span class="hljs-comment">// memento&#x3092;&#x30BB;&#x30C3;&#x30C8;&#x3057;&#x3066;&#x305D;&#x306E;&#x72B6;&#x614B;&#x3092;&#x5FA9;&#x5143;</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setMemento</span><span class="hljs-params">($obj)</span>
+  </span>{
+    $this-&gt;setSubject($obj-&gt;getSubject());
+    $this-&gt;setBody($obj-&gt;getBody());
+    $this-&gt;setDatetime($obj-&gt;getDatetime());
+  }
+}
+
+
+<span class="hljs-comment">// memento: &#x8A18;&#x61B6;&#x3059;&#x308B;&#x3084;&#x3064;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArticleMemento</span>
+</span>{
+  <span class="hljs-keyword">private</span> $subject = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $body = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $datetime = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setSubject</span><span class="hljs-params">($s)</span>
+  </span>{
+    $this-&gt;subject = $s;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBody</span><span class="hljs-params">($s)</span>
+  </span>{
+    $this-&gt;body = $s;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setDatetime</span><span class="hljs-params">($d)</span>
+  </span>{
+    $this-&gt;datetime = $d;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSubject</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;subject;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBody</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;body;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDatetime</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;datetime;
+  }
+}
+
+
+
+<span class="hljs-comment">// CareTaker: &#x30E1;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x4FDD;&#x6301;&#x3059;&#x308B;&#x3084;&#x3064;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArticleCaretaker</span>
+</span>{
+  <span class="hljs-keyword">private</span> $memento = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMemento</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;memento;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setMemento</span><span class="hljs-params">($memento)</span>
+  </span>{
+    $this-&gt;memento = $memento;
+  }
+}
+
+
+<span class="hljs-comment">// &#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;</span>
+
+date_default_timezone_set(<span class="hljs-string">&quot;Asia/Tokyo&quot;</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">say</span><span class="hljs-params">($s)</span>
+</span>{
+  <span class="hljs-keyword">print</span> $s . <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;
+}
+
+
+say(<span class="hljs-string">&quot;&#x521D;&#x671F;&#x72B6;&#x614B;&quot;</span>);
+
+$article = <span class="hljs-keyword">new</span> Article();
+$article-&gt;setSubject(<span class="hljs-string">&quot;&#x5909;&#x66F4;&#x524D;&#x306E;&#x8A18;&#x4E8B;&#x306E;&#x4EF6;&#x540D;&quot;</span>);
+$article-&gt;setBody(<span class="hljs-string">&quot;&#x5909;&#x66F4;&#x524D;&#x306E;&#x8A18;&#x4E8B;&#x306E;&#x672C;&#x6587;&quot;</span>);
+$article-&gt;setDatetime(date(<span class="hljs-string">&quot;Y/m/d H:i:s&quot;</span>));
+
+say($article-&gt;getSubject());
+say($article-&gt;getBody());
+say($article-&gt;getDatetime());
+
+<span class="hljs-comment">// &#x30B1;&#x30A2;&#x30C6;&#x30A4;&#x30AB;&#x30FC;&#x306B;&#x4ECA;&#x306E;Article&#x306E;&#x30E1;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x30BB;&#x30C3;&#x30C8;&#x3057;&#x8A18;&#x61B6;</span>
+$act = <span class="hljs-keyword">new</span> ArticleCareTaker();
+$act-&gt;setMemento($article-&gt;createMemento());
+
+say(<span class="hljs-string">&quot;&#x5909;&#x66F4;&quot;</span>);
+$article-&gt;setSubject(<span class="hljs-string">&quot;&#x5909;&#x66F4;&#x5F8C;&#x306E;&#x8A18;&#x4E8B;&#x306E;&#x4EF6;&#x540D;&quot;</span>);
+$article-&gt;setBody(<span class="hljs-string">&quot;&#x5909;&#x66F4;&#x5F8C;&#x306E;&#x8A18;&#x4E8B;&#x306E;&#x672C;&#x6587;&quot;</span>);
+$article-&gt;setSubject(date(<span class="hljs-string">&quot;Y/m/d H:i:s&quot;</span>, strtotime(<span class="hljs-string">&quot;+1hour&quot;</span>)));
+
+say($article-&gt;getSubject());
+say($article-&gt;getBody());
+say($article-&gt;getDatetime());
+
+
+say(<span class="hljs-string">&quot;&#x5FA9;&#x5143;&quot;</span>);
+<span class="hljs-comment">// Article&#x306B;&#x3055;&#x3063;&#x304D;&#x30B1;&#x30A2;&#x30C6;&#x30A4;&#x30AB;&#x30FC;&#x306B;&#x4FDD;&#x5B58;&#x3057;&#x305F;&#x30E1;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x30BB;&#x30C3;&#x30C8;&#x3057;&#x3066;&#x5FA9;&#x5143;</span>
+$article-&gt;setMemento($act-&gt;getMemento());
+
+say($article-&gt;getSubject());
+say($article-&gt;getBody());
+say($article-&gt;getDatetime());
+</code></pre>
 
                                 
                                 </section>
@@ -526,7 +699,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Memento","level":"1.2.16","depth":2,"next":{"title":"Observer","level":"1.2.17","depth":2,"path":"docs/observer.md","ref":"docs/observer.md","articles":[]},"previous":{"title":"Mediator","level":"1.2.15","depth":2,"path":"docs/mediator.md","ref":"docs/mediator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/memento.md","mtime":"2020-03-14T08:23:54.638Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Memento","level":"1.2.16","depth":2,"next":{"title":"Observer","level":"1.2.17","depth":2,"path":"docs/observer.md","ref":"docs/observer.md","articles":[]},"previous":{"title":"Mediator","level":"1.2.15","depth":2,"path":"docs/mediator.md","ref":"docs/mediator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/memento.md","mtime":"2020-05-15T14:02:23.421Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -534,10 +707,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

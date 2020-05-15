@@ -485,6 +485,133 @@ Mediator&#x304C;100&#x4EBA;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3092;&#x63
 </ul>
 <h2 id="&#x30C7;&#x30E1;&#x30EA;&#x30C3;&#x30C8;">&#x30C7;&#x30E1;&#x30EA;&#x30C3;&#x30C8;</h2>
 <p>Mediator&#x306E;&#x51E6;&#x7406;&#x306F;&#x8907;&#x96D1;&#x306B;&#x306A;&#x308B;&#x3002;&#x3042;&#x3089;&#x3086;&#x308B;&#x8ABF;&#x505C;&#x306B;&#x95A2;&#x3059;&#x308B;&#x51E6;&#x7406;&#x3001;&#x3059;&#x306A;&#x308F;&#x3061;&#x500B;&#x3005;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x95A2;&#x3059;&#x308B;&#x60C5;&#x5831;&#x3092;&#x5168;&#x3066;&#x6709;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;&#x3044;&#x3051;&#x306A;&#x3044;&#x305F;&#x3081;&#x3002;</p>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">/**
+ * &#x758E;&#x7D50;&#x5408;
+ * &#x76F4;&#x63A5;&#x5177;&#x4F53;&#x7684;&#x306A;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x540C;&#x58EB;&#x3092;&#x64CD;&#x4F5C;&#x3055;&#x305B;&#x305A;
+ * Mediator&#x3092;&#x901A;&#x3058;&#x3066;&#x64CD;&#x4F5C;&#x3055;&#x305B;&#x308B;
+ * &#x76F8;&#x624B;&#x304C;&#x5B9F;&#x969B;&#x306B;&#x8AB0;&#x3067;&#x3042;&#x308B;&#x304B;&#x5B9F;&#x969B;&#x306F;&#x4F55;&#x3092;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x306F;&#x77E5;&#x3089;&#x305B;&#x306A;&#x3044;
+ * &#x304A;&#x4E92;&#x3044;&#x306E;&#x5E73;&#x548C;&#x3092;&#x5B88;&#x308B;
+ */</span>
+
+<span class="hljs-comment">/**
+ * &#x4EF2;&#x4ECB;&#x8005; Mediator
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Mediator</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addColleague</span><span class="hljs-params">($assistant)</span></span>;
+}
+
+<span class="hljs-comment">/**
+ * &#x540C;&#x50DA;
+ * &#x4EF2;&#x4ECB;&#x5F79;&#x3092;&#x30BB;&#x30C3;&#x30C8;&#x3059;&#x308B;
+ * &#x540C;&#x3058;&#x76F8;&#x8AC7;&#x8005;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x76F8;&#x8AC7;&#x3059;&#x308B;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Colleague</span>
+</span>{
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setMediator</span><span class="hljs-params">($mediator)</span></span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">consult</span><span class="hljs-params">($to, $message)</span></span>;
+}
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hero</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Mediator</span>
+</span>{
+  <span class="hljs-keyword">private</span> $colleagues = <span class="hljs-keyword">array</span>();
+  <span class="hljs-comment">/**
+   * &#x7BA1;&#x8F44;&#x4E0B;&#x306B;&#x7F6E;&#x304B;&#x308C;&#x308B;&#x90E8;&#x4E0B;&#x3092;&#x8FFD;&#x52A0;
+   */</span>
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addColleague</span><span class="hljs-params">($assistant)</span>
+  </span>{
+    $this-&gt;colleagues[$assistant-&gt;getName()] = $assistant;
+    $assistant-&gt;setMediator($this);
+  }
+
+  <span class="hljs-comment">/**
+   * from&#x90E8;&#x4E0B;&#x304B;&#x3089;to&#x90E8;&#x4E0B;&#x3078;&#x76F8;&#x8AC7;&#x3055;&#x308C;&#x305F;&#x5185;&#x5BB9;&#x3092;&#x4F1D;&#x3048;&#x308B;
+   * <span class="hljs-doctag">@param</span> $from &#x90E8;&#x4E0B;
+   * <span class="hljs-doctag">@param</span> $to $&#x90E8;&#x4E0B;
+   * <span class="hljs-doctag">@param</span> $message &#x76F8;&#x8AC7;&#x5185;&#x5BB9;
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendMessage</span><span class="hljs-params">($from, $to, $message)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (array_key_exists($to, $this-&gt;colleagues)) {
+      <span class="hljs-keyword">print</span> $from-&gt;getName() . <span class="hljs-string">&quot;&#x304B;&#x3089;&quot;</span> . $this-&gt;colleagues[$to]-&gt;getName() . <span class="hljs-string">&quot;&#x3078;&quot;</span>;
+      $this-&gt;colleagues[$to]-&gt;receiveMessage($message);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x77E5;&#x3089;&#x306A;&#x3044;&#x90E8;&#x4E0B;&#x3067;&#x3059;&lt;br&gt;&quot;</span>;
+    }
+  }
+}
+
+
+<span class="hljs-comment">/**
+ * &#x30A2;&#x30B7;&#x30B9;&#x30BF;&#x30F3;&#x30C8;
+ * &#x4ED6;&#x306E;&#x90E8;&#x4E0B;&#x306B;&#x76F8;&#x8AC7;&#x3059;&#x308B;&#x524D;&#x306B;&#x4E00;&#x5EA6;&#x4EF2;&#x4ECB;&#x5F79;&#x3092;&#x4ECB;&#x3059;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Assistant</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Colleague</span>
+</span>{
+  <span class="hljs-keyword">private</span> $name;
+  <span class="hljs-keyword">private</span> $mediator;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($name)</span>
+  </span>{
+    $this-&gt;name = $name;
+  }
+
+  <span class="hljs-comment">/**
+   * &#x4F55;&#x304B;&#x76F8;&#x8AC7;&#x3059;&#x308B;&#x3068;&#x304D;&#x306B;&#x5831;&#x544A;&#x3059;&#x308B;&#x4EF2;&#x4ECB;&#x5F79;&#x306E;&#x8A2D;&#x5B9A;
+   */</span>
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setMediator</span><span class="hljs-params">($mediator)</span>
+  </span>{
+    $this-&gt;mediator = $mediator;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;name;
+  }
+
+  <span class="hljs-comment">/**
+   * $to&#x306E;&#x3076;&#x304B;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x76F8;&#x8AC7;&#x3059;&#x308B;&#x304C;
+   * &#x81EA;&#x5206;&#x306F;&#x8AB0;&#x3005;&#x306B;&#x76F8;&#x8AC7;&#x3057;&#x305F;&#x3044;&#x3068;&#x3001;&#x4EF2;&#x4ECB;&#x5F79;&#x3092;&#x4E2D;&#x7D99;
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">consult</span><span class="hljs-params">($to, $message)</span>
+  </span>{
+    $this-&gt;mediator-&gt;sendMessage($this, $to, $message);
+  }
+
+  <span class="hljs-comment">/**
+   * &#x76F8;&#x8AC7;&#x5185;&#x5BB9;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;
+   */</span>
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">receiveMessage</span><span class="hljs-params">($message)</span>
+  </span>{
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;[$message] &lt;br&gt;&quot;</span>;
+  }
+}
+
+
+$hero = <span class="hljs-keyword">new</span> Hero();
+$yellow = <span class="hljs-keyword">new</span> Assistant(<span class="hljs-string">&quot;yellow&quot;</span>);
+$blue = <span class="hljs-keyword">new</span> Assistant(<span class="hljs-string">&quot;blue&quot;</span>);
+
+$hero-&gt;addColleague($yellow);
+$hero-&gt;addColleague($blue);
+
+$blue-&gt;consult(<span class="hljs-string">&quot;yellow&quot;</span>, <span class="hljs-string">&quot;how are you? &quot;</span>);
+$yellow-&gt;consult(<span class="hljs-string">&quot;blue&quot;</span>, <span class="hljs-string">&quot;soso.&quot;</span>);
+</code></pre>
 
                                 
                                 </section>
@@ -528,7 +655,7 @@ Mediator&#x304C;100&#x4EBA;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3092;&#x63
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mediator","level":"1.2.15","depth":2,"next":{"title":"Memento","level":"1.2.16","depth":2,"path":"docs/memento.md","ref":"docs/memento.md","articles":[]},"previous":{"title":"Iterator","level":"1.2.14","depth":2,"path":"docs/iterator.md","ref":"docs/iterator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/mediator.md","mtime":"2020-03-14T09:00:50.378Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mediator","level":"1.2.15","depth":2,"next":{"title":"Memento","level":"1.2.16","depth":2,"path":"docs/memento.md","ref":"docs/memento.md","articles":[]},"previous":{"title":"Iterator","level":"1.2.14","depth":2,"path":"docs/iterator.md","ref":"docs/iterator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/mediator.md","mtime":"2020-05-15T13:57:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -536,10 +663,6 @@ Mediator&#x304C;100&#x4EBA;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3092;&#x63
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

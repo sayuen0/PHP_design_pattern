@@ -469,6 +469,127 @@
 <h2 id="&#x76EE;&#x7684;">&#x76EE;&#x7684;</h2>
 <p>&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x3092;&#x8D77;&#x3053;&#x3059;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x3053;&#x3053;&#x306E;&#x5B9F;&#x88C5;&#x3092;&#x610F;&#x8B58;&#x3057;&#x306A;&#x3044;</p>
 <p>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;(JS)&#x304C;&#x305D;&#x308C;&#x3092;&#x89B3;&#x6E2C;&#x3057;&#x3066;&#x52D5;&#x304F;</p>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-number">1</span>);
+
+
+
+<span class="hljs-comment">/**
+ * &#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x30EA;&#x30B9;&#x30CA;&#x30FC;
+ * &#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3078;
+ * &#x6307;&#x5B9A;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;
+ * &#x4E8B;&#x524D;&#x767B;&#x9332;
+ * &#x6307;&#x5B9A;&#x306E;&#x30BF;&#x30A4;&#x30DF;&#x30F3;&#x30B0;&#x3067;&#x51E6;&#x7406;&#x3092;&#x50CD;&#x304D;&#x304B;&#x3051;&#x308B;
+ * 
+ * JS&#x306E;DOM&#x306F;&#x3060;&#x3044;&#x305F;&#x3044;&#x3053;&#x308C;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x308B;
+ * 
+ */</span>
+
+
+
+<span class="hljs-comment">/**
+ * &#x30E9;&#x30B8;&#x30AA;&#x305D;&#x306E;&#x3082;&#x306E;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;
+ * &#x767A;&#x4FE1;&#x5F79;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ISubject</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">($obserrer)</span></span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">($obserrer)</span></span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">notify</span><span class="hljs-params">($e)</span></span>;
+}
+
+
+<span class="hljs-comment">/**
+ * &#x30EA;&#x30B9;&#x30CA;&#x30FC;
+ * &#x805E;&#x304F;&#x4F53;&#x52E2;&#x3060;&#x3051;&#x6301;&#x3063;&#x3066;&#x308C;&#x3070;&#x3044;&#x3044;
+ * 
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IObserver</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">receive</span><span class="hljs-params">($music)</span></span>;
+}
+
+
+<span class="hljs-comment">/**
+ * &#x5B9F;&#x969B;&#x306E;&#x30E9;&#x30B8;&#x30AA;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Radio</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">ISubject</span>
+</span>{
+  <span class="hljs-comment">// &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x5168;&#x54E1;</span>
+  <span class="hljs-keyword">private</span> $observers = <span class="hljs-keyword">array</span>();
+
+
+  <span class="hljs-comment">/**
+   * &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306E;&#x300C;&#x8996;&#x8074;&#x5951;&#x7D04;&#x300D;
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">($observer)</span>
+  </span>{
+    $this-&gt;observers[] = $observer;
+  }
+
+  <span class="hljs-comment">/**
+   * &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306E;&#x300C;&#x8996;&#x8074;&#x89E3;&#x7D04;&#x300D;
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">($observer)</span>
+  </span>{
+    <span class="hljs-keyword">foreach</span> ($this-&gt;observers <span class="hljs-keyword">as</span> $obs) {
+      <span class="hljs-keyword">if</span> ($observer != $obs) {
+        $this-&gt;observers[] = $obs; <span class="hljs-comment">//observer&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x3066;&#x308B;&#x306E;&#x304B;&#xFF1F;&#x3053;&#x308C;&#x52D5;&#x304F;&#x306E;&#xFF1F;</span>
+      }
+    }
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">notify</span><span class="hljs-params">($e)</span>
+  </span>{
+    <span class="hljs-keyword">foreach</span> ($this-&gt;observers <span class="hljs-keyword">as</span> $obs) {
+      $obs-&gt;receive($e);
+    }
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">broadCast</span><span class="hljs-params">($music)</span>
+  </span>{
+    $this-&gt;notify($music);
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">talk</span><span class="hljs-params">()</span>
+  </span>{
+    $this-&gt;notify(<span class="hljs-string">&quot;DJ&#x306E;&#x558B;&#x308A;&quot;</span>);
+  }
+}
+
+
+<span class="hljs-comment">/**
+ * &#x30EA;&#x30B9;&#x30CA;&#x30FC;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Listenter</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">IObserver</span>
+</span>{
+  <span class="hljs-keyword">private</span> $name;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($name)</span>
+  </span>{
+    $this-&gt;name = $name;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">receive</span><span class="hljs-params">($music)</span>
+  </span>{
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x30E9;&#x30B8;&#x30AA;&#x30CD;&#x30FC;&#x30E0; $this-&gt;name &#x3055;&#x3093;&#x304C; $music &quot;</span> . <span class="hljs-string">&quot;&#x3092;&#x805E;&#x304D;&#x307E;&#x3057;&#x305F; &lt;br&gt;&quot;</span>;
+  }
+}
+
+
+$radio = <span class="hljs-keyword">new</span> Radio();
+$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Larry&quot;</span>));
+$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Gates&quot;</span>));
+$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Jobs&quot;</span>));
+$radio-&gt;broadCast(<span class="hljs-string">&quot;SHIELD TRIGGER! ~&#x30AF;&#x30ED;&#x30C3;&#x30AF;8&#x679A;~&quot;</span>);
+$radio-&gt;talk();
+</code></pre>
 
                                 
                                 </section>
@@ -512,7 +633,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Observer","level":"1.2.17","depth":2,"next":{"title":"Prototype","level":"1.2.18","depth":2,"path":"docs/prototype.md","ref":"docs/prototype.md","articles":[]},"previous":{"title":"Memento","level":"1.2.16","depth":2,"path":"docs/memento.md","ref":"docs/memento.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/observer.md","mtime":"2020-03-14T09:49:09.497Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Observer","level":"1.2.17","depth":2,"next":{"title":"Prototype","level":"1.2.18","depth":2,"path":"docs/prototype.md","ref":"docs/prototype.md","articles":[]},"previous":{"title":"Memento","level":"1.2.16","depth":2,"path":"docs/memento.md","ref":"docs/memento.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/observer.md","mtime":"2020-05-15T14:02:55.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -520,10 +641,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

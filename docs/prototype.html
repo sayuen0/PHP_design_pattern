@@ -485,6 +485,115 @@
 &#x30DF;&#x30E5;&#x30FC;&#x30BF;&#x30D6;&#x30EB;&#x3067;&#x3082;&#x4E92;&#x3044;&#x306B;&#x540C;&#x3058;&#x306A;&#x3089;&#x305D;&#x308C;&#x306F;&#x540C;&#x3058;&#x52D5;&#x304D;&#x3057;&#x304B;&#x3067;&#x304D;&#x306A;&#x3044;&#x3002;&#x68D2;&#x306E;&#x4E21;&#x7AEF;&#x306B;&#x30DE;&#x30CD;&#x30AD;&#x30F3;&#x3064;&#x3051;&#x308B;&#x30A2;&#x30EC;&#x3002;</p>
 <h2 id="&#x7528;&#x9014;&#x3092;&#x8003;&#x3048;&#x308B;">&#x7528;&#x9014;&#x3092;&#x8003;&#x3048;&#x308B;</h2>
 <p>&#x30B7;&#x30E5;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x30B2;&#x30FC;&#x30E0;&#x306E;&#x5F3E;&#x3002;</p>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">/**
+ * &#x30AF;&#x30ED;&#x30FC;&#x30F3;&#x3092;&#x3044;&#x3058;&#x308D;&#x3046;&#x304C;&#x5143;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5F71;&#x97FF;&#x3092;&#x4E0E;&#x3048;&#x306A;&#x3044;
+ * 
+ * PHP&#x306B;&#x306F;&#x3082;&#x3068;&#x3082;&#x3068;clone&#x306E;&#x6A5F;&#x80FD;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x305D;&#x308C;&#x3092;&#x7528;&#x3044;&#x308B;
+ * clone&#x306E;&#x6A5F;&#x80FD;&#x304C;&#x306A;&#x3044;&#x8A00;&#x8A9E;&#x306B;&#x304A;&#x3044;&#x3066;&#x306F;
+ * &#x660E;&#x793A;&#x7684;&#x306B;&#x6DF1;&#x3044;&#x30B3;&#x30D4;&#x30FC;&#x3092;&#x3057;&#x305F;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3059;
+ * &#x3064;&#x307E;&#x308A;&#x3001;&#x30C7;&#x30A3;&#x30FC;&#x30D7;&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x306A;&#x3044;&#x3068;&#x4E88;&#x671F;&#x305B;&#x306C;&#x30D0;&#x30B0;&#x306E;&#x539F;&#x56E0;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3088;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;
+ * 
+ * 
+ */</span>
+
+
+
+
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Prototype</span>
+</span>{
+  <span class="hljs-keyword">private</span> $values = <span class="hljs-keyword">array</span>();
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">($key, $val)</span>
+  </span>{
+    $this-&gt;values[$key]   = $val;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">($key)</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;values[$key];
+  }
+
+  <span class="hljs-comment">/**
+   * php&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x306F;&#x30B7;&#x30E3;&#x30ED;&#x30FC;&#x30B3;&#x30D4;&#x30FC;&#x306A;&#x306E;&#x3067;
+   * &#x6DF1;&#x3044;&#x30B3;&#x30D4;&#x30FC;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x30DE;&#x30B8;&#x30C3;&#x30AF;&#x30E1;&#x30BD;&#x30C3;&#x30C9;clone&#x3092;&#x4F5C;&#x308B;
+   * 
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">foreach</span> ($this-&gt;values <span class="hljs-keyword">as</span> $key =&gt; $val) {
+      <span class="hljs-keyword">if</span> (is_object($val)) {
+        $this-&gt;key = <span class="hljs-keyword">clone</span> $val;
+      } <span class="hljs-keyword">else</span> {
+        $this-&gt;key = $val;
+      }
+    }
+  }
+}
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span>
+</span>{
+  <span class="hljs-keyword">private</span> $values = <span class="hljs-keyword">array</span>();
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">($key, $val)</span>
+  </span>{
+    $this-&gt;values[$key] = $val;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">($key)</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;values[$key];
+  }
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">say</span><span class="hljs-params">($i)</span>
+</span>{
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;$i &lt;br&gt;&quot;</span>;
+}
+
+
+<span class="hljs-comment">// &#x30AA;&#x30EA;&#x30B8;&#x30CA;&#x30EB;&#x4F5C;&#x6210;</span>
+
+$originalObj = <span class="hljs-keyword">new</span> Prototype();
+$originalObj-&gt;hoge = <span class="hljs-string">&quot;fuga&quot;</span>;
+$cloneObj = <span class="hljs-keyword">clone</span> $originalObj;
+say($originalObj-&gt;hoge === $cloneObj-&gt;hoge ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>); <span class="hljs-comment">//OK</span>
+
+
+<span class="hljs-comment">// &#x30AF;&#x30ED;&#x30FC;&#x30F3;&#x306B;&#x30D4;&#x30E8;&#x3092;&#x4EE3;&#x5165;</span>
+$cloneObj-&gt;hoge = <span class="hljs-string">&quot;piyo&quot;</span>;
+
+<span class="hljs-comment">//&#x30AF;&#x30ED;&#x30FC;&#x30F3;&#x306B;&#x306F;hoge&#x304C;&#x3042;&#x3063;&#x3066;&#x3001;</span>
+<span class="hljs-comment">// &#x30AA;&#x30EA;&#x30B8;&#x30CA;&#x30EB;&#x306B;&#x306F;piyo&#x304C;&#x3042;&#x308B;</span>
+say($originalObj-&gt;hoge == $cloneObj-&gt;hoge  ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>); <span class="hljs-comment">//NG;</span>
+
+var_dump($originalObj-&gt;hoge);
+var_dump($cloneObj-&gt;hoge);
+
+$originalObj-&gt;child = <span class="hljs-keyword">new</span> Child();
+$originalObj-&gt;child-&gt;xyzzy = <span class="hljs-string">&quot;vim&quot;</span>;
+$cloneObj  = <span class="hljs-keyword">clone</span> $originalObj;
+say($originalObj-&gt;child-&gt;xyzzy == $cloneObj-&gt;child-&gt;xyzzy ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>); <span class="hljs-comment">//OK</span>
+
+<span class="hljs-comment">// clone&#x306E;child&#x306E;xyzzy&#x306B;emacs&#x3092;&#x4EE3;&#x5165;</span>
+
+$cloneObj-&gt;child-&gt;xyzzy = <span class="hljs-string">&quot;emacs&quot;</span>;
+
+<span class="hljs-comment">// &#x30AA;&#x30EA;&#x30B8;&#x30CA;&#x30EB;&#x3068;&#x30AF;&#x30ED;&#x30FC;&#x30F3;&#x304C;&#x6B63;&#x3057;&#x304F;&#x30C7;&#x30A3;&#x30FC;&#x30D7;&#x30B3;&#x30D4;&#x30FC;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-comment">// &#x30DE;&#x30B8;&#x30C3;&#x30AF;&#x30E1;&#x30BD;&#x30C3;&#x30C9;clone&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x3066;&#x304A;&#x304B;&#x306A;&#x3044;&#x3068;</span>
+<span class="hljs-comment">// &#x30AA;&#x30EA;&#x30B8;&#x30CA;&#x30EB;&#x3082;emacs&#x306B;&#x306A;&#x308B;&#x306E;&#x3067;&#x6C17;&#x3092;&#x3064;&#x3051;&#x308B;</span>
+<span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x306F;&#x3001;Child&#x306B;&#x306F;__clone&#x3057;&#x3066;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;</span>
+<span class="hljs-comment">// child&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x30B7;&#x30E3;&#x30ED;&#x30FC;&#x30B3;&#x30D4;&#x30FC;&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3063;&#x305F;&#x4F8B;</span>
+say($originalObj-&gt;child-&gt;xyzzy == <span class="hljs-string">&quot;vim&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>); <span class="hljs-comment">// NG</span>
+say($cloneObj-&gt;child-&gt;xyzzy == <span class="hljs-string">&quot;emacs&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>); <span class="hljs-comment">//OK</span>
+
+var_dump($originalObj-&gt;child);
+var_dump($cloneObj-&gt;child);
+</code></pre>
 
                                 
                                 </section>
@@ -528,7 +637,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Prototype","level":"1.2.18","depth":2,"next":{"title":"Proxy","level":"1.2.19","depth":2,"path":"docs/proxy.md","ref":"docs/proxy.md","articles":[]},"previous":{"title":"Observer","level":"1.2.17","depth":2,"path":"docs/observer.md","ref":"docs/observer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/prototype.md","mtime":"2020-03-14T06:28:24.592Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Prototype","level":"1.2.18","depth":2,"next":{"title":"Proxy","level":"1.2.19","depth":2,"path":"docs/proxy.md","ref":"docs/proxy.md","articles":[]},"previous":{"title":"Observer","level":"1.2.17","depth":2,"path":"docs/observer.md","ref":"docs/observer.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/prototype.md","mtime":"2020-05-15T14:03:34.983Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -536,10 +645,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

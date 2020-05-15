@@ -485,9 +485,9 @@ implements&#x306B;&#x3088;&#x308B;&#x8907;&#x6570;&#x6982;&#x5FF5;&#x306E;&#x639
 <p>How&#x306E;&#x8EF8;&#x3092;&#x6DF7;&#x305C;&#x308B;</p>
 <p>2*2=4&#x306E;&#x30DE;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x751F;&#x6210;</p>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
-<pre><code>
-&lt;?php
-/**
+<pre><code class="lang-php">
+<span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/**
  *
  * &#x652F;&#x6301;&#x8005;&#x3068;&#x4F5C;&#x696D;&#x8005;&#x3092;&#x5206;&#x5272;&#x7D71;&#x6CBB;&#x3057;&#x3066;&#x67D4;&#x8EDF;&#x306A;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x3092;&#x5B9F;&#x73FE;
  *  &#x591A;&#x5C11;&#x306E;&#x52B9;&#x7387;&#x3092;&#x30ED;&#x30B9;&#x3057;&#x3066;&#x3067;&#x3082;&#x5168;&#x3066;&#x306E;&#x624B;&#x7D9A;&#x304D;&#x3092;&#x4E00;&#x8CAB;&#x3057;&#x305F;&#x624B;&#x9806;&#x306B;&#x307E;&#x3068;&#x3081;&#x308B;
@@ -496,126 +496,127 @@ implements&#x306B;&#x3088;&#x308B;&#x8907;&#x6570;&#x6982;&#x5FF5;&#x306E;&#x639
  *  &#x300C;&#x7570;&#x306A;&#x308B;&#x4E8B;&#x67C4;&#x3092;&#x4EFB;&#x305B;&#x308B;&#x4EBA;&#x6750;&#x300D;&#x3092;&#x9078;&#x51FA;
  * &#x300C;&#x5C0F;&#x3055;&#x306A;&#x547D;&#x4EE4;&#x306E;&#x624B;&#x7D9A;&#x304D;&#x3092;&#x7D71;&#x4E00;&#x300D;
  * &#x300C;&#x5C0F;&#x3055;&#x306A;&#x3053;&#x3068;&#x3092;&#x4EFB;&#x305B;&#x308B;&#x4EBA;&#x6750;&#x3082;&#x3061;&#x3001;&#x81EA;&#x5206;&#x306F;&#x305D;&#x308C;&#x306B;&#x5F37;&#x304F;&#x6C17;&#x306B;&#x304B;&#x3051;&#x306A;&#x3044;&#x300D;
- */
+ */</span>
 
 
-/**
+<span class="hljs-comment">/**
  * Abstraction: inplementor&#x3092;&#x4FDD;&#x6301;&#x3057;Implementor&#x3092;&#x4F7F;&#x3063;&#x305F;
  * &#x57FA;&#x672C;&#x7684;&#x306A;&#x6A5F;&#x80FD;&#x304C;&#x5B9F;&#x88C5;
  * RefinedAbstraction: Abstraction&#x306E;&#x6A5F;&#x80FD;&#x8FFD;&#x52A0;
  * Implementor : Abstraction&#x304C;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x898F;&#x5B9A;
  * ConcreteImplementor : &#x5177;&#x4F53;&#x7684;&#x306A;Implementor
- */
+ */</span>
 
 
 
-//  Abstraction
+<span class="hljs-comment">//  Abstraction</span>
 
-class Bridge
-{
-  private $impl;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bridge</span>
+</span>{
+  <span class="hljs-keyword">private</span> $impl;
 
-  public function __construct($impl)
-  {
-    if (!($impl instanceof Implement)) {
-      throw new Exception(&quot;&#x305D;&#x308C;&#x306F;&#x7121;&#x7406;&#x306A;&#x76F8;&#x8AC7;&quot;);
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($impl)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (!($impl <span class="hljs-keyword">instanceof</span> Implement)) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x305D;&#x308C;&#x306F;&#x7121;&#x7406;&#x306A;&#x76F8;&#x8AC7;&quot;</span>);
     }
     $this-&gt;impl = $impl;
   }
-  /**
+  <span class="hljs-comment">/**
    * implementor&#x306E;doMethod&#x3092;&#x4F7F;&#x3046;
    * implementor&#x306E;doMethod&#x3092;&#x5207;&#x308A;&#x66FF;&#x3048;&#x308B;&#x3060;&#x3051;&#x3067;&#x5B9F;&#x88C5;&#x304C;&#x5207;&#x308A;&#x304B;&#x5B9F;&#x88C5;&#x304C;&#x5207;&#x308A;&#x66FF;&#x308F;&#x308B;
    * 
    *
-   * @return void
-   */
-  public function doMethod()
-  {
-    return $this-&gt;impl-&gt;doMethod();
+   * <span class="hljs-doctag">@return</span> void
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMethod</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;impl-&gt;doMethod();
   }
 }
 
 
-// RefindedAbstraction &#x305D;&#x306E;1
+<span class="hljs-comment">// RefindedAbstraction &#x305D;&#x306E;1</span>
 
-class BridgeSub1 extends Bridge
-{
-  public function doMethod()
-  {
-    return &quot;Sub1 | &quot; . parent::doMethod();
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BridgeSub1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Bridge</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMethod</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Sub1 | &quot;</span> . <span class="hljs-keyword">parent</span>::doMethod();
   }
 }
 
 
-// RefinedAbstraction &#x305D;&#x306E;2
+<span class="hljs-comment">// RefinedAbstraction &#x305D;&#x306E;2</span>
 
-class BridgeSub2 extends Bridge
-{
-  public function doMethod()
-  {
-    // &#x8A00;&#x3044;&#x63DB;&#x3048;&#x308C;&#x3070;
-    // &#x81EA;&#x5206;&#x306E;&#x51E6;&#x7406;&#xFF0B;&#x89AA;&#x304B;&#x3089;&#x306E;&#x4F1D;&#x8A00;&#x304C;&#x5B9F;&#x88C5;&#x3067;&#x304D;&#x308B;
-    // &#x89AA;&#x304C;&#x4F55;&#x3092;doMethod&#x3059;&#x308B;&#x306E;&#x304B;&#x306F;Implement&#x306B;&#x3088;&#x308B;
-    return &quot;Sub2 | &quot; . parent::doMethod();
-  }
-}
-
-
-
-// implementor
-
-interface Implement
-{
-  public function doMethod();
-}
-
-
-// concrete implementor
-
-class ImplementSample1  implements Implement
-{
-  public function doMethod()
-  {
-    return &quot;&#x5B9F;&#x88C5;1 &quot;;
-  }
-}
-
-class ImplementSample2  implements Implement
-{
-  public function doMethod()
-  {
-    return &quot;&#x5B9F;&#x88C5;2 &quot;;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BridgeSub2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Bridge</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMethod</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-comment">// &#x8A00;&#x3044;&#x63DB;&#x3048;&#x308C;&#x3070;</span>
+    <span class="hljs-comment">// &#x81EA;&#x5206;&#x306E;&#x51E6;&#x7406;&#xFF0B;&#x89AA;&#x304B;&#x3089;&#x306E;&#x4F1D;&#x8A00;&#x304C;&#x5B9F;&#x88C5;&#x3067;&#x304D;&#x308B;</span>
+    <span class="hljs-comment">// &#x89AA;&#x304C;&#x4F55;&#x3092;doMethod&#x3059;&#x308B;&#x306E;&#x304B;&#x306F;Implement&#x306B;&#x3088;&#x308B;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Sub2 | &quot;</span> . <span class="hljs-keyword">parent</span>::doMethod();
   }
 }
 
 
 
-function say($i)
-{
-  print &quot;$i &lt;br&gt;&quot;;
+<span class="hljs-comment">// implementor</span>
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Implement</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMethod</span><span class="hljs-params">()</span></span>;
 }
 
 
-// &#x4EE5;&#x4E0B;&#x540C;&#x3058;doMethod&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x304C;
-// RefinedAbstraction&#x3067;&#x6A5F;&#x80FD;&#x304C;&#x62E1;&#x5F35;&#x3055;&#x308C;
-// concreteImplement&#x3092;&#x5DEE;&#x3057;&#x66FF;&#x3048;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x308A;
-// &#x5225;&#x306E;&#x5B9F;&#x88C5;&#x51E6;&#x7406;&#x304C;&#x3055;&#x308C;&#x308B;
+<span class="hljs-comment">// concrete implementor</span>
 
-$parent = new Bridge(new ImplementSample2());
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ImplementSample1</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Implement</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMethod</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x5B9F;&#x88C5;1 &quot;</span>;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ImplementSample2</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Implement</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMethod</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x5B9F;&#x88C5;2 &quot;</span>;
+  }
+}
+
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">say</span><span class="hljs-params">($i)</span>
+</span>{
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;$i &lt;br&gt;&quot;</span>;
+}
+
+
+<span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x540C;&#x3058;doMethod&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x304C;</span>
+<span class="hljs-comment">// RefinedAbstraction&#x3067;&#x6A5F;&#x80FD;&#x304C;&#x62E1;&#x5F35;&#x3055;&#x308C;</span>
+<span class="hljs-comment">// concreteImplement&#x3092;&#x5DEE;&#x3057;&#x66FF;&#x3048;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x308A;</span>
+<span class="hljs-comment">// &#x5225;&#x306E;&#x5B9F;&#x88C5;&#x51E6;&#x7406;&#x304C;&#x3055;&#x308C;&#x308B;</span>
+
+$parent = <span class="hljs-keyword">new</span> Bridge(<span class="hljs-keyword">new</span> ImplementSample2());
 say($parent-&gt;doMethod());
 
-$subclass1 = new BridgeSub1(new ImplementSample1);
+$subclass1 = <span class="hljs-keyword">new</span> BridgeSub1(<span class="hljs-keyword">new</span> ImplementSample1);
 say($subclass1-&gt;doMethod());
 
-$subclass1_2 = new BridgeSub1(new ImplementSample2);
+$subclass1_2 = <span class="hljs-keyword">new</span> BridgeSub1(<span class="hljs-keyword">new</span> ImplementSample2);
 say($subclass1_2-&gt;doMethod());
 
-$subclass2 = new BridgeSub2(new ImplementSample1);
+$subclass2 = <span class="hljs-keyword">new</span> BridgeSub2(<span class="hljs-keyword">new</span> ImplementSample1);
 say($subclass2-&gt;doMethod());
 
-$subclass2_2 = new BridgeSub2(new ImplementSample2);
+$subclass2_2 = <span class="hljs-keyword">new</span> BridgeSub2(<span class="hljs-keyword">new</span> ImplementSample2);
 say($subclass2_2-&gt;doMethod());
 </code></pre>
+
                                 
                                 </section>
                             
@@ -658,7 +659,7 @@ say($subclass2_2-&gt;doMethod());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Bridge","level":"1.2.3","depth":2,"next":{"title":"Builder","level":"1.2.4","depth":2,"path":"docs/builder.md","ref":"docs/builder.md","articles":[]},"previous":{"title":"Adapter","level":"1.2.2","depth":2,"path":"docs/adapter.md","ref":"docs/adapter.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/bridge.md","mtime":"2020-05-15T13:33:06.285Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Bridge","level":"1.2.3","depth":2,"next":{"title":"Builder","level":"1.2.4","depth":2,"path":"docs/builder.md","ref":"docs/builder.md","articles":[]},"previous":{"title":"Adapter","level":"1.2.2","depth":2,"path":"docs/adapter.md","ref":"docs/adapter.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/bridge.md","mtime":"2020-05-15T13:50:16.975Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -666,10 +667,6 @@ say($subclass2_2-&gt;doMethod());
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -474,6 +474,70 @@
 <li>&#x30A4;&#x30DF;&#x30E5;&#x30FC;&#x30BF;&#x30D6;&#x30EB;&#x3067;&#x3042;&#x308B;</li>
 </ul>
 <p>&#x3053;&#x3068;&#x3002;</p>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+
+<span class="hljs-comment">/**
+ * &#x7D76;&#x5BFE;&#x552F;&#x4E00;&#x541B;&#x81E8;&#x3059;&#x308B;&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x5909;&#x6570;
+ * &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x4E2D;&#x306B;&#x4E00;&#x3064;&#x3060;&#x3051;&#x3042;&#x308C;&#x3070;&#x826F;&#x3044;&#x3001;&#x307E;&#x305F;&#x306F;&#x4E00;&#x3064;&#x3057;&#x304B;&#x3044;&#x3066;&#x6B32;&#x3057;&#x304F;&#x306A;&#x3044;
+ * &#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x5236;&#x5FA1;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30D1;&#x30BF;&#x30FC;&#x30F3;
+ * &#x751F;&#x6210;&#x304C;&#x91CD;&#x304F;&#x3066;&#x81F3;&#x308B;&#x6240;&#x3067;new&#x3055;&#x305B;&#x3061;&#x3083;&#x3044;&#x3051;&#x306A;&#x3044;&#x3068;&#x304D;
+ */</span>
+
+
+
+
+<span class="hljs-comment">/**
+ * &#x30ED;&#x30B0;&#x3084;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3001;&#x91CD;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306A;&#x3069;
+ * &#x305D;&#x306E;&#x5B9F;&#x614B;&#x3092;&#x4F7F;&#x3044;&#x307E;&#x308F;&#x3057;&#x305F;&#x3044;&#x3068;&#x304D;&#x306B;&#x7528;&#x3044;&#x308B;
+ * &#x3084;&#x308A;&#x65B9;
+ * 
+ * 1. &#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3092;private&#x306B;&#x3059;&#x308B;
+ * 2. &#x81EA;&#x8EAB;&#x3092;&#x4FDD;&#x6301;&#x3059;&#x308B;private static&#x306A;&#x5909;&#x6570;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;
+ * 3. &#x81EA;&#x8EAB;&#x3092;&#x8FD4;&#x3059; public static&#x306A;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F5C;&#x308B;
+ * 
+ * 
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span>
+</span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> $instance;
+
+  <span class="hljs-comment">/**
+   * &#x5916;&#x90E8;&#x304B;&#x3089;new&#x3067;&#x304D;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3092;
+   * private&#x3067;&#x5B9F;&#x88C5;
+   */</span>
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+  </span>{
+  }
+
+  <span class="hljs-comment">/**
+   * &#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3051;&#x308C;&#x3070;new&#x3001;
+   * &#x3055;&#x308C;&#x3066;&#x3044;&#x308C;&#x3070;&#x305D;&#x306E;&#x307E;&#x307E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3059;
+   */</span>
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInstance</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>::$instance) {
+      <span class="hljs-keyword">self</span>::$instance  = <span class="hljs-keyword">new</span> Singleton();
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>::$instance;
+  }
+}
+
+
+$obj1 = Singleton::getInstance();
+$obj2 = Singleton::getInstance();
+
+<span class="hljs-keyword">if</span> ($obj1 === $obj2) {
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x540C;&#x3058;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3060;&quot;</span>;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x9055;&#x3046;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3060;&quot;</span>;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -517,7 +581,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Singleton","level":"1.2.20","depth":2,"next":{"title":"State","level":"1.2.21","depth":2,"path":"docs/state.md","ref":"docs/state.md","articles":[]},"previous":{"title":"Proxy","level":"1.2.19","depth":2,"path":"docs/proxy.md","ref":"docs/proxy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/singleton.md","mtime":"2020-03-14T06:01:57.274Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Singleton","level":"1.2.20","depth":2,"next":{"title":"State","level":"1.2.21","depth":2,"path":"docs/state.md","ref":"docs/state.md","articles":[]},"previous":{"title":"Proxy","level":"1.2.19","depth":2,"path":"docs/proxy.md","ref":"docs/proxy.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/singleton.md","mtime":"2020-05-15T14:05:28.702Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -525,10 +589,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

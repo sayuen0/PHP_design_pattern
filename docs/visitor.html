@@ -465,6 +465,145 @@
                                 
                                 <h1 id="visitor&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Visitor&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
 <h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">/**
+ * &#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x3068;&#x51E6;&#x7406;&#x3092;&#x5206;&#x3051;&#x3066;&#x4FDD;&#x5B88;&#x6027;&#x3092;&#x9AD8;&#x3081;&#x308B;
+ * &#x3068;&#x306F;&#x3044;&#x3048;PHP&#x3067;&#x306F;&#x578B;&#x3082;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30ED;&#x30FC;&#x30C9;&#x3082;&#x306A;&#x3044;&#x306E;&#x3067;
+ * &#x4FDD;&#x5B88;&#x6027;&#x4E91;&#x3005;&#x306E;&#x8B70;&#x8AD6;&#x306F;&#x96E3;&#x3057;&#x3044;&#x3002;
+ * &#x3057;&#x304B;&#x3057;&#x4E00;&#x3064;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x306B;&#x5BFE;&#x3059;&#x308B;
+ * &#x51E6;&#x7406;&#x304C;&#x8907;&#x6570;&#x3042;&#x308B;&#x3068;&#x304D;&#x306B;&#x306F;&#x52B9;&#x679C;&#x5927;
+ * &#x300C;OR&#x30DE;&#x30C3;&#x30D1;&#x30FC;&#x306E;&#x30AB;&#x30B9;&#x30B1;&#x30FC;&#x30C9;&#x51E6;&#x7406;&#x300D;
+ * &#x300C;&#x9000;&#x4F1A;&#x306B;&#x3088;&#x308B;&#x9023;&#x9396;&#x524A;&#x9664;&#x300D;
+ * &#x300C;&#x30A2;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x51CD;&#x7D50;&#x300D;
+ */</span>
+
+
+
+<span class="hljs-comment">/**
+ * &#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x3068;&#x30A2;&#x30EB;&#x30B4;&#x30EA;&#x30BA;&#x30E0;&#x3092;&#x5206;&#x96E2;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;
+ * &#x4FDD;&#x5B88;&#x6027;&#x3092;&#x9AD8;&#x3081;&#x308B;
+ * &#x69D8;&#x3005;&#x306A;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x3092;&#x4E00;&#x5EA6;&#x306B;&#x51E6;&#x7406;&#x3059;&#x308B;&#x3068;&#x304D;&#x3001;
+ * &#x305D;&#x306E;&#x4E00;&#x9023;&#x306E;&#x51E6;&#x7406;&#x3092;&#x4E00;&#x3064;&#x306E;Visitor&#x306B;&#x5B9F;&#x88C5;&#x3059;&#x308C;&#x3070;
+ * &#x5358;&#x306B;&#x30C8;&#x30E9;&#x30D0;&#x30FC;&#x30B9;(&#x6A2A;&#x65AD;)&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;
+ * &#x9069;&#x5207;&#x306A;&#x51E6;&#x7406;&#x3078;&#x3068;&#x30C7;&#x30A3;&#x30B9;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x304D;&#x308B;
+ * 
+ */</span>
+
+
+<span class="hljs-comment">/**
+ * &#x8A2A;&#x554F;&#x8005;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Visitor</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visit</span><span class="hljs-params">($acceptor)</span></span>;
+}
+
+
+<span class="hljs-comment">/***
+ * &#x8A2A;&#x554F;&#x8005;&#x3092;&#x53D7;&#x3051;&#x5165;&#x308C;&#x308B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3060;&#x3051;&#x7528;&#x610F;&#x3059;&#x308B;
+ */</span>
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Element</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accept</span><span class="hljs-params">($visitor)</span></span>;
+}
+
+
+<span class="hljs-comment">/**
+ * &#x5177;&#x4F53;&#x7684;&#x306A;&#x8A2A;&#x554F;&#x8005;&#x306E;&#x30D3;&#x30B8;&#x30CD;&#x30B9;&#x30DE;&#x30F3;&#x3067;
+ * &#x8272;&#x3005;&#x306A;&#x4F1A;&#x793E;&#x306E;&#x8272;&#x3005;&#x306A;&#x90E8;&#x7F72;&#x3092;&#x8A2A;&#x554F;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BusinessMan</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Visitor</span>
+</span>{
+  <span class="hljs-comment">/**
+   * php&#x3067;&#x306F;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30ED;&#x30FC;&#x30C9;&#x304C;&#x306A;&#x3044;&#x306E;&#x3067;
+   * visit+acceptor&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x540D;&#x3067;&#x547C;&#x3070;&#x308C;&#x308B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x6C7A;&#x5B9A;
+   * 
+   */</span>
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visit</span><span class="hljs-params">($acceptor)</span>
+  </span>{
+    $method = <span class="hljs-string">&quot;visit&quot;</span> . get_class($acceptor);
+    $this-&gt;$method($acceptor);
+  }
+
+  <span class="hljs-comment">/**
+   * &#x30E9;&#x30B8;&#x30AA;&#x5C40;&#x305D;&#x306E;&#x3082;&#x306E;&#x306B;&#x8A2A;&#x554F;&#x3057;&#x305F;&#x3068;&#x304D;
+   *
+   * <span class="hljs-doctag">@param</span> [type] $acceptor
+   * <span class="hljs-doctag">@return</span> void
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visitRadioStation</span><span class="hljs-params">($acceptor)</span>
+  </span>{
+    <span class="hljs-keyword">print</span> $acceptor . <span class="hljs-string">&quot;&#x3092;&#x8A2A;&#x554F;&#x3057;&#x3066;&#x8272;&#x3005;&#x3084;&#x308A;&#x307E;&#x3059;&lt;br&gt;&quot;</span>;
+    $acceptor-&gt;next-&gt;accept($this);
+  }
+
+  <span class="hljs-comment">/**
+   * &#x30E9;&#x30B8;&#x30AA;&#x5C40;&#x306E;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x756A;&#x7D44;&#x90E8;&#x3092;&#x8A2A;&#x554F;&#x3057;&#x305F;&#x3068;&#x304D;&#x306B;&#x547C;&#x3070;&#x308C;&#x307E;&#x3059;
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visitRadioStation_News</span><span class="hljs-params">($acceptor)</span>
+  </span>{
+    <span class="hljs-keyword">print</span> $acceptor . <span class="hljs-string">&quot;&#x3092;&#x8A2A;&#x554F;&#x3057;&#x3066;&#x8272;&#x3005;&#x3084;&#x308A;&#x307E;&#x3059;&lt;br&gt;&quot;</span>;
+  }
+}
+
+
+<span class="hljs-comment">/**
+ * &#x30E9;&#x30B8;&#x30AA;&#x5C40;
+ * visitor&#x3092;&#x53D7;&#x3051;&#x5165;&#x308C;&#x308B;
+ */</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RadioStation</span>   <span class="hljs-keyword">implements</span> <span class="hljs-title">Element</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x30E9;&#x30B8;&#x30AA;&#x5C40;&quot;</span>;
+  }
+
+  <span class="hljs-comment">/**
+   * &#x8A2A;&#x554F;&#x8005;&#x3092;&#x53D7;&#x3051;&#x5165;&#x308C;&#x308B;
+   */</span>
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accept</span><span class="hljs-params">($visitor)</span>
+  </span>{
+    $visitor-&gt;visit($this);
+  }
+}
+
+
+
+<span class="hljs-comment">/**
+ * &#x30E9;&#x30B8;&#x30AA;&#x5C40;&#x306E;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x756A;&#x7D44;&#x3076;
+ */</span>
+
+
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RadioStation_News</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Element</span>
+</span>{
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x30E9;&#x30B8;&#x30AA;&#x5C40;&#x306E;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x756A;&#x7D44;&#x62C5;&#x5F53;&quot;</span>;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accept</span><span class="hljs-params">($visitor)</span>
+  </span>{
+    $visitor-&gt;visit($this);
+  }
+}
+
+
+$radio = <span class="hljs-keyword">new</span> RadioStation();
+$radio-&gt;next = <span class="hljs-keyword">new</span> RadioStation_News();
+$radio-&gt;accept(<span class="hljs-keyword">new</span> BusinessMan());
+</code></pre>
 
                                 
                                 </section>
@@ -504,7 +643,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Visitor","level":"1.2.23","depth":2,"previous":{"title":"Template Method","level":"1.2.22","depth":2,"path":"docs/templateMethod.md","ref":"docs/templateMethod.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/visitor.md","mtime":"2020-03-17T01:57:30.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Visitor","level":"1.2.23","depth":2,"previous":{"title":"Template Method","level":"1.2.22","depth":2,"path":"docs/templateMethod.md","ref":"docs/templateMethod.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/visitor.md","mtime":"2020-05-15T14:07:00.015Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -512,10 +651,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -465,7 +465,166 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="state--strategy-&#x30D1;&#x30BF;&#x30FC;&#x30F3;">State &amp; Strategy &#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">/**&#x30B9;&#x30C6;&#x30FC;&#x30C8;&#x30D1;&#x30BF;&#x30FC;&#x30F3;
+ * 
+ * State: &#x72B6;&#x614B;&#x3054;&#x3068;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x96C6;&#x307E;&#x308A;
+ * ConcreteState State&#x3067;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x305F;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5177;&#x4F53;&#x7684;&#x306B;&#x5B9F;&#x88C5;
+ * Context:ConcreteState&#x3092;&#x6301;&#x3061;&#x3001;State&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;API&#x3092;&#x6301;&#x3064;
+ */</span>
+
+<span class="hljs-comment">/**
+ * state
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Manual</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-comment">/**
+ * concreteState
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LadyManual</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Manual</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span>
+  </span>{
+    var_dump(<span class="hljs-string">&quot;&#x672C;&#x5F53;&#x306E;&#x89AA;&#x306E;&#x3088;&#x3046;&#x306B;&#x7518;&#x3048;&#x308B;&quot;</span>);
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OldGuyManual</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Manual</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span>
+  </span>{
+    var_dump(<span class="hljs-string">&quot;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x3082;&#x306E;&#x3092;&#x8912;&#x3081;&#x308B;&quot;</span>);
+  }
+}
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AngryManManual</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Manual</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span>
+  </span>{
+    var_dump(<span class="hljs-string">&quot;&#x5B50;&#x4F9B;&#x3089;&#x3057;&#x304F;&#x632F;&#x821E;&#x3046;&quot;</span>);
+  }
+}
+
+
+<span class="hljs-comment">// Context :state&#x81EA;&#x8EAB;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StateContext</span>
+</span>{
+  <span class="hljs-keyword">private</span> $state;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($age)</span>
+  </span>{
+    $this-&gt;setTargetAge($age);
+  }
+
+  <span class="hljs-comment">// concreteState&#x3092;&#x6301;&#x3064;</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setTargetAge</span><span class="hljs-params">($age)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> ($age &gt;= <span class="hljs-number">20</span> &amp;&amp; $age &lt;= <span class="hljs-number">40</span>) {
+      $this-&gt;state = <span class="hljs-keyword">new</span> LadyManual();
+    } <span class="hljs-keyword">elseif</span> ($age &gt;= <span class="hljs-number">40</span> &amp;&amp; $age &lt;= <span class="hljs-number">60</span>) {
+      $this-&gt;state = <span class="hljs-keyword">new</span> AngryManManual();
+    } <span class="hljs-keyword">elseif</span> ($age &gt; <span class="hljs-number">60</span>) {
+      $this-&gt;state = <span class="hljs-keyword">new</span> OldGuyManual();
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x305D;&#x3093;&#x306A;&#x4EBA;&#x3088;&#x304F;&#x77E5;&#x3089;&#x3093;&#x3088;&quot;</span>);
+    }
+  }
+
+  <span class="hljs-comment">//concreteState&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;API&#x3092;&#x6301;&#x3064;</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span>
+  </span>{
+    $this-&gt;state-&gt;behave();
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  $human = <span class="hljs-keyword">new</span> StateContext(<span class="hljs-number">20</span>);
+  $human-&gt;behave();
+  $human-&gt;setTargetAge(<span class="hljs-number">41</span>);
+  $human-&gt;behave();
+  $human-&gt;setTargetAge(<span class="hljs-number">61</span>);
+  $human-&gt;behave();
+}
+
+<span class="hljs-comment">// &#x30B9;&#x30C8;&#x30E9;&#x30C6;&#x30B8;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</span>
+
+<span class="hljs-comment">/**
+ * Strategy &#x62BD;&#x8C61;&#x7684;&#x306A;&#x6226;&#x7565;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;
+ * ConcreteStrategy Strategy &#x5177;&#x4F53;&#x7684;&#x306A;&#x6226;&#x7565;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;
+ * Context ConcreteStrategy&#x3092;&#x6240;&#x6709;&#x3059;&#x308B; Strategy&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;
+ */</span>
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Strategy</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LadyStrategy</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Strategy</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span>
+  </span>{
+    var_dump(<span class="hljs-string">&quot;&#x672C;&#x5F53;&#x306E;&#x89AA;&#x306E;&#x3088;&#x3046;&#x306B;&#x7518;&#x3048;&#x308B;&quot;</span>);
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OlomanStrategy</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Strategy</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span>
+  </span>{
+    var_dump(<span class="hljs-string">&quot;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x3082;&#x306E;&#x3092;&#x8912;&#x3081;&#x308B;&quot;</span>);
+  }
+}
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AngryManStrategy</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Strategy</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span>
+  </span>{
+    var_dump(<span class="hljs-string">&quot;&#x5B50;&#x4F9B;&#x3089;&#x3057;&#x304F;&#x632F;&#x821E;&#x3046;&quot;</span>);
+  }
+}
+
+
+<span class="hljs-comment">// Context : strategy&#x672C;&#x4EBA;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteStrategy</span>
+</span>{
+  <span class="hljs-keyword">private</span> $strategy;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($strategy)</span>
+  </span>{
+    $this-&gt;strategy = $strategy;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behave</span><span class="hljs-params">()</span>
+  </span>{
+    $this-&gt;strategy-&gt;behave();
+  }
+}
+
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main2</span><span class="hljs-params">()</span>
+</span>{
+  $person = <span class="hljs-keyword">new</span> ConcreteStrategy(<span class="hljs-keyword">new</span> LadyStrategy());
+  $person-&gt;behave();
+  $person = <span class="hljs-keyword">new</span> ConcreteStrategy(<span class="hljs-keyword">new</span> OlomanStrategy());
+  $person-&gt;behave();
+  $person = <span class="hljs-keyword">new</span> ConcreteStrategy(<span class="hljs-keyword">new</span> AngryManStrategy());
+  $person-&gt;behave();
+}
+
+main();
+main2();
+</code></pre>
+
                                 
                                 </section>
                             
@@ -508,7 +667,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"State","level":"1.2.21","depth":2,"next":{"title":"Template Method","level":"1.2.22","depth":2,"path":"docs/templateMethod.md","ref":"docs/templateMethod.md","articles":[]},"previous":{"title":"Singleton","level":"1.2.20","depth":2,"path":"docs/singleton.md","ref":"docs/singleton.md","articles":[]},"dir":"neutral"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/state.md","mtime":"2020-03-14T09:54:34.914Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"State","level":"1.2.21","depth":2,"next":{"title":"Template Method","level":"1.2.22","depth":2,"path":"docs/templateMethod.md","ref":"docs/templateMethod.md","articles":[]},"previous":{"title":"Singleton","level":"1.2.20","depth":2,"path":"docs/singleton.md","ref":"docs/singleton.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/state.md","mtime":"2020-05-15T14:06:24.902Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -516,10 +675,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

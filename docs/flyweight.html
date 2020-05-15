@@ -482,6 +482,92 @@
 </ul>
 <h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;</h2>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Flyweight_UML_class_diagram.svg" alt=""></p>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+
+<span class="hljs-comment">/**
+ * &#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x306E;&#x8CA0;&#x8377;&#x3092;&#x6E1B;&#x3089;&#x3059;
+ * &#x8981;&#x3059;&#x308B;&#x306B;&#x3086;&#x308B;&#x3044;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;
+ * &#x3080;&#x3057;&#x308D;&#x3053;&#x3044;&#x3064;&#x306E;&#x304D;&#x3064;&#x3044;&#x7248;&#x304C;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;
+ * &#x3082;&#x3057;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3092;&#x691C;&#x8A0E;&#x3059;&#x308B;&#x3068;&#x304D;&#x306F;&#x3001;
+ * &#x307E;&#x305A;&#x5148;&#x306B;&#x3053;&#x3044;&#x3064;&#x3092;&#x691C;&#x8A0E;&#x3057;&#x3066;
+ */</span>
+
+
+<span class="hljs-comment">/**
+ * &#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x306F;&#x81EA;&#x5206;&#x304C;&#x552F;&#x4E00;&#x8907;&#x88FD;&#x3055;&#x308C;&#x306A;&#x3044;
+ * &#x30D5;&#x30E9;&#x30A4;&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x306F;&#x4ED6;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x8907;&#x88FD;&#x3057;&#x306A;&#x3044;
+ * &#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x7684;&#x306A;&#x3084;&#x3064;&#x306B;&#x5F15;&#x6570;&#x3092;&#x6E21;&#x3057;&#x3066;&#x72B6;&#x6CC1;&#x306B;&#x5FDC;&#x3058;&#x3066;
+ * &#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x304B;&#x3089;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3057;&#x305F;&#x308A;
+ * &#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3057;&#x306A;&#x304C;&#x3089;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3057;&#x305F;&#x308A;&#x3059;&#x308B;
+ */</span>
+
+
+<span class="hljs-comment">/**
+ * &#x8179;&#x5FC3;
+ */</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Confidant</span>
+</span>{
+  <span class="hljs-keyword">private</span> $name;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($key)</span>
+  </span>{
+    $this-&gt;name = $key;
+  }
+}
+
+
+<span class="hljs-comment">/**
+ * &#x8179;&#x5FC3;&#x3092;&#x96C7;&#x3044;&#x3001;
+ * &#x4E00;&#x5EA6;&#x4F5C;&#x3063;&#x305F;&#x3082;&#x306E;&#x306F;&#x5171;&#x6709;&#x3055;&#x308C;&#x308B;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x30FC;
+ * &#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3067;&#x5B9F;&#x88C5;
+ */</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfidantFactory</span>
+</span>{
+  <span class="hljs-keyword">private</span> $confidant = <span class="hljs-keyword">array</span>();
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> $instance = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+  </span>{
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInstance</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>::$instance) {
+      <span class="hljs-keyword">self</span>::$instance = <span class="hljs-keyword">new</span> ConfidantFactory();
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>::$instance;
+  }
+
+  <span class="hljs-comment">/**
+   * &#x521D;&#x3081;&#x3066;&#x96C7;&#x3046;&#x3082;&#x306E;&#x306F;
+   * &#x751F;&#x6210;&#x3055;&#x308C;&#x3001;&#x3059;&#x3067;&#x306B;&#x96C7;&#x3063;&#x3066;&#x3044;&#x308B;&#x3082;&#x306E;&#x306F;&#x4F5C;&#x3063;&#x305F;&#x3082;&#x306E;&#x304C;&#x5171;&#x6709;&#x3055;&#x308C;&#x308B;
+   */</span>
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span><span class="hljs-params">($key)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (!$this-&gt;confidant[$key]) {
+      $this-&gt;confidant[$key] = <span class="hljs-keyword">new</span> Confidant($key);
+      <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;[$key]&#x3092;&#x65B0;&#x305F;&#x306B;&#x96C7;&#x3046;&#x306E;&#x3067;&#x3059;&#x3002;&lt;br&gt;&quot;</span>;
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x3059;&#x3067;&#x306B;&#x3044;&#x308B;&#x306E;&#x3067;&#x4F7F;&#x3044;&#x307E;&#x308F;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&lt;br&gt;&quot;</span>;
+    }
+    <span class="hljs-keyword">return</span> $this-&gt;confidant[$key];
+  }
+}
+
+$factory = ConfidantFactory::getInstance();
+<span class="hljs-keyword">if</span> ($factory-&gt;get(<span class="hljs-string">&quot;&#x57F7;&#x4E8B;&quot;</span>) === $factory-&gt;getInstance()-&gt;get(<span class="hljs-string">&quot;&#x57F7;&#x4E8B;&quot;</span>)) {
+  <span class="hljs-keyword">print</span>  <span class="hljs-string">&quot;&#x540C;&#x3058;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306A;&#x306E;&#x3067;&#x3059;&quot;</span>;
+  <span class="hljs-comment"># code...</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x5225;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3059;&quot;</span>;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -525,7 +611,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Flyweight","level":"1.2.12","depth":2,"next":{"title":"Interpreter","level":"1.2.13","depth":2,"path":"docs/interpreter.md","ref":"docs/interpreter.md","articles":[]},"previous":{"title":"Factory Method","level":"1.2.11","depth":2,"path":"docs/factoryMethod.md","ref":"docs/factoryMethod.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/flyweight.md","mtime":"2020-03-14T07:30:34.650Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Flyweight","level":"1.2.12","depth":2,"next":{"title":"Interpreter","level":"1.2.13","depth":2,"path":"docs/interpreter.md","ref":"docs/interpreter.md","articles":[]},"previous":{"title":"Factory Method","level":"1.2.11","depth":2,"path":"docs/factoryMethod.md","ref":"docs/factoryMethod.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/flyweight.md","mtime":"2020-05-15T13:54:12.285Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -533,10 +619,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

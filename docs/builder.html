@@ -497,6 +497,234 @@ wikipedia&#x3088;&#x308A;</p>
 <li>&#x6761;&#x4EF6;</li>
 </ul>
 <p>&#x306A;&#x3069;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3068;&#x3001;&#x30D3;&#x30EB;&#x30C0;&#x304C;&#x52DD;&#x624B;&#x306B;SQL&#x3092;&#x7D44;&#x307F;&#x7ACB;&#x3066;&#x3066;&#x304F;&#x308C;&#x308B;</p>
+<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">/**
+ * &#x8907;&#x6570;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x3068;&#x8907;&#x6570;&#x306E;&#x30D3;&#x30EB;&#x30C0;
+ * &#x591A;&#x7A2E;&#x591A;&#x69D8;&#x306A;&#x3053;&#x3068;&#x3092;&#x5B9F;&#x73FE;&#x3059;&#x308B;
+ * 
+ * &#x6BD4;&#x8F03;&#x7684;&#x696D;&#x52D9;&#x306B;&#x843D;&#x3068;&#x3057;&#x8FBC;&#x307F;&#x3084;&#x3059;&#x3044;&#x304C;&#x3001;
+ * &#x6700;&#x521D;&#x304B;&#x3089;Builder&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x898B;&#x8D8A;&#x3059;&#x306E;&#x306F;&#x96E3;&#x3057;&#x3044;
+ * &#x30EA;&#x30D5;&#x30A1;&#x30AF;&#x30BF;&#x30EA;&#x30F3;&#x30B0;&#x6642;&#x306B;&#x69CB;&#x9020;&#x3092;&#x898B;&#x6975;&#x3081;&#x308B;&#x306E;&#x304C;&#x73FE;&#x5B9F;&#x7684;
+ * 
+ * &#x30D3;&#x30EB;&#x30C0;&#x306E;&#x69CB;&#x9020;
+ * &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#xFF1A;&#x30D3;&#x30EB;&#x30C0;&#x3092;&#x4F7F;&#x3046;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x3064; &#x305D;&#x306E;&#x4E0A;&#x3067;&#x4E2D;&#x8EAB;&#x3092;&#x4F5C;&#x308B;
+ * &#x30D3;&#x30EB;&#x30C0;&#xFF1A;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x751F;&#x6210;&#x3001;&#x76EE;&#x7684;&#x306B;&#x5FDC;&#x3058;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x4ED8;&#x4E0E;
+ * &#x30D3;&#x30EB;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#xFF1A;&#x751F;&#x6210;&#x7269;
+ * 
+ */</span>
+
+
+
+<span class="hljs-comment">//  Builder</span>
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DocumentBuilder</span>
+</span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setTitle</span><span class="hljs-params">($str)</span></span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHeader</span><span class="hljs-params">($str)</span></span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBody</span><span class="hljs-params">($str)</span></span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setFooter</span><span class="hljs-params">($str)</span></span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getResult</span><span class="hljs-params">()</span></span>;
+}
+
+
+<span class="hljs-comment">// Director &#x4E2D;&#x8EAB;&#x3092;&#x4F5C;&#x308B;</span>
+<span class="hljs-comment">// &#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x66F8;&#x304D;&#x305F;&#x3044;&#x4EBA;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReportDirector</span>
+</span>{
+  <span class="hljs-keyword">private</span> $builder;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(DocumentBuilder $builder)</span>
+  </span>{
+    $this-&gt;builder = $builder;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">()</span>
+  </span>{
+    $this-&gt;builder-&gt;setTitle(<span class="hljs-string">&quot;&#x5831;&#x544A;&#x66F8;&quot;</span>);
+    $this-&gt;builder-&gt;setHeader(<span class="hljs-string">&quot;&#x5931;&#x6557;&quot;</span>);
+    $this-&gt;builder-&gt;setBody(<span class="hljs-string">&quot;&#x30D7;&#x30ED;&#x30C8;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x7121;&#x99C4;&#x306B;&#x3059;&#x308B;&quot;</span>);
+    $this-&gt;builder-&gt;setFooter(<span class="hljs-string">&quot;&#x6B21;&#x9811;&#x5F35;&#x308A;&#x307E;&#x3057;&#x3087;&#x3046;&quot;</span>);
+    <span class="hljs-keyword">return</span> $this-&gt;builder-&gt;getResult();
+  }
+}
+
+
+<span class="hljs-comment">// director2 </span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DiaryDirector</span>
+</span>{
+  <span class="hljs-keyword">private</span> $builder;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(DocumentBuilder $builder)</span>
+  </span>{
+    $this-&gt;builder = $builder;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">()</span>
+  </span>{
+    $this-&gt;builder-&gt;setTitle(<span class="hljs-string">&quot;&#x65E5;&#x8A18;2020/03/12&quot;</span>);
+    $this-&gt;builder-&gt;setHeader(<span class="hljs-string">&quot;&#x3044;&#x3044;&#x65E5;&#x3060;&#x3063;&#x305F;&quot;</span>);
+    $this-&gt;builder-&gt;setBody(<span class="hljs-string">&quot;&#x30D7;&#x30ED;&#x30C8;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x591A;&#x6570;&#x751F;&#x6210;&quot;</span>);
+    $this-&gt;builder-&gt;setFooter(<span class="hljs-string">&quot;&#x660E;&#x65E5;&#x3082;&#x9811;&#x5F35;&#x308B;&quot;</span>);
+    <span class="hljs-keyword">return</span> $this-&gt;builder-&gt;getResult();
+  }
+}
+
+
+
+<span class="hljs-comment">// builder1 &#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308B;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HtmlBuilder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DocumentBuilder</span>
+</span>{
+  <span class="hljs-keyword">private</span> $header = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $body = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $footer = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $title = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBody</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;body;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFooter</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;footer;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getHeader</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;header;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTitle</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;title;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setTitle</span><span class="hljs-params">($title)</span>
+  </span>{
+    $this-&gt;title = $title;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHeader</span><span class="hljs-params">($header)</span>
+  </span>{
+    $this-&gt;header = $header;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBody</span><span class="hljs-params">($body)</span>
+  </span>{
+    $this-&gt;body = $body;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setFooter</span><span class="hljs-params">($footer)</span>
+  </span>{
+    $this-&gt;footer = $footer;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getResult</span><span class="hljs-params">()</span>
+  </span>{
+    ob_start();
+<span class="hljs-meta">?&gt;</span>
+    &lt;html&gt;
+
+    &lt;head&gt;
+      &lt;title&gt;<span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;title, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+      &lt;h1&gt;<span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;header, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>&lt;/h1&gt;
+
+      &lt;div&gt;
+        &lt;p&gt;
+          <span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;body) <span class="hljs-meta">?&gt;</span>
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;hr&gt;
+      &lt;div&gt;<span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;footer, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>&lt;/div&gt;
+    &lt;/body&gt;
+
+    &lt;/html&gt;
+  <span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">return</span> ob_get_clean();
+  }
+}
+
+<span class="hljs-comment">// builder 2 &#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308B;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MarkdownBuilder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DocumentBuilder</span>
+</span>{
+  <span class="hljs-keyword">private</span> $header = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $body = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $footer = <span class="hljs-keyword">null</span>;
+  <span class="hljs-keyword">private</span> $title = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBody</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;body;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFooter</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;footer;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getHeader</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;header;
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTitle</span><span class="hljs-params">()</span>
+  </span>{
+    <span class="hljs-keyword">return</span> $this-&gt;title;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setTitle</span><span class="hljs-params">($title)</span>
+  </span>{
+    $this-&gt;title = $title;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHeader</span><span class="hljs-params">($header)</span>
+  </span>{
+    $this-&gt;header = $header;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBody</span><span class="hljs-params">($body)</span>
+  </span>{
+    $this-&gt;body = $body;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setFooter</span><span class="hljs-params">($footer)</span>
+  </span>{
+    $this-&gt;footer = $footer;
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getResult</span><span class="hljs-params">()</span>
+  </span>{
+    ob_start();
+  <span class="hljs-meta">?&gt;</span>
+    <span class="hljs-comment"># &lt;?= htmlspecialchars($this-&gt;title, ENT_QUOTES) ?&gt;</span>
+    <span class="hljs-comment">## &lt;?= htmlspecialchars($this-&gt;header, ENT_QUOTES) ?&gt;</span>
+
+    <span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;body, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>
+
+    ------------------------------------------
+    <span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;footer, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">return</span> ob_get_clean();
+  }
+}
+
+
+<span class="hljs-comment">// &#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308B;&#x3084;&#x3064;&#x3092;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x306F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x6301;&#x3064;</span>
+$hr = <span class="hljs-keyword">new</span> ReportDirector(<span class="hljs-keyword">new</span> HtmlBuilder());
+$mr = <span class="hljs-keyword">new</span> ReportDirector(<span class="hljs-keyword">new</span> MarkdownBuilder());
+
+<span class="hljs-keyword">print</span>($hr-&gt;build());
+<span class="hljs-keyword">print</span>($mr-&gt;build());
+
+<span class="hljs-comment">// &#x65E5;&#x8A18;&#x3092;&#x751F;&#x6210;</span>
+$hd = <span class="hljs-keyword">new</span> DiaryDirector(<span class="hljs-keyword">new</span> HtmlBuilder());
+$md = <span class="hljs-keyword">new</span> DiaryDirector(<span class="hljs-keyword">new</span> MarkdownBuilder());
+
+
+<span class="hljs-keyword">echo</span> $hd-&gt;build();<span class="hljs-comment">//director&#x304C;build&#x3059;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3066;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;builder&#x304C;&#x624B;&#x9806;&#x306B;&#x5F93;&#x3063;&#x3066;build&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;</span>
+<span class="hljs-keyword">echo</span> $md-&gt;build();
+</code></pre>
 
                                 
                                 </section>
@@ -540,7 +768,7 @@ wikipedia&#x3088;&#x308A;</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Builder","level":"1.2.4","depth":2,"next":{"title":"Command","level":"1.2.5","depth":2,"path":"docs/command.md","ref":"docs/command.md","articles":[]},"previous":{"title":"Bridge","level":"1.2.3","depth":2,"path":"docs/bridge.md","ref":"docs/bridge.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/builder.md","mtime":"2020-03-14T04:45:25.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T13:36:35.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Builder","level":"1.2.4","depth":2,"next":{"title":"Command","level":"1.2.5","depth":2,"path":"docs/command.md","ref":"docs/command.md","articles":[]},"previous":{"title":"Bridge","level":"1.2.3","depth":2,"path":"docs/bridge.md","ref":"docs/bridge.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/builder.md","mtime":"2020-05-15T13:41:47.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:11:03.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -548,10 +776,6 @@ wikipedia&#x3088;&#x308A;</p>
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
