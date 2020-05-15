@@ -22,4 +22,11 @@ GOFの23パターンや、興味があれば他パターンもまとめる
 -  `npm run-script build  && npm run publish`
 
 
+### SUMMARY自動生成
+
+- `npm install -g gitbook-summary`
+- `book sm -i node_modules -r docs -o ./SUMMARY.md`
+
+[gitbook\-summary \- npm](https://www.npmjs.com/package/gitbook-summary)
+
 
