@@ -28,5 +28,19 @@
 ### 更新の仕方
 
 - ドキュメントを書く
--  `npm run-script build  && npm run-script deploy`
+-  `npm run-script build  && npm run publish`
+
+
+
+### TODO
+
+- [ ] Javaのデザインパターンからもメモを書く
+  - [ ] そのソースを追加する
+- [ ] 整理する
+- [ ] まだ書いてないパターンのコメントを書く
+- [ ] 階層化する
+- [ ] 参考文献ページを作成する
+- [ ] ちゃんと参考文献を明記する
+- [ ] basic認証を導入する
+
 
