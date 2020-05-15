@@ -10,3 +10,6 @@ package.json
 
 # ignore all program source files
 patterns/
+
+# tasks
+TODO.md
