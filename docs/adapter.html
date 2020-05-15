@@ -469,11 +469,39 @@
 <p>&#x300C;&#x53F3;&#x3068;&#x5DE6;&#x306E;&#x7AEF;&#x5B50;&#x304C;&#x3042;&#x3063;&#x3066;&#x3044;&#x306A;&#x304F;&#x3066;&#x7E4B;&#x3052;&#x306A;&#x3044;&#x304B;&#x3089;&#x3001;&#x4E21;&#x7AEF;&#x5B50;&#x3092;&#x7E4B;&#x3052;&#x3089;&#x308C;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x9593;&#x306B;&#x631F;&#x3080;&#x300D;</p>
 <h2 id="&#x76EE;&#x7684;">&#x76EE;&#x7684;</h2>
 <p>&#x300C;&#x672C;&#x6765;&#x306E;&#x6A5F;&#x80FD;&#x3078;&#x306E;&#x59D4;&#x8B72;&#x300D;</p>
+<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
+<ul>
+<li>&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;: &#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x305D;&#x3046;&#x3044;&#x3046;&#x540D;&#x524D;&#x3067;&#x547C;&#x3073;&#x51FA;&#x3057;&#x305F;&#x3044;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3064;<ul>
+<li>fire&#x3068;&#x304B;create&#x3068;&#x304B;&#x5358;&#x7D14;&#x306A;&#x540D;&#x524D;</li>
+</ul>
+</li>
+<li>Adapter: &#x631F;&#x3080;&#x4E3B;&#x4F53;&#x3002;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;</li>
+<li>Adaptee: &#x631F;&#x307E;&#x308C;&#x3066;&#x5BFE;&#x5FDC;&#x3055;&#x308C;&#x308B;&#x4E3B;&#x4F53;</li>
+</ul>
+<h2 id="&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</h2>
+<p>2&#x3064;&#x3042;&#x308B;</p>
+<h3 id="1-&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x88C5;">1. &#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x88C5;</h3>
+<ol>
+<li>&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x304B;&#x3089;&#x547C;&#x3073;&#x51FA;&#x3057;&#x305F;&#x3044;&#x540D;&#x524D;&#x306E;&#x30B7;&#x30B0;&#x30CD;&#x30C1;&#x30E3;&#x3092;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306B;&#x7F6E;&#x304F;</li>
+<li>&#x305D;&#x308C;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3001;&#x304B;&#x3064;Adaptee&#x3092;&#x7D99;&#x627F;&#x3057;&#x305F;Adapter&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</li>
+<li>Adapter&#x5185;&#x3067;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;Override&#x3057;&#x3066;&#x3001;Adaptee&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;</li>
+</ol>
+<h3 id="2-&#x59D4;&#x8B72;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x88C5;">2. &#x59D4;&#x8B72;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x88C5;</h3>
+<ol>
+<li>&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x304B;&#x3089;&#x547C;&#x3073;&#x51FA;&#x3057;&#x305F;&#x3044;&#x540D;&#x524D;&#x306E;&#x30B7;&#x30B0;&#x30CD;&#x30C1;&#x30E3;&#x3092;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306B;&#x7F6E;&#x304F;</li>
+<li>&#x305D;&#x308C;&#x3092;&#x7D99;&#x627F;&#x3057;&#x305F;Adapter&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;Adaptee&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;</li>
+<li>&#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3057;&#x3066;&#x3001;&#x81EA;&#x5206;&#x304C;&#x6301;&#x3064;Adaptee&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;</li>
+</ol>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
+<p><strong>&#x65E2;&#x5B58;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x6539;&#x9020;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x306A;&#x304F;&#x306A;&#x308B;</strong>&#x3002;&#x672C;&#x6765;&#x30AF;&#x30E9;&#x30B9;&#x306F;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x305F;&#x3089;&#x30C6;&#x30B9;&#x30C8;&#x3057;&#x306A;&#x3051;&#x3070;&#x3044;&#x3051;&#x306A;&#x3044;&#x3002;</p>
+<p>&#x30C6;&#x30B9;&#x30C8;&#x306E;&#x901A;&#x3063;&#x305F;&#x65E2;&#x5B58;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x30E9;&#x30C3;&#x30D7;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x8FFD;&#x52A0;&#x6A5F;&#x80FD;&#x5206;&#x3060;&#x3051;&#x3092;&#x30C6;&#x30B9;&#x30C8;&#x3059;&#x308C;&#x3070;&#x826F;&#x304F;&#x306A;&#x308B;</p>
+<p><strong>&#x65E2;&#x5B58;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x5185;&#x5BB9;&#x306F;&#x77E5;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x306A;&#x3044;</strong>&#x3002;&#x4ED5;&#x69D8;&#x304C;&#x308F;&#x304B;&#x308C;&#x3070;Adapter&#x3067;&#x65B0;&#x3057;&#x3044;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x6210;&#x3067;&#x304D;&#x308B;&#x3002;</p>
 <h2 id="&#x4ED6;&#x3068;&#x306E;&#x95A2;&#x9023;">&#x4ED6;&#x3068;&#x306E;&#x95A2;&#x9023;</h2>
-<h3 id="decorator">Decorator</h3>
+<h3 id="decorator"><a href="docs/decorator.md">Decorator</a></h3>
 <p>&#x5143;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x30E9;&#x30C3;&#x30D7;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x70B9;&#x3067;&#x540C;&#x4E00;&#x3002;</p>
 <p>&#x305F;&#x3060;&#x3057;Decorator&#x306E;&#x76EE;&#x7684;&#x306F;&#x300C;&#x672C;&#x6765;&#x306E;&#x6A5F;&#x80FD;&#x306E;&#x62E1;&#x5F35;&#x300D;&#x3002;&#x610F;&#x5473;&#x5408;&#x3044;&#x306F;&#x300C;&#x53F3;&#x3068;&#x5DE6;&#x306E;&#x7AEF;&#x5B50;&#x304C;&#x3042;&#x3063;&#x3066;&#x3044;&#x308B;&#x3068;&#x3053;&#x308D;&#x306B;&#x3001;&#x540C;&#x3058;&#x304F;&#x7AEF;&#x5B50;&#x306E;&#x3042;&#x3046;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x4E2D;&#x9593;&#x88C5;&#x7F6E;&#x3092;&#x304B;&#x307E;&#x3059;&#x300D;</p>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<h2 id="php">PHP</h2>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-comment">/**
@@ -649,7 +677,7 @@ Oven2::bake(<span class="hljs-keyword">new</span> PieDishWithAdapter2(<span clas
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Adapter","level":"1.2.2","depth":2,"next":{"title":"Bridge","level":"1.2.3","depth":2,"path":"docs/bridge.md","ref":"docs/bridge.md","articles":[]},"previous":{"title":"Abstract Factory","level":"1.2.1","depth":2,"path":"docs/abstractFactory.md","ref":"docs/abstractFactory.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/adapter.md","mtime":"2020-05-15T13:32:33.503Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:31:30.593Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Adapter","level":"1.2.2","depth":2,"next":{"title":"Bridge","level":"1.2.3","depth":2,"path":"docs/bridge.md","ref":"docs/bridge.md","articles":[]},"previous":{"title":"Abstract Factory","level":"1.2.1","depth":2,"path":"docs/abstractFactory.md","ref":"docs/abstractFactory.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/adapter.md","mtime":"2020-05-15T14:49:05.604Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T14:50:57.866Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
