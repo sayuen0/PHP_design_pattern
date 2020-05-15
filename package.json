@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/sayuen0/PHP_design_pattern#readme",
   "dependencies": {
+    "npm": ">=6.13.4",
     "express": "^4.17.1",
     "gitbook-cli": "^2.3.2"
   },
