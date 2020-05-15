@@ -24,3 +24,4 @@
   * [State](docs/state.md)
   * [Template Method](docs/templateMethod.md)
   * [Visitor](docs/visitor.md)
+
