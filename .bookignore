@@ -4,3 +4,9 @@
 # ignore npm files
 yarn.lock
 package.json
+
+# ignore all php files
+*.php
+
+# ignore all program source files
+patterns/
