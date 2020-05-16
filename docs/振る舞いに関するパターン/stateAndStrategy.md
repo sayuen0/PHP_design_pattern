@@ -1,4 +1,35 @@
 # State & Strategy パターン
+
+# Strategy
+
+> **アルゴリズムをごっそり切り替える**
+
+
+## 登場人物
+
+- Strategy: 戦略名インタフェース
+- ConcreteStrategy: 戦略を実装 **(具体的な作戦、方策、方法、アルゴリズムの切り替え)**
+- Context: Strategy利用者
+
+
+
+## クラス図
+
+![500px\-StrategyPatternClassDiagram\.svg\.png \(500×213\)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/StrategyPatternClassDiagram.svg/500px-StrategyPatternClassDiagram.svg.png)
+
+## やり方
+
+- ConcreteStrategy達にStrategyを実装させる
+- Contextは**ConcreteStrategyインスタンスを持つ**が、Strategyインタフェースを呼び出す
+
+
+## メリット(用途)
+
+
+## 所感
+
+これただのインタフェースの使い方では?
+
 # ソース
 
 ```php
