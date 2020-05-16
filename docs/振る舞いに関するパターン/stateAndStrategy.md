@@ -1,4 +1,5 @@
-# State & Strategy パターン
+# State
+
 
 # Strategy
 
@@ -10,7 +11,6 @@
 - Strategy: 戦略名インタフェース
 - ConcreteStrategy: 戦略を実装 **(具体的な作戦、方策、方法、アルゴリズムの切り替え)**
 - Context: Strategy利用者
-
 
 
 ## クラス図
