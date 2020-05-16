@@ -503,24 +503,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30E1;&#x30E2;&#x66F8;&#x304D;">&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30E1;&#x30E2;&#x66F8;&#x304D;</h2>
+                                <h1 id="builder&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Builder&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
+<p>&#x4F55;&#x3089;&#x304B;&#x306E;<strong>&#x69CB;&#x9020;</strong>&#x3092;&#x6301;&#x3063;&#x305F;&#x6210;&#x679C;&#x7269;&#x3092;&#x7D44;&#x307F;&#x7ACB;&#x3066;&#x308B;&#x969B;</p>
+<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<p>&#x4EBA;&#x9593;&#x304C;HTML&#x3067;&#x6587;&#x7AE0;&#x3092;&#x66F8;&#x304F;&#x3068;&#x304D;&#x3001;
+HTML&#x306E;&#x30B7;&#x30F3;&#x30BF;&#x30C3;&#x30AF;&#x30B9;&#x3092;&#x3044;&#x3061;&#x3044;&#x3061;&#x7D44;&#x307F;&#x7ACB;&#x3066;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x30B3;&#x30F3;&#x30C6;&#x30F3;&#x30C4;(&#x3068;&#x30BF;&#x30B0;&#x306E;&#x7A2E;&#x985E;)&#x3092;&#x4E0E;&#x3048;&#x305F;&#x3089;&#x3001;&#x6B63;&#x3057;&#x3044;&#x30B7;&#x30F3;&#x30BF;&#x30C3;&#x30AF;&#x30B9;&#x306E;&#x30BF;&#x30B0;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3057;&#x3066;&#x307B;&#x3057;&#x3044;&#x3068;&#x3044;&#x3046;&#x8003;&#x3048;&#x3002;
+&#x305D;&#x306E;&#x30BF;&#x30B0;&#x306E;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x306F;Builder&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x3084;&#x3089;&#x305B;&#x308B;&#x3002;</p>
+<p><strong>&#x4EBA;&#x9593;&#x306F;Builder&#x306E;&#x5177;&#x4F53;&#x7684;&#x306A;&#x6319;&#x52D5;&#x3092;&#x77E5;&#x3089;&#x306A;&#x304F;&#x3066;&#x3082;&#x826F;&#x3044;&#x3002;</strong></p>
+<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
 <ul>
-<li><p>&#x8907;&#x96D1;&#x306A;&#x69CB;&#x9020;&#x7269;&#x3068;&#x304B;&#x6587;&#x6CD5;&#x3092;&#x6301;&#x3063;&#x305F;&#x8A00;&#x8A9E;&#x306E;&#x751F;&#x6210;&#x3092;&#x3001;&#x6709;&#x80FD;&#x306A;&#x30ED;&#x30DC;&#x30C3;&#x30C8;(&#x30D3;&#x30EB;&#x30C0;&#x306B;&#x4EFB;&#x305B;&#x308B;)</p>
-</li>
-<li><p>&#x66F8;&#x5F0F;&#x306B;&#x3064;&#x3044;&#x3066;HTML&#x306A;&#x306E;&#x304B;Markdown&#x306A;&#x306E;&#x304B;&#x3067;&#xFF12;&#x7A2E;&#x985E;&#x306E;&#x30D3;&#x30EB;&#x30C0;&#x304C;&#x767B;&#x5834;&#x3059;&#x308B;</p>
-</li>
-<li>&#x66F8;&#x304D;&#x305F;&#x3044;&#x5185;&#x5BB9;&#x306B;&#x3064;&#x3044;&#x3066;&#x65E5;&#x8A18;&#x306A;&#x306E;&#x304B;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x306A;&#x306E;&#x304B;&#x3067;2&#x7A2E;&#x985E;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x304C;&#x767B;&#x5834;&#x3059;&#x308B;</li>
+<li>Builder: &#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x306E;&#x305F;&#x3081;&#x306E;API&#x3092;&#x5B9A;&#x3081;&#x308B;&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;</li>
+<li>ConcreteBuilder: Builder&#x306E;API&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3001;&#x5177;&#x4F53;&#x7684;&#x306A;&#x3082;&#x306E;&#x3092;&#x4F5C;&#x308B;</li>
+<li>Director: Builder&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;<ul>
+<li><strong>ConcreteBuilder&#x306E;&#x7A2E;&#x985E;&#x306B;&#x95A2;&#x4FC2;&#x306A;&#x304F;&#x4F7F;&#x3048;&#x308B;&#x3088;&#x3046;&#x306B;&#x3001;Builder&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x307F;&#x547C;&#x3076;</strong></li>
 </ul>
-<ul>
-<li>&#x66F8;&#x304D;&#x305F;&#x3044;&#x5185;&#x5BB9;&#x3068;&#x66F8;&#x5F0F;&#x306E;&#x5206;&#x96E2;&#x304C;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x306F;&#x7F8E;&#x5473;&#x3057;&#x3044;</li>
-<li><p>&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x306F;&#x6587;&#x6CD5;&#x30A8;&#x30E9;&#x30FC;&#x306A;&#x3069;&#x306E;&#x66F8;&#x5F0F;&#x306B;&#x95A2;&#x3059;&#x308B;&#x904E;&#x3061;&#x3092;&#x5B8C;&#x5168;&#x306B;&#x9632;&#x3052;&#x308B;</p>
 </li>
-<li><p>&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x306F;&#x66F8;&#x304D;&#x305F;&#x3044;&#x5185;&#x5BB9;&#x3060;&#x3051;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3001;&#x30D3;&#x30EB;&#x30C0;&#x306B;&#x4F5C;&#x308B;&#x3053;&#x3068;&#x3092;&#x4EFB;&#x305B;&#x308C;&#x3070;&#x30D3;&#x30EB;&#x30C0;&#x306F;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;&#x5185;&#x5BB9;&#x304B;&#x3089;&#x6B63;&#x3057;&#x3044;&#x66F8;&#x5F0F;&#x3067;&#x30D7;&#x30ED;&#x30C0;&#x30AF;&#x30C8;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;</p>
-</li>
+<li>Client: &#x5229;&#x7528;&#x8005;&#x3002;Main</li>
 </ul>
+<h2 id="&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</h2>
+<ol>
+<li>Builder&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x306E;&#x305F;&#x3081;&#x306E;&#x62BD;&#x8C61;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;</li>
+<li>Director&#x306F;Builder&#x578B;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3061;&#x3001;Builder&#x578B;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3076;</li>
+<li>Main&#x306F;ConcreteBuilder&#x3068;Director&#x3092;&#x751F;&#x6210;&#x3057;&#x3001;Director&#x306B;&#x300C;&#x4F5C;&#x308C;&#x300D;&#x3068;&#x4E00;&#x8A00;&#x8A00;&#x3046;&#x3002;<ul>
+<li>Director&#x306F;Builder&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x901A;&#x3058;&#x3066;ConcreteBuilder&#x304B;&#x3089;&#x6210;&#x679C;&#x7269;&#x3092;&#x4F5C;&#x308B;</li>
+</ul>
+</li>
+</ol>
 <h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;</h2>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Builder_UML_class_diagram.svg/1920px-Builder_UML_class_diagram.svg.png" alt="">
 wikipedia&#x3088;&#x308A;</p>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
+<p>&#x300C;&#x4EA4;&#x63DB;&#x53EF;&#x80FD;&#x6027;&#x300D;: &#x5165;&#x308C;&#x66FF;&#x3048;&#x3089;&#x308C;&#x308B;&#x304B;&#x3089;&#x3053;&#x305D;&#x90E8;&#x54C1;&#x3068;&#x3057;&#x3066;&#x306E;&#x4FE1;&#x983C;&#x6027;&#x304C;&#x9AD8;&#x304F;&#x306A;&#x308B;</p>
+<ul>
+<li>Client&#x306F;Builder&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;<strong>&#x77E5;&#x3089;&#x306A;&#x3044;</strong>&#x3002;Client&#x304C;Director&#x306B;&#x304A;&#x9858;&#x3044;&#x3059;&#x308B;&#x3068;Director&#x306E;&#x306A;&#x304B;&#x3067;&#x3080;&#x306B;&#x3083;&#x3080;&#x306B;&#x3083;&#x4ED5;&#x4E8B;&#x304C;&#x9032;&#x3093;&#x3067;&#x3044;&#x3044;&#x611F;&#x3058;&#x306E;&#x6210;&#x679C;&#x7269;&#x304C;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;</li>
+<li>Director&#x306F;ConcreteBuilder&#x306E;&#x5B9F;&#x88C5;&#x3092;<strong>&#x77E5;&#x3089;&#x306A;&#x3044;</strong>&#x3002;&#x77E5;&#x3089;&#x306A;&#x3044;&#x306E;&#x3067;HTMLBuilder&#x3060;&#x308D;&#x3046;&#x304C;MarkdownBuilder&#x3060;&#x308D;&#x3046;&#x304C;&#x554F;&#x984C;&#x306A;&#x304F;&#x52D5;&#x304B;&#x305B;&#x308B;&#x3002;</li>
+<li>&#x8FD1;&#x3044;&#x5C06;&#x6765;&#x6271;&#x3046;&#x66F8;&#x5F0F;&#x304C;&#x5897;&#x3048;&#x305D;&#x3046;&#x306A;&#x3068;&#x304D;&#x6709;&#x52B9;&#x306A;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</li>
+</ul>
 <h2 id="&#x5FDC;&#x7528;&#x4F8B;">&#x5FDC;&#x7528;&#x4F8B;</h2>
 <h3 id="csv-xml&#x5F62;&#x5F0F;&#x3092;&#x4F5C;&#x308A;&#x5206;&#x3051;&#x308B;">CSV, XML&#x5F62;&#x5F0F;&#x3092;&#x4F5C;&#x308A;&#x5206;&#x3051;&#x308B;</h3>
 <ul>
@@ -574,6 +592,7 @@ wikipedia&#x3088;&#x308A;</p>
 </span>{
   <span class="hljs-keyword">private</span> $builder;
 
+<span class="hljs-comment">//PHP&#x306F;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5909;&#x6570;&#x578B;&#x306B;&#x3067;&#x304D;&#x308B;?</span>
   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(DocumentBuilder $builder)</span>
   </span>{
     $this-&gt;builder = $builder;
@@ -591,6 +610,7 @@ wikipedia&#x3088;&#x308A;</p>
 
 
 <span class="hljs-comment">// director2 </span>
+<span class="hljs-comment">// &#x65E5;&#x8A18;&#x66F8;&#x304D;&#x305F;&#x3044;&#x4EBA;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DiaryDirector</span>
 </span>{
@@ -613,7 +633,7 @@ wikipedia&#x3088;&#x308A;</p>
 
 
 
-<span class="hljs-comment">// builder1 &#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308B;</span>
+<span class="hljs-comment">// builder1 HTML&#x30D3;&#x30EB;&#x30C0;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HtmlBuilder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DocumentBuilder</span>
 </span>{
@@ -686,7 +706,7 @@ wikipedia&#x3088;&#x308A;</p>
   }
 }
 
-<span class="hljs-comment">// builder 2 &#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308B;</span>
+<span class="hljs-comment">// builder2 &#x30DE;&#x30FC;&#x30AF;&#x30C0;&#x30A6;&#x30F3; &#x30D3;&#x30EB;&#x30C0;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MarkdownBuilder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DocumentBuilder</span>
 </span>{
@@ -748,9 +768,9 @@ wikipedia&#x3088;&#x308A;</p>
 }
 
 
-<span class="hljs-comment">// &#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308B;&#x3084;&#x3064;&#x3092;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x306F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x6301;&#x3064;</span>
-$hr = <span class="hljs-keyword">new</span> ReportDirector(<span class="hljs-keyword">new</span> HtmlBuilder());
-$mr = <span class="hljs-keyword">new</span> ReportDirector(<span class="hljs-keyword">new</span> MarkdownBuilder());
+
+$hr = <span class="hljs-keyword">new</span> ReportDirector(<span class="hljs-keyword">new</span> HtmlBuilder());<span class="hljs-comment">//HTML&#x3067;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</span>
+$mr = <span class="hljs-keyword">new</span> ReportDirector(<span class="hljs-keyword">new</span> MarkdownBuilder());<span class="hljs-comment">//Markdown&#x3067;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</span>
 
 <span class="hljs-keyword">print</span>($hr-&gt;build());
 <span class="hljs-keyword">print</span>($mr-&gt;build());
@@ -762,7 +782,25 @@ $md = <span class="hljs-keyword">new</span> DiaryDirector(<span class="hljs-keyw
 
 <span class="hljs-keyword">echo</span> $hd-&gt;build();<span class="hljs-comment">//director&#x304C;build&#x3059;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3066;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;builder&#x304C;&#x624B;&#x9806;&#x306B;&#x5F93;&#x3063;&#x3066;build&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;</span>
 <span class="hljs-keyword">echo</span> $md-&gt;build();
+
+
+<span class="hljs-comment">// !&#x3044;&#x305A;&#x308C;&#x3082;build()&#x3068;&#x3044;&#x3046;API&#x3060;&#x3051;&#x3067;&#x751F;&#x6210;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3042;&#x308B;&#x3002;</span>
 </code></pre>
+<h2 id="&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30E1;&#x30E2;&#x66F8;&#x304D;">&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30E1;&#x30E2;&#x66F8;&#x304D;</h2>
+<ul>
+<li><p>&#x8907;&#x96D1;&#x306A;&#x69CB;&#x9020;&#x7269;&#x3068;&#x304B;&#x6587;&#x6CD5;&#x3092;&#x6301;&#x3063;&#x305F;&#x8A00;&#x8A9E;&#x306E;&#x751F;&#x6210;&#x3092;&#x3001;&#x6709;&#x80FD;&#x306A;&#x30ED;&#x30DC;&#x30C3;&#x30C8;(&#x30D3;&#x30EB;&#x30C0;&#x306B;&#x4EFB;&#x305B;&#x308B;)</p>
+</li>
+<li><p>&#x66F8;&#x5F0F;&#x306B;&#x3064;&#x3044;&#x3066;HTML&#x306A;&#x306E;&#x304B;Markdown&#x306A;&#x306E;&#x304B;&#x3067;&#xFF12;&#x7A2E;&#x985E;&#x306E;&#x30D3;&#x30EB;&#x30C0;&#x304C;&#x767B;&#x5834;&#x3059;&#x308B;</p>
+</li>
+<li>&#x66F8;&#x304D;&#x305F;&#x3044;&#x5185;&#x5BB9;&#x306B;&#x3064;&#x3044;&#x3066;&#x65E5;&#x8A18;&#x306A;&#x306E;&#x304B;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x306A;&#x306E;&#x304B;&#x3067;2&#x7A2E;&#x985E;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x304C;&#x767B;&#x5834;&#x3059;&#x308B;</li>
+</ul>
+<ul>
+<li>&#x66F8;&#x304D;&#x305F;&#x3044;&#x5185;&#x5BB9;&#x3068;&#x66F8;&#x5F0F;&#x306E;&#x5206;&#x96E2;&#x304C;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x306F;&#x7F8E;&#x5473;&#x3057;&#x3044;</li>
+<li><p>&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x306F;&#x6587;&#x6CD5;&#x30A8;&#x30E9;&#x30FC;&#x306A;&#x3069;&#x306E;&#x66F8;&#x5F0F;&#x306B;&#x95A2;&#x3059;&#x308B;&#x904E;&#x3061;&#x3092;&#x5B8C;&#x5168;&#x306B;&#x9632;&#x3052;&#x308B;</p>
+</li>
+<li><p>&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x306F;&#x66F8;&#x304D;&#x305F;&#x3044;&#x5185;&#x5BB9;&#x3060;&#x3051;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3001;&#x30D3;&#x30EB;&#x30C0;&#x306B;&#x4F5C;&#x308B;&#x3053;&#x3068;&#x3092;&#x4EFB;&#x305B;&#x308C;&#x3070;&#x30D3;&#x30EB;&#x30C0;&#x306F;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;&#x5185;&#x5BB9;&#x304B;&#x3089;&#x6B63;&#x3057;&#x3044;&#x66F8;&#x5F0F;&#x3067;&#x30D7;&#x30ED;&#x30C0;&#x30AF;&#x30C8;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;</p>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -806,7 +844,7 @@ $md = <span class="hljs-keyword">new</span> DiaryDirector(<span class="hljs-keyw
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Builder","level":"1.4.2","depth":2,"next":{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},"previous":{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/生成に関するパターン/builder.md","mtime":"2020-05-15T22:47:17.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T23:28:40.453Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Builder","level":"1.4.2","depth":2,"next":{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},"previous":{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/生成に関するパターン/builder.md","mtime":"2020-05-16T09:12:31.431Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-16T13:00:20.330Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
