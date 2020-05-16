@@ -1,21 +1,47 @@
+# Builderパターン
 
-## ソースのメモ書き
-
-- 複雑な構造物とか文法を持った言語の生成を、有能なロボット(ビルダに任せる)
-
-- 書式についてHTMLなのかMarkdownなのかで２種類のビルダが登場する
-- 書きたい内容について日記なのかレポートなのかで2種類のディレクタが登場する
+何らかの**構造**を持った成果物を組み立てる際
 
 
-- 書きたい内容と書式の分離ができていることは美味しい
-- ディレクタは文法エラーなどの書式に関する過ちを完全に防げる
+## 概要
 
-- ディレクタは書きたい内容だけ指定して、ビルダに作ることを任せればビルダは受け取った内容から正しい書式でプロダクトを生成する
+人間がHTMLで文章を書くとき、
+HTMLのシンタックスをいちいち組み立てるのではなく、コンテンツ(とタグの種類)を与えたら、正しいシンタックスのタグを自動生成してほしいという考え。
+そのタグの自動生成はBuilderクラスにやらせる。
+
+**人間はBuilderの具体的な挙動を知らなくても良い。**
+
+
+## 登場人物
+
+- Builder: インスタンス生成のためのAPIを定める抽象クラス
+- ConcreteBuilder: BuilderのAPIを実装し、具体的なものを作る
+- Director: Builderインタフェースを使ってインスタンスを生成する
+  - **ConcreteBuilderの種類に関係なく使えるように、Builderメソッドのみ呼ぶ**
+- Client: 利用者。Main
+
+
+## やり方
+
+1. Builderにインスタンス生成のための抽象メソッドを定義する
+2. DirectorはBuilder型のプロパティを持ち、Builder型のメソッドを呼ぶ
+3. MainはConcreteBuilderとDirectorを生成し、Directorに「作れ」と一言言う。
+   -  DirectorはBuilderメソッドを通じてConcreteBuilderから成果物を作る
+
 
 
 ## クラス図
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Builder_UML_class_diagram.svg/1920px-Builder_UML_class_diagram.svg.png)
 wikipediaより
+
+## メリット(用途)
+
+
+「交換可能性」: 入れ替えられるからこそ部品としての信頼性が高くなる
+
+- ClientはBuilderのメソッドは**知らない**。ClientがDirectorにお願いするとDirectorのなかでむにゃむにゃ仕事が進んでいい感じの成果物ができている
+- DirectorはConcreteBuilderの実装を**知らない**。知らないのでHTMLBuilderだろうがMarkdownBuilderだろうが問題なく動かせる。
+- 近い将来扱う書式が増えそうなとき有効なパターン
 
 ## 応用例
 
@@ -75,6 +101,7 @@ class ReportDirector
 {
   private $builder;
 
+//PHPはインタフェースを変数型にできる?
   public function __construct(DocumentBuilder $builder)
   {
     $this->builder = $builder;
@@ -92,6 +119,7 @@ class ReportDirector
 
 
 // director2 
+// 日記書きたい人
 
 class DiaryDirector
 {
@@ -114,7 +142,7 @@ class DiaryDirector
 
 
 
-// builder1 雛形を作る
+// builder1 HTMLビルダ
 
 class HtmlBuilder implements DocumentBuilder
 {
@@ -187,7 +215,7 @@ class HtmlBuilder implements DocumentBuilder
   }
 }
 
-// builder 2 雛形を作る
+// builder2 マークダウン ビルダ
 
 class MarkdownBuilder implements DocumentBuilder
 {
@@ -249,9 +277,9 @@ class MarkdownBuilder implements DocumentBuilder
 }
 
 
-// 雛形を作るやつをディレクタはプロパティに持つ
-$hr = new ReportDirector(new HtmlBuilder());
-$mr = new ReportDirector(new MarkdownBuilder());
+
+$hr = new ReportDirector(new HtmlBuilder());//HTMLでレポート
+$mr = new ReportDirector(new MarkdownBuilder());//Markdownでレポート
 
 print($hr->build());
 print($mr->build());
@@ -264,4 +292,21 @@ $md = new DiaryDirector(new MarkdownBuilder());
 echo $hd->build();//directorがbuildするのではなくてプロパティのbuilderが手順に従ってbuildしてくれる
 echo $md->build();
 
+
+// !いずれもbuild()というAPIだけで生成できているのである。
+
 ```
+
+
+## ソースのメモ書き
+
+- 複雑な構造物とか文法を持った言語の生成を、有能なロボット(ビルダに任せる)
+
+- 書式についてHTMLなのかMarkdownなのかで２種類のビルダが登場する
+- 書きたい内容について日記なのかレポートなのかで2種類のディレクタが登場する
+
+
+- 書きたい内容と書式の分離ができていることは美味しい
+- ディレクタは文法エラーなどの書式に関する過ちを完全に防げる
+
+- ディレクタは書きたい内容だけ指定して、ビルダに作ることを任せればビルダは受け取った内容から正しい書式でプロダクトを生成する
