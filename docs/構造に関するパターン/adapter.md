@@ -42,7 +42,7 @@
 
 ## 他との関連
 
-### [Decorator](/docs/decorator.md)
+### [Decorator](/docs/構造に関するパターン/decorator.md)
 
 元のオブジェクトをラップするという点で同一。
 
