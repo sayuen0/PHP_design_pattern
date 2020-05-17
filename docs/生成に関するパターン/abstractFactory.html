@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Abstract Factory · GitBook</title>
+        <title>Abstract Factory · デザインパターンお勉強</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -15,6 +15,30 @@
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -501,34 +525,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="abstract-factory">Abstract Factory</h1>
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#abstract-factory">Abstract Factory</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
+<li><div><a href="#&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;-abstract-factory">&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Abstract Factory</a><i></i></div></li>
+<li><div><a href="#&#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;">&#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#html&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;">HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="Abstract_Factory">Abstract Factory</h1>
 <blockquote>
 <p><strong>&#x62BD;&#x8C61;&#x7684;&#x306A;&#x90E8;&#x54C1;&#x3092;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x3066;&#x62BD;&#x8C61;&#x7684;&#x306A;&#x88FD;&#x54C1;&#x3092;&#x4F5C;&#x308B;</strong></p>
 </blockquote>
 <p>//TODO: <a href="https://github.com/sayuen0/design-pattern-study/issues/1" target="_blank">#1</a></p>
-<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<h2 id="&#x6982;&#x8981;">1. &#x6982;&#x8981;</h2>
 <p>&#x4F5C;&#x308A;&#x65B9;&#x3088;&#x308A;&#x5148;&#x306B;&#x4F7F;&#x3044;&#x65B9;&#x306B;&#x7740;&#x76EE;&#x3059;&#x308B;</p>
 <p>&#x6F2B;&#x753B;&#x3067;&#x308F;&#x304B;&#x308B;Factory Method&#x3088;&#x308A;</p>
 <blockquote>
 <p>&#x4F5C;&#x308A;&#x65B9;&#x3088;&#x308A;&#x5148;&#x306B;&#x4F7F;&#x3044;&#x65B9;&#x306B;&#x7740;&#x76EE;&#x3059;&#x308B; Abstract Factory &#x3068;&#x306F;&#x9055;&#x3044;&#x3001;</p>
 </blockquote>
 <p>&#x540C;&#x3058;create&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308C;&#x3070;&#x5B09;&#x3057;&#x3044;&#x3002;&#x4F7F;&#x3044;&#x65B9;&#x306B;&#x7740;&#x76EE;&#x3057;&#x3066;&#x3044;&#x308B;</p>
-<h2 id="&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;-abstract-factory">&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Abstract Factory</h2>
+<h2 id="&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;_Abstract_Factory">2. &#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Abstract Factory</h2>
 <p><a href="https://qiita.com/tags/&#x30C7;&#x30B6;&#x30A4;&#x30F3;&#x30D1;&#x30BF;&#x30FC;&#x30F3;" target="_blank">&#x30C7;&#x30B6;&#x30A4;&#x30F3;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><a href="https://qiita.com/tags/gof" target="_blank">GoF</a></p>
 <p>&#x6F2B;&#x753B;&#x3067;&#x308F;&#x304B;&#x308B;Factory Method&#x3088;&#x308A;</p>
 <blockquote>
 <p>&#x4F5C;&#x308A;&#x65B9;&#x3088;&#x308A;&#x5148;&#x306B;&#x4F7F;&#x3044;&#x65B9;&#x306B;&#x7740;&#x76EE;&#x3059;&#x308B; Abstract Factory &#x3068;&#x306F;&#x9055;&#x3044;&#x3001;</p>
 </blockquote>
 <p>&#x540C;&#x3058;create&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308C;&#x3070;&#x5B09;&#x3057;&#x3044;&#x3002;&#x4F7F;&#x3044;&#x65B9;&#x306B;&#x7740;&#x76EE;&#x3057;&#x3066;&#x3044;&#x308B;</p>
-<h2 id="&#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;">&#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;</h2>
-<h3 id="html&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;">HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;</h3>
+<h2 id="&#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;">3. &#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;</h2>
+<h3 id="HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;">3.1. HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;</h3>
 <ul>
 <li>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x30D5;&#x30A9;&#x30FC;&#x30E0;</li>
 <li>&#x65B0;&#x898F;&#x767B;&#x9332;&#x30D5;&#x30A9;&#x30FC;&#x30E0;</li>
 <li>&#x8A2D;&#x5B9A;&#x30D5;&#x30A9;&#x30FC;&#x30E0;</li>
 </ul>
 <p>&#x3044;&#x305A;&#x308C;&#x3082;Form&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;create&#x304B;&#x3089;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3068;&#x304B;</p>
-<h2 id=""> </h2>
+<h2 id="_">4.  </h2>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);
@@ -707,7 +745,7 @@ $foreignFashion-&gt;setCap($foreignFactory-&gt;createCap());
 var_dump($jpFashion);
 var_dump($foreignFashion);
 </code></pre>
-
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;_Abstract_Factory">2. &#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Abstract Factory</a></li><li><a href="#&#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;">3. &#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;</a></li><ul><li><a href="#HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;">3.1. HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;</a></li></ul><li><a href="#_">4.  </a></li></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -746,7 +784,7 @@ var_dump($foreignFashion);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Abstract Factory","level":"1.4.1","depth":2,"next":{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},"previous":{"title":"生成に関するパターン","level":"1.4","depth":1,"ref":"","articles":[{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},{"title":"Singleton","level":"1.4.5","depth":2,"path":"docs/生成に関するパターン/singleton.md","ref":"docs/生成に関するパターン/singleton.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/生成に関するパターン/abstractFactory.md","mtime":"2020-05-17T12:32:47.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T12:45:35.988Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Abstract Factory","level":"1.4.1","depth":2,"next":{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},"previous":{"title":"生成に関するパターン","level":"1.4","depth":1,"ref":"","articles":[{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},{"title":"Singleton","level":"1.4.5","depth":2,"path":"docs/生成に関するパターン/singleton.md","ref":"docs/生成に関するパターン/singleton.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/abstractFactory.md","mtime":"2020-05-17T12:32:47.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -757,6 +795,34 @@ var_dump($foreignFashion);
     
         
         <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
         
     
         

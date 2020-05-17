@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Command · GitBook</title>
+        <title>Command · デザインパターンお勉強</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -15,6 +15,30 @@
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -501,13 +525,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="command&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Command&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#command&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Command&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
+<li><div><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</a><i></i></div></li>
+<li><div><a href="#&#x95A2;&#x9023;">&#x95A2;&#x9023;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a><i></i></div></li>
+</ul>
+</div>
+
+<h1 id="Command&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Command&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
 <blockquote>
 <p><strong>&#x547D;&#x4EE4;&#x3092;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x3059;&#x308B;</strong></p>
 </blockquote>
-<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<h2 id="&#x6982;&#x8981;">1. &#x6982;&#x8981;</h2>
 <p>&#x547D;&#x4EE4;&#x306E;&#x96C6;&#x307E;&#x308A;&#x3092;&#x5C65;&#x6B74;&#x3068;&#x3057;&#x3066;&#x4FDD;&#x5B58;&#x3057;&#x3066;&#x3001;&#x53D6;&#x308A;&#x6D88;&#x3057;&#x305F;&#x308A;&#x3084;&#x308A;&#x76F4;&#x3057;&#x305F;&#x308A;&#x3067;&#x304D;&#x308B;</p>
-<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
+<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
 <ul>
 <li>Command: &#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;</li>
 <li>ConcreteCommand</li>
@@ -515,7 +550,7 @@
 <li>Client: ConcreteCommand&#x3092;&#x751F;&#x6210;&#x3057;&#x3066;&#x3001;Reciever&#x3092;&#x5272;&#x308A;&#x5F53;&#x3066;&#x308B;</li>
 <li>Invoker: &#x547D;&#x4EE4;&#x5B9F;&#x884C;&#x958B;&#x59CB;&#x5F79;</li>
 </ul>
-<h2 id="&#x95A2;&#x9023;">&#x95A2;&#x9023;</h2>
+<h2 id="&#x95A2;&#x9023;">3. &#x95A2;&#x9023;</h2>
 <ul>
 <li>Composite: &#x30DE;&#x30AF;&#x30ED;&#x30B3;&#x30DE;&#x30F3;&#x30C9;(&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x96C6;&#x307E;&#x308A;)&#x3082;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x3042;&#x308B;</li>
 <li>Memento: &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x5C65;&#x6B74;&#x306E;&#x4FDD;&#x5B58;&#x306B;&#x4F7F;&#x3048;&#x308B;</li>
@@ -689,7 +724,7 @@ main();
   }
 }
 </code></pre>
-
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</a></li><li><a href="#&#x95A2;&#x9023;">3. &#x95A2;&#x9023;</a></li></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -728,7 +763,7 @@ main();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Command","level":"1.2.1","depth":2,"next":{"title":"COR","level":"1.2.2","depth":2,"path":"docs/振る舞いに関するパターン/COR.md","ref":"docs/振る舞いに関するパターン/COR.md","articles":[]},"previous":{"title":"振る舞いに関するパターン","level":"1.2","depth":1,"ref":"","articles":[{"title":"Command","level":"1.2.1","depth":2,"path":"docs/振る舞いに関するパターン/command.md","ref":"docs/振る舞いに関するパターン/command.md","articles":[]},{"title":"COR","level":"1.2.2","depth":2,"path":"docs/振る舞いに関するパターン/COR.md","ref":"docs/振る舞いに関するパターン/COR.md","articles":[]},{"title":"DI","level":"1.2.3","depth":2,"path":"docs/振る舞いに関するパターン/DI.md","ref":"docs/振る舞いに関するパターン/DI.md","articles":[]},{"title":"Interpreter","level":"1.2.4","depth":2,"path":"docs/振る舞いに関するパターン/interpreter.md","ref":"docs/振る舞いに関するパターン/interpreter.md","articles":[]},{"title":"Iterator","level":"1.2.5","depth":2,"path":"docs/振る舞いに関するパターン/iterator.md","ref":"docs/振る舞いに関するパターン/iterator.md","articles":[]},{"title":"Mediator","level":"1.2.6","depth":2,"path":"docs/振る舞いに関するパターン/mediator.md","ref":"docs/振る舞いに関するパターン/mediator.md","articles":[]},{"title":"Memento","level":"1.2.7","depth":2,"path":"docs/振る舞いに関するパターン/memento.md","ref":"docs/振る舞いに関するパターン/memento.md","articles":[]},{"title":"Observer","level":"1.2.8","depth":2,"path":"docs/振る舞いに関するパターン/observer.md","ref":"docs/振る舞いに関するパターン/observer.md","articles":[]},{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},{"title":"Template Method","level":"1.2.10","depth":2,"path":"docs/振る舞いに関するパターン/templateMethod.md","ref":"docs/振る舞いに関するパターン/templateMethod.md","articles":[]},{"title":"Visitor","level":"1.2.11","depth":2,"path":"docs/振る舞いに関するパターン/visitor.md","ref":"docs/振る舞いに関するパターン/visitor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/command.md","mtime":"2020-05-17T12:42:38.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T12:45:35.988Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Command","level":"1.2.1","depth":2,"next":{"title":"COR","level":"1.2.2","depth":2,"path":"docs/振る舞いに関するパターン/COR.md","ref":"docs/振る舞いに関するパターン/COR.md","articles":[]},"previous":{"title":"振る舞いに関するパターン","level":"1.2","depth":1,"ref":"","articles":[{"title":"Command","level":"1.2.1","depth":2,"path":"docs/振る舞いに関するパターン/command.md","ref":"docs/振る舞いに関するパターン/command.md","articles":[]},{"title":"COR","level":"1.2.2","depth":2,"path":"docs/振る舞いに関するパターン/COR.md","ref":"docs/振る舞いに関するパターン/COR.md","articles":[]},{"title":"DI","level":"1.2.3","depth":2,"path":"docs/振る舞いに関するパターン/DI.md","ref":"docs/振る舞いに関するパターン/DI.md","articles":[]},{"title":"Interpreter","level":"1.2.4","depth":2,"path":"docs/振る舞いに関するパターン/interpreter.md","ref":"docs/振る舞いに関するパターン/interpreter.md","articles":[]},{"title":"Iterator","level":"1.2.5","depth":2,"path":"docs/振る舞いに関するパターン/iterator.md","ref":"docs/振る舞いに関するパターン/iterator.md","articles":[]},{"title":"Mediator","level":"1.2.6","depth":2,"path":"docs/振る舞いに関するパターン/mediator.md","ref":"docs/振る舞いに関するパターン/mediator.md","articles":[]},{"title":"Memento","level":"1.2.7","depth":2,"path":"docs/振る舞いに関するパターン/memento.md","ref":"docs/振る舞いに関するパターン/memento.md","articles":[]},{"title":"Observer","level":"1.2.8","depth":2,"path":"docs/振る舞いに関するパターン/observer.md","ref":"docs/振る舞いに関するパターン/observer.md","articles":[]},{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},{"title":"Template Method","level":"1.2.10","depth":2,"path":"docs/振る舞いに関するパターン/templateMethod.md","ref":"docs/振る舞いに関するパターン/templateMethod.md","articles":[]},{"title":"Visitor","level":"1.2.11","depth":2,"path":"docs/振る舞いに関するパターン/visitor.md","ref":"docs/振る舞いに関するパターン/visitor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/command.md","mtime":"2020-05-17T12:42:38.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -739,6 +774,34 @@ main();
     
         
         <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
         
     
         

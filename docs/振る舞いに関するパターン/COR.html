@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>COR · GitBook</title>
+        <title>COR · デザインパターンお勉強</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -15,6 +15,30 @@
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -503,13 +527,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="chain-of-responsibility">Chain Of Responsibility</h1>
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#chain-of-responsibility">Chain Of Responsibility</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
+<li><div><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</a><i></i></div></li>
+<li><div><a href="#&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;(&amp;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;)</a><i></i></div></li>
+<li><div><a href="#&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</a><i></i></div></li>
+<li><div><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</a><i></i></div></li>
+<li><div><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#php">PHP</a><i></i></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="Chain_Of_Responsibility">Chain Of Responsibility</h1>
 <blockquote>
 <p><strong>&#x8CAC;&#x4EFB;&#x306E;&#x305F;&#x3089;&#x3044;&#x56DE;&#x3057;</strong></p>
 </blockquote>
-<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<h2 id="&#x6982;&#x8981;">1. &#x6982;&#x8981;</h2>
 <p>&#x8907;&#x6570;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x9396;&#x7E4B;&#x304E;&#x3057;&#x3066;&#x3001;&#x305D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x9396;&#x3092;&#x9806;&#x6B21;&#x6E21;&#x308A;&#x6B69;&#x3044;&#x3066;&#x76EE;&#x7684;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x6C7A;&#x5B9A;&#x3059;&#x308B;</p>
-<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
+<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
 <ul>
 <li>Handler: &#x8981;&#x6C42;&#x3092;&#x51E6;&#x7406;&#x3059;&#x308B;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;<ul>
 <li><strong>&#x6B21;&#x306E;Handler&#x3092;&#x6301;&#x3064;</strong></li>
@@ -519,22 +559,22 @@
 <li>ConcreteHandler(Resolver): &#x8981;&#x6C42;&#x51E6;&#x7406;&#x3092;&#x5B9F;&#x88C5;</li>
 <li>Client(Sender): ConcreteHandler&#x306B;&#x8981;&#x6C42;&#x3092;&#x51FA;&#x3059;</li>
 </ul>
-<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;(&amp;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;)</h2>
+<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;(_&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;)">3. &#x30AF;&#x30E9;&#x30B9;&#x56F3;(&amp;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;)</h2>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/W3sDesign_Chain_of_Responsibility_Design_Pattern_UML.jpg" alt="W3sDesign\_Chain\_of\_Responsibility\_Design\_Pattern\_UML\.jpg \(700&#xD7;240\)"></p>
-<h2 id="&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</h2>
+<h2 id="&#x3084;&#x308A;&#x65B9;">4. &#x3084;&#x308A;&#x65B9;</h2>
 <ul>
 <li>ConcreteHandler&#x306B;&#x89E3;&#x6C7A;&#x6761;&#x4EF6;&#x30FB;&#x89E3;&#x6C7A;&#x3067;&#x304D;&#x306A;&#x3044;&#x3068;&#x304D;&#x6B21;&#x306B;&#x6E21;&#x3059;Hanlder&#x3001;&#x89E3;&#x6C7A;&#x51E6;&#x7406;&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;</li>
 <li>Client&#x306F;&#x6700;&#x521D;&#x306E;ConcreteHandler&#x306B;&#x5BFE;&#x3057;&#x3066;&#x4E00;&#x5EA6;&#x3060;&#x3051;&#x8981;&#x6C42;&#x3092;&#x6295;&#x3052;&#x308B;</li>
 </ul>
-<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)">5. &#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
 <ul>
 <li>&#x300C;&#x8AB0;&#x304B;&#x304C;&#x89E3;&#x6C7A;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;&#x300D;<ul>
 <li>&#x8981;&#x6C42;&#x8005;&#x3067;&#x3042;&#x308B;Client&#x304C;&#x89E3;&#x6C7A;&#x8005;&#x3092;&#x77E5;&#x3063;&#x3066;&#x3044;&#x308B;(&#x89E3;&#x6C7A;&#x8005;&#x306B;&#x4F9D;&#x5B58;&#x3059;&#x308B;)&#x306E;&#x306F;&#x3088;&#x304F;&#x306A;&#x3044;&#x304C;&#x3001;&#x305F;&#x3089;&#x3044;&#x56DE;&#x3057;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x4F9D;&#x5B58;&#x3092;&#x89E3;&#x6D88;&#x3067;&#x304D;&#x308B;</li>
 </ul>
 </li>
 </ul>
-<h2 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h2>
-<h3 id="php">PHP</h3>
+<h2 id="&#x30BD;&#x30FC;&#x30B9;">6. &#x30BD;&#x30FC;&#x30B9;</h2>
+<h3 id="PHP">6.1. PHP</h3>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);
 error_reporting(E_ALL);
@@ -772,7 +812,7 @@ $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class
 $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class="hljs-number">60</span>));
 $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class="hljs-number">100</span>));
 </code></pre>
-
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#Chain_Of_Responsibility">Chain Of Responsibility</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</a></li><li><a href="#&#x30AF;&#x30E9;&#x30B9;&#x56F3;(_&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;)">3. &#x30AF;&#x30E9;&#x30B9;&#x56F3;(&amp;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;)</a></li><li><a href="#&#x3084;&#x308A;&#x65B9;">4. &#x3084;&#x308A;&#x65B9;</a></li><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)">5. &#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</a></li><li><a href="#&#x30BD;&#x30FC;&#x30B9;">6. &#x30BD;&#x30FC;&#x30B9;</a></li><ul><li><a href="#PHP">6.1. PHP</a></li></ul></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -815,7 +855,7 @@ $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"COR","level":"1.2.2","depth":2,"next":{"title":"DI","level":"1.2.3","depth":2,"path":"docs/振る舞いに関するパターン/DI.md","ref":"docs/振る舞いに関するパターン/DI.md","articles":[]},"previous":{"title":"Command","level":"1.2.1","depth":2,"path":"docs/振る舞いに関するパターン/command.md","ref":"docs/振る舞いに関するパターン/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/COR.md","mtime":"2020-05-17T00:34:45.149Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T12:45:35.988Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"COR","level":"1.2.2","depth":2,"next":{"title":"DI","level":"1.2.3","depth":2,"path":"docs/振る舞いに関するパターン/DI.md","ref":"docs/振る舞いに関するパターン/DI.md","articles":[]},"previous":{"title":"Command","level":"1.2.1","depth":2,"path":"docs/振る舞いに関するパターン/command.md","ref":"docs/振る舞いに関するパターン/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/COR.md","mtime":"2020-05-17T00:34:45.149Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -826,6 +866,34 @@ $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class
     
         
         <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
         
     
         

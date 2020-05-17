@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Template Method · GitBook</title>
+        <title>Template Method · デザインパターンお勉強</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -15,6 +15,30 @@
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -503,8 +527,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="template-method">template method</h1>
-<h2 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h2>
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#template-method">template method</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</a><i></i></div></li>
+<li><div><a href="#&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</a><i></i></div></li>
+<li><div><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</a><i></i></div></li>
+<li><div><a href="#&#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;">&#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#factory-method">Factory Method</a><i></i></div></li>
+<li><div><a href="#strategy">Strategy</a><i></i></div></li>
+</ul></li>
+</ul></li>
+<li><div><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a><i></i></div></li>
+</ul>
+</div>
+
+
+<h1 id="template_method">template method</h1>
+<h2 id="&#x6982;&#x5FF5;">1. &#x6982;&#x5FF5;</h2>
 <p>&#x632F;&#x308B;&#x821E;&#x3044;&#x3092;&#x6B6F;&#x629C;&#x3051;&#x3067;&#x62BD;&#x8C61;&#x3055;&#x305B;&#x3066;&#x3001;
 &#x305D;&#x308C;&#x3092;&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x304C;&#x5177;&#x4F53;&#x3067;&#x88DC;&#x3046;</p>
 <p>&#x3053;&#x308C;&#x306B;&#x95A2;&#x3057;&#x3066;&#x306F;&#x6F2B;&#x753B;&#x304C;&#x3042;&#x307E;&#x308A;&#x306B;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x3044;&#x306E;&#x3067;&#x305D;&#x308C;&#x3092;&#x534A;&#x7761;</p>
@@ -529,7 +570,7 @@
 - 10000&#x30D5;&#x30A1;&#x30DC;&#x306E;&#x30C4;&#x30A4;&#x30FC;&#x30C8;&#x3092;&#x3057;&#x305F;&#x4EBA;
 - &#x5F15;&#x7528;&#x9858;&#x3044;
 </code></pre><p>&#x3067;&#x7A74;&#x57CB;&#x3081;&#x3057;&#x3066;&#x904B;&#x7528;&#x3059;&#x308B;</p>
-<h2 id="&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</h2>
+<h2 id="&#x3084;&#x308A;&#x65B9;">2. &#x3084;&#x308A;&#x65B9;</h2>
 <ol>
 <li>&#x5B9F;&#x88C5;&#x306F;&#x6C7A;&#x3081;&#x306A;&#x3044;&#x304C;&#x547C;&#x3073;&#x51FA;&#x3057;&#x9806;&#x306F;&#x6C7A;&#x3081;&#x305F;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3064;&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</li>
 <li>&#x5B9F;&#x88C5;&#x5185;&#x5BB9;&#x3092;&#x6C7A;&#x3081;&#x306A;&#x3044;&#x62BD;&#x8C61;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x914D;&#x7F6E;&#x3059;&#x308B;<ul>
@@ -543,13 +584,13 @@
 <li>&#x7D99;&#x627F;&#x3057;&#x3001;&#x62BD;&#x8C61;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;</li>
 <li>&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x304B;&#x3089;&#x306F;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;</li>
 </ol>
-<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)">3. &#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
 <p><strong>&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x8AA4;&#x308A;&#x304C;&#x898B;&#x3064;&#x304B;&#x3063;&#x305F;&#x3089;&#x3001;(&#x5177;&#x8C61;&#x306B;&#x306F;&#x624B;&#x3092;&#x3064;&#x3051;&#x305A;)&#x305D;&#x308C;&#x3060;&#x3051;&#x76F4;&#x305B;&#x3070;&#x6E08;&#x3080;&#x3002;</strong>
 &#x3082;&#x3057;&#x30B3;&#x30D4;&#x30DA;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x305F;&#x3089;&#x4FEE;&#x6B63;&#x30AF;&#x30E9;&#x30B9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x5897;&#x3048;&#x308B;&#x3002;</p>
-<h2 id="&#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;">&#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h2>
-<h3 id="factory-method">Factory Method</h3>
+<h2 id="&#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;">4. &#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h2>
+<h3 id="Factory_Method">4.1. Factory Method</h3>
 <p>Template Method&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x306B;&#x4F7F;&#x3046;&#x3068;Factory Method&#x3002;</p>
-<h3 id="strategy">Strategy</h3>
+<h3 id="Strategy">4.2. Strategy</h3>
 <ul>
 <li>Template Method : <strong>&#x7D99;&#x627F;</strong>&#x306B;&#x3088;&#x308A;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;&#x52D5;&#x4F5C;&#x3092;&#x5909;&#x66F4;<ul>
 <li>&#x30B9;&#x30FC;&#x30D1;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x5927;&#x67A0;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x3092;&#x6C7A;&#x3081;&#x3066;&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x5B9F;&#x88C5;</li>
@@ -844,7 +885,7 @@ say($user-&gt;mail_address == <span class="hljs-string">&quot;sayuen0@gmail.com&
 
 &lt;a href=<span class="hljs-string">&quot;/docs/templateMethod.md&quot;</span>&gt;&#x8AAC;&#x660E;&#x3078;&lt;/a&gt;
 </code></pre>
-
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x6982;&#x5FF5;">1. &#x6982;&#x5FF5;</a></li><li><a href="#&#x3084;&#x308A;&#x65B9;">2. &#x3084;&#x308A;&#x65B9;</a></li><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)">3. &#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</a></li><li><a href="#&#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;">4. &#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a></li><ul><li><a href="#Factory_Method">4.1. Factory Method</a></li><li><a href="#Strategy">4.2. Strategy</a></li></ul></ul></div><a href="#&#x6982;&#x5FF5;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -887,7 +928,7 @@ say($user-&gt;mail_address == <span class="hljs-string">&quot;sayuen0@gmail.com&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Template Method","level":"1.2.10","depth":2,"next":{"title":"Visitor","level":"1.2.11","depth":2,"path":"docs/振る舞いに関するパターン/visitor.md","ref":"docs/振る舞いに関するパターン/visitor.md","articles":[]},"previous":{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/templateMethod.md","mtime":"2020-05-15T22:49:14.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T12:45:35.988Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Template Method","level":"1.2.10","depth":2,"next":{"title":"Visitor","level":"1.2.11","depth":2,"path":"docs/振る舞いに関するパターン/visitor.md","ref":"docs/振る舞いに関するパターン/visitor.md","articles":[]},"previous":{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/templateMethod.md","mtime":"2020-05-15T22:49:14.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -898,6 +939,34 @@ say($user-&gt;mail_address == <span class="hljs-string">&quot;sayuen0@gmail.com&
     
         
         <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
         
     
         

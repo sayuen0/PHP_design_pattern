@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Flyweight · GitBook</title>
+        <title>Flyweight · デザインパターンお勉強</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -15,6 +15,30 @@
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
@@ -503,34 +527,51 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="flyweight&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Flyweight&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#flyweight&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Flyweight&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
+<li><div><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</a><i></i></div></li>
+<li><div><a href="#&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</a><i></i></div></li>
+<li><div><a href="#&#x30AF;&#x30E9;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;</a><i></i></div></li>
+<li><div><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;</a><i></i></div></li>
+<li><div><a href="#&#x6CE8;&#x610F;&#x70B9;">&#x6CE8;&#x610F;&#x70B9;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#intrinsic&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;&#x304B;extrinsic&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;&#x304B;">intrinsic(&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;)&#x304B;extrinsic(&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;)&#x304B;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+<li><div><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a><i></i></div></li>
+</ul>
+</div>
+
+<h1 id="Flyweight&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Flyweight&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
 <blockquote>
 <p><strong>&#x540C;&#x3058;&#x3082;&#x306E;&#x3092;&#x5171;&#x6709;&#x3057;&#x3066;&#x7121;&#x99C4;&#x3092;&#x306A;&#x304F;&#x3059;</strong></p>
-<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<h2 id="&#x6982;&#x8981;">1. &#x6982;&#x8981;</h2>
 </blockquote>
 <ul>
 <li>&#x7B49;&#x4FA1;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x5171;&#x6709;&#x3057;&#x305F;&#x3089;&#x8EFD;&#x91CF;&#x5316;&#x3067;&#x304D;&#x308B;&#x3088;&#x306D;&#x3063;&#x3066;&#x8A71;</li>
 </ul>
-<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
+<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
 <ul>
 <li>&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;: &#x751F;&#x6210;&#x3059;&#x308B;&#x3084;&#x3064;</li>
 <li>&#x30D5;&#x30E9;&#x30A4;&#x30A6;&#x30A7;&#x30A4;&#x30C8;: &#x8EFD;&#x304F;&#x3057;&#x305F;&#x3044;&#x3084;&#x3064;</li>
 </ul>
-<h2 id="&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</h2>
+<h2 id="&#x3084;&#x308A;&#x65B9;">3. &#x3084;&#x308A;&#x65B9;</h2>
 <ol>
 <li>&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x306F;&#x30D5;&#x30E9;&#x30A4;&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x30E1;&#x30F3;&#x30D0;&#x30FC;&#x306B;&#x6301;&#x3064;</li>
 <li>&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x81EA;&#x8EAB;&#x306F;public&#x3067;static&#x306A;&#x3001;1&#x5EA6;&#x76EE;&#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3060;&#x3051;&#x300C;&#x751F;&#x6210;&#x300D;&#x3057;2&#x5EA6;&#x76EE;&#x4EE5;&#x964D;&#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x306F;&#x3059;&#x3067;&#x306B;&#x751F;&#x6210;&#x3057;&#x305F;&#x3084;&#x3064;&#x3092;&#x8FD4;&#x3059;getInstance&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3064;</li>
 <li>&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x304B;&#x3089;&#x306E;&#x30D5;&#x30E9;&#x30A4;&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x306F;&#x3001;&#x65E2;&#x306B;&#x3042;&#x308C;&#x3070;&#x65E2;&#x5B58;&#x306E;&#x3082;&#x306E;&#x3092;&#x8FD4;&#x3057;&#x3001;&#x306A;&#x304B;&#x3063;&#x305F;&#x3089;&#x4E00;&#x5EA6;&#x3060;&#x3051;&#x751F;&#x6210;&#x3057;&#x3066;&#x767B;&#x9332;&#x3057;&#x3066;&#x8FD4;&#x3059;</li>
 </ol>
-<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;</h2>
+<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;">4. &#x30AF;&#x30E9;&#x30B9;&#x56F3;</h2>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Flyweight_UML_class_diagram.svg" alt=""></p>
-<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;</h2>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;">5. &#x30E1;&#x30EA;&#x30C3;&#x30C8;</h2>
 <ul>
 <li>&#x30E1;&#x30E2;&#x30EA;&#x7BC0;&#x7D04;&#xFF1A;&#x3053;&#x308C;&#x306B;&#x5C3D;&#x304D;&#x308B;</li>
 <li>&#x6642;&#x9593;&#x7BC0;&#x7D04;&#xFF1A;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x306B;&#x6642;&#x9593;&#x306E;&#x304B;&#x304B;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306A;&#x3089;</li>
 </ul>
-<h2 id="&#x6CE8;&#x610F;&#x70B9;">&#x6CE8;&#x610F;&#x70B9;</h2>
-<h3 id="intrinsic&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;&#x304B;extrinsic&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;&#x304B;">intrinsic(&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;)&#x304B;extrinsic(&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;)&#x304B;</h3>
+<h2 id="&#x6CE8;&#x610F;&#x70B9;">6. &#x6CE8;&#x610F;&#x70B9;</h2>
+<h3 id="intrinsic(&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;)&#x304B;extrinsic(&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;)&#x304B;">6.1. intrinsic(&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;)&#x304B;extrinsic(&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;)&#x304B;</h3>
 <p>Flyweight&#x306B;&#x5909;&#x66F4;&#x3092;&#x52A0;&#x3048;&#x308B;&#x3068;&#x5F53;&#x7136;&#x3060;&#x3051;&#x3069;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x5185;&#x306E;Flyweight&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5168;&#x3066;&#x306B;&#x5909;&#x66F4;&#x304C;&#x5171;&#x6709;&#x3055;&#x308C;&#x308B;&#x3002;</p>
 <ul>
 <li>&#x30A4;&#x30F3;&#x30C8;&#x30EA;&#x30F3;&#x30B8;&#x30C3;&#x30AF;: &#x5834;&#x6240;&#x3084;&#x72B6;&#x6CC1;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x306A;&#x3044;&#x60C5;&#x5831;&#x3002;&#x5171;&#x6709;&#x3057;&#x3066;&#x826F;&#x3044;&#x306E;&#x3067;Flyweight&#x306B;&#x7D44;&#x307F;&#x8FBC;&#x3093;&#x3067;&#x826F;&#x3044;</li>
@@ -627,7 +668,7 @@ $factory = ConfidantFactory::getInstance();
   <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x5225;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3059;&quot;</span>;
 }
 </code></pre>
-
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</a></li><li><a href="#&#x3084;&#x308A;&#x65B9;">3. &#x3084;&#x308A;&#x65B9;</a></li><li><a href="#&#x30AF;&#x30E9;&#x30B9;&#x56F3;">4. &#x30AF;&#x30E9;&#x30B9;&#x56F3;</a></li><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;">5. &#x30E1;&#x30EA;&#x30C3;&#x30C8;</a></li><li><a href="#&#x6CE8;&#x610F;&#x70B9;">6. &#x6CE8;&#x610F;&#x70B9;</a></li><ul><li><a href="#intrinsic(&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;)&#x304B;extrinsic(&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;)&#x304B;">6.1. intrinsic(&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;)&#x304B;extrinsic(&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;)&#x304B;</a></li></ul></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -670,7 +711,7 @@ $factory = ConfidantFactory::getInstance();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Flyweight","level":"1.3.6","depth":2,"next":{"title":"Proxy","level":"1.3.7","depth":2,"path":"docs/構造に関するパターン/proxy.md","ref":"docs/構造に関するパターン/proxy.md","articles":[]},"previous":{"title":"Facade","level":"1.3.5","depth":2,"path":"docs/構造に関するパターン/facade.md","ref":"docs/構造に関するパターン/facade.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/構造に関するパターン/flyweight.md","mtime":"2020-05-17T12:10:25.065Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T12:45:35.988Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Flyweight","level":"1.3.6","depth":2,"next":{"title":"Proxy","level":"1.3.7","depth":2,"path":"docs/構造に関するパターン/proxy.md","ref":"docs/構造に関するパターン/proxy.md","articles":[]},"previous":{"title":"Facade","level":"1.3.5","depth":2,"path":"docs/構造に関するパターン/facade.md","ref":"docs/構造に関するパターン/facade.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/構造に関するパターン/flyweight.md","mtime":"2020-05-17T12:10:25.065Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -681,6 +722,34 @@ $factory = ConfidantFactory::getInstance();
     
         
         <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
         
     
         
