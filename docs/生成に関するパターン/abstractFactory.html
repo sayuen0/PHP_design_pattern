@@ -534,7 +534,11 @@
 <ul>
 <li><div><a href="#html&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;">HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;</a><i></i></div></li>
 </ul></li>
-<li><div><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a><i></i></div></li>
+<li><div><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#php">PHP</a><i></i></div></li>
+<li><div><a href="#java">Java</a><i></i></div></li>
+</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -567,9 +571,187 @@
 </ul>
 <p>&#x3044;&#x305A;&#x308C;&#x3082;Form&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;create&#x304B;&#x3089;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3068;&#x304B;</p>
 <h2 id="&#x30BD;&#x30FC;&#x30B9;">4. &#x30BD;&#x30FC;&#x30B9;</h2>
-<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-ident">Error</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-function">file</span>&#xA0;<span class="sunlight-ident">not</span>&#xA0;<span class="sunlight-ident">found</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-operator">/</span><span class="sunlight-ident">Applications</span><span class="sunlight-operator">/</span><span class="sunlight-ident">MAMP</span><span class="sunlight-operator">/</span><span class="sunlight-ident">htdocs</span><span class="sunlight-operator">/</span><span class="sunlight-ident">design_patterns</span><span class="sunlight-operator">/</span><span class="sunlight-ident">patterns</span><span class="sunlight-operator">/</span><span class="sunlight-ident">AbstractFactory</span><span class="sunlight-operator">/</span><span class="sunlight-ident">index</span><span class="sunlight-operator">.</span><span class="sunlight-ident">php</span>
+<h3 id="PHP">4.1. PHP</h3>
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-openTag">&lt;?php</span>
+<span class="sunlight-function">ini_set</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;display_errors&quot;</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-string">&quot;1&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x5358;&#x306B;new&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x306A;&#x304F;
+&#xA0;*&#xA0;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x4F9D;&#x5B58;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;
+&#xA0;*&#xA0;&#x521D;&#x3081;&#x3066;&#x5229;&#x7528;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x308B;&#x3088;&#x3046;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x304A;&#x3051;&#x308B;
+&#xA0;*&#xA0;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x8A2D;&#x5B9A;&#x306E;&#x4E00;&#x8CAB;&#x6027;&#x3092;&#x4FDD;&#x3064;&#x305F;&#x3081;&#x306B;&#x4F7F;&#x3046;
+&#xA0;*&#xA0;
+&#xA0;*/</span>
+
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x5B9F;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x7528;&#x3044;&#x3066;
+&#xA0;*&#xA0;&#x4E00;&#x8CAB;&#x6027;&#x306E;&#x3042;&#x308B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x76EE;&#x7684;&#x3068;&#x3057;&#x305F;&#x30D1;&#x30BF;&#x30FC;&#x30F3;
+&#xA0;*&#xA0;&#x4F9D;&#x5B58;&#x6027;&#x6CE8;&#x5165;&#x306B;&#x3088;&#x3063;&#x3066;&#x304A;&#x682A;&#x3092;&#x596A;&#x308F;&#x308C;&#x3064;&#x3064;&#x3042;&#x308B;&#x3089;&#x3057;&#x3044;
+&#xA0;*
+&#xA0;*/</span>
+
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#xA0;&#x30A2;&#x30D6;&#x30B9;&#x30C8;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;
+&#xA0;*&#xA0;&#x300C;&#x4F5C;&#x308B;&#x300D;
+&#xA0;*&#xA0;&#x4F55;&#x3092;&#x4F5C;&#x308B;&#x306E;&#x304B;&#x306F;&#x5B50;&#x4F9B;&#x306B;&#x3088;&#x308B;
+&#xA0;*&#xA0;
+&#xA0;*/</span>
+<span class="sunlight-keyword">interface</span>&#xA0;<span class="sunlight-named-ident">FashionFactory</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
+
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x308B;&#x5BFE;&#x8C61;
+&#xA0;*&#xA0;&#x670D;
+&#xA0;*/</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">Fashion</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$tops</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$bottoms</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$cap</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$tops</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">tops</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$tops</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$bottoms</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">bottoms</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$bottoms</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$cap</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">cap</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$cap</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">tops</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">bottoms</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">cap</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x5B9F;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x305D;&#x306E;&#xFF11;
+&#xA0;*&#xA0;&#x548C;&#x670D;&#x5DE5;&#x5834;
+&#xA0;*/</span>
+
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">JapaneseFashionFactory</span>&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">FashionFactory</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-variable">$instance</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;singleton?</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getInstance</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span>&#xA0;<span class="sunlight-operator">==</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x81EA;&#x5206;&#x3092;&#x30E1;&#x30F3;&#x30D0;&#x306B;&#x6301;&#x3064;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">JapaneseFashionFactory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;&#x9577;&#x7740;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;&#x88B4;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;&#x4E09;&#x5EA6;&#x7B20;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x5B9F;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;2
+&#xA0;*&#xA0;&#x6D0B;&#x670D;&#x5DE5;&#x5834;
+&#xA0;*/</span>
+
+
+
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ForeignFashionFactory</span>&#xA0;&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">FashionFactory</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-variable">$instance</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getInstance</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span>&#xA0;<span class="sunlight-operator">==</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x81EA;&#x5206;&#x3092;&#x30E1;&#x30F3;&#x30D0;&#x306B;&#x6301;&#x3064;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">ForeignFashionFactory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;&#x30B8;&#x30E3;&#x30B1;&#x30C3;&#x30C8;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;&#x30B8;&#x30FC;&#x30F3;&#x30BA;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;&#x30AD;&#x30E3;&#x30C3;&#x30D7;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+
+<span class="sunlight-comment">//&#xA0;&#x548C;&#x670D;&#x5DE5;&#x5834;</span>
+<span class="sunlight-variable">$jpFactory</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-named-ident">JapaneseFashionFactory</span><span class="sunlight-operator">::</span><span class="sunlight-ident">getInstance</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-comment">//&#xA0;&#x6D0B;&#x670D;</span>
+<span class="sunlight-variable">$foreignFactory</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-named-ident">ForeignFashionFactory</span><span class="sunlight-operator">::</span><span class="sunlight-ident">getInstance</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+
+
+
+<span class="sunlight-comment">//&#xA0;&#x3069;&#x3061;&#x3089;&#x304C;&#x4F5C;&#x308D;&#x3046;&#x304C;create****&#x3068;&#x3044;&#x3046;&#x547C;&#x3073;&#x51FA;&#x3057;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x304C;&#x30DF;&#x30BD;</span>
+<span class="sunlight-comment">//&#xA0;&#x670D;&#x306B;&#x548C;&#x670D;&#x5DE5;&#x5834;&#x306E;&#x30C8;&#x30C3;&#x30D7;&#x30B9;&#x3068;&#x30DC;&#x30C8;&#x30E0;&#x30BA;&#x3092;&#x8A2D;&#x5B9A;</span>
+<span class="sunlight-variable">$jpFashion</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">Fashion</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$jpFashion</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$jpFactory</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">createTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$jpFashion</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$jpFactory</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">createBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$jpFashion</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$jpFactory</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">createCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-variable">$foreignFashion</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">Fashion</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$foreignFashion</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$foreignFactory</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">createTops</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$foreignFashion</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$foreignFactory</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">createBottoms</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$foreignFashion</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$foreignFactory</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">createCap</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-function">var_dump</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$jpFashion</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-function">var_dump</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$foreignFashion</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 </span></pre></div></div></code></pre>
-<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#Abstract_Factory">Abstract Factory</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;_Abstract_Factory">2. &#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Abstract Factory</a></li><li><a href="#&#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;">3. &#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;</a></li><ul><li><a href="#HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;">3.1. HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;</a></li></ul><li><a href="#&#x30BD;&#x30FC;&#x30B9;">4. &#x30BD;&#x30FC;&#x30B9;</a></li></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+<h3 id="Java">4.2. Java</h3>
+<p>TODO: #5 #4 &#x57CB;&#x3081;&#x308B;</p>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#Abstract_Factory">Abstract Factory</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;_Abstract_Factory">2. &#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Abstract Factory</a></li><li><a href="#&#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;">3. &#x6D3B;&#x304B;&#x305B;&#x305D;&#x3046;&#x306A;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x308B;</a></li><ul><li><a href="#HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;">3.1. HTML&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x90E8;&#x54C1;&#x751F;&#x6210;</a></li></ul><li><a href="#&#x30BD;&#x30FC;&#x30B9;">4. &#x30BD;&#x30FC;&#x30B9;</a></li><ul><li><a href="#PHP">4.1. PHP</a></li><li><a href="#Java">4.2. Java</a></li></ul></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -608,7 +790,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Abstract Factory","level":"1.4.1","depth":2,"next":{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},"previous":{"title":"生成に関するパターン","level":"1.4","depth":1,"ref":"","articles":[{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},{"title":"Singleton","level":"1.4.5","depth":2,"path":"docs/生成に関するパターン/singleton.md","ref":"docs/生成に関するパターン/singleton.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/abstractFactory.md","mtime":"2020-05-17T14:29:34.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:29:45.127Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Abstract Factory","level":"1.4.1","depth":2,"next":{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},"previous":{"title":"生成に関するパターン","level":"1.4","depth":1,"ref":"","articles":[{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},{"title":"Singleton","level":"1.4.5","depth":2,"path":"docs/生成に関するパターン/singleton.md","ref":"docs/生成に関するパターン/singleton.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/abstractFactory.md","mtime":"2020-05-17T14:31:43.828Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:32:48.224Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
