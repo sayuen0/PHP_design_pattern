@@ -1,4 +1,6 @@
 {
-  "plugins": ["-sharing", "hide-published-with"],
+  "title": "デザインパターンお勉強",
+  "description": "This is design pattern study site",
+  "plugins": ["-sharing", "hide-published-with", "copy-code-button", "navigator", "page-treeview", "intopic-toc", "back-to-top-button", "expand-active-chapter", "collapsible-chapters"],
   "language": "ja"
 }
