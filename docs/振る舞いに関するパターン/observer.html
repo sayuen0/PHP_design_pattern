@@ -504,10 +504,59 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="observer&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Observer&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
-<h2 id="&#x76EE;&#x7684;">&#x76EE;&#x7684;</h2>
-<p>&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x3092;&#x8D77;&#x3053;&#x3059;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x3053;&#x3053;&#x306E;&#x5B9F;&#x88C5;&#x3092;&#x610F;&#x8B58;&#x3057;&#x306A;&#x3044;</p>
-<p>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;(JS)&#x304C;&#x305D;&#x308C;&#x3092;&#x89B3;&#x6E2C;&#x3057;&#x3066;&#x52D5;&#x304F;</p>
-<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<blockquote>
+<p><strong>&#x72B6;&#x614B;&#x306E;&#x5909;&#x5316;&#x3092;&#x901A;&#x77E5;&#x3059;&#x308B;</strong></p>
+</blockquote>
+<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<p>&#x5225;&#x540D;<strong>Pub-Sub(Publish-Subscribe)</strong>&#x30D1;&#x30BF;&#x30FC;&#x30F3;</p>
+<ul>
+<li>Publish: &#x767A;&#x884C;</li>
+<li>Subscribe: &#x8CFC;&#x8AAD;</li>
+</ul>
+<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
+<ul>
+<li>Subject: &#x89B3;&#x5BDF;&#x3055;&#x308C;&#x308B;&#x5074;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;<ul>
+<li>Observer&#x306B;&#x81EA;&#x8EAB;&#x306E;&#x5909;&#x5316;&#x3092;notify&#x3059;&#x308B;</li>
+</ul>
+</li>
+<li>ConcreteSubject</li>
+<li>Observer: &#x76E3;&#x8996;&#x5F79;&#x3002;Subject&#x304B;&#x3089;&#x300C;&#x72B6;&#x614B;&#x304C;&#x5909;&#x308F;&#x308A;&#x307E;&#x3057;&#x305F;&#x3088;&#x300D;&#x3068;&#x901A;&#x77E5;&#x3092;&#x53D7;&#x3051;&#x308B;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;<ul>
+<li>&#x4E00;&#x3064;&#x306E;Subject&#x3092;&#x76E3;&#x8996;&#x3059;&#x308B;<strong>Observer&#x306F;&#x8907;&#x6570;&#x5B58;&#x5728;&#x3057;&#x3066;&#x826F;&#x3044;</strong></li>
+</ul>
+</li>
+<li>ConcreteObserver</li>
+</ul>
+<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Observer-pattern-class-diagram.png" alt="Observer\-pattern\-class\-diagram\.png \(600&#xD7;320\)"></p>
+<h2 id="&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</h2>
+<ul>
+<li>Subject&#x306B;Observer&#x9054;&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;</li>
+<li>Observer&#x306B;update(Subject&#x306E;&#x72B6;&#x614B;&#x5909;&#x5316;&#x304C;&#x3042;&#x3063;&#x305F;&#x3053;&#x3068;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308A;&#x3001;&#x4F55;&#x304B;&#x3059;&#x308B;)&#x3092;&#x5B9F;&#x88C5;</li>
+<li>Subject&#x306E;&#x72B6;&#x614B;&#x5909;&#x5316;&#x304C;&#x3042;&#x3063;&#x305F;&#x3089;&#x3001;Observer&#x5168;&#x54E1;&#x306B;&#x51E6;&#x7406;&#x3092;&#x4FC3;&#x3059;<ul>
+<li>&#x305D;&#x306E;&#x969B;Subject&#x81EA;&#x8EAB;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x60C5;&#x5831;&#x3092;Observer&#x306B;&#x6E21;&#x3059;&#x3068;&#x3001;&#x72B6;&#x614B;&#x3054;&#x3068;&#x306E;&#x4F55;&#x304B;&#x304C;&#x3067;&#x304D;&#x3066;&#x3044;&#x3044;&#x3088;&#x306D;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
+<p>&#x4EA4;&#x63DB;&#x53EF;&#x80FD;&#x6027;</p>
+<ul>
+<li>ConcreteSubject&#x306F;Observer&#x306B;&#x306F;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x304C;ConcreteObserver&#x306B;&#x306F;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;</li>
+<li>ConcreteObserver&#x306F;Subject&#x306B;&#x306F;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x304C;ConcreteSubject&#x306B;&#x306F;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;</li>
+</ul>
+<h2 id="&#x95A2;&#x9023;">&#x95A2;&#x9023;</h2>
+<ul>
+<li>Meditator<ul>
+<li>&#x5171;&#x901A;&#x70B9;: &#x8907;&#x6570;&#x306E;&#x5BFE;&#x8C61;&#x306B;&#x72B6;&#x614B;&#x5909;&#x5316;&#x3092;&#x901A;&#x77E5;</li>
+<li>&#x76F8;&#x9055;&#x70B9;(&#x76EE;&#x7684;&#x306E;&#x9055;&#x3044;)<ul>
+<li>Mediator: <strong>&#x51E6;&#x7406;&#x3092;&#x4E2D;&#x592E;&#x5316;</strong>&#x3059;&#x308B;</li>
+<li>Observer: &#x500B;&#x3005;&#x306B;&#x72B6;&#x614B;&#x5909;&#x5316;&#x3092;&#x901A;&#x77E5;&#x3057;&#x3066;<strong>&#x540C;&#x671F;&#x3092;&#x53D6;&#x308B;</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h2>
+<h3 id="php">PHP</h3>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-number">1</span>);
 
@@ -556,13 +605,14 @@ ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class
  */</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Radio</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">ISubject</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Radio</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ISubject</span>
 </span>{
   <span class="hljs-comment">// &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x5168;&#x54E1;</span>
   <span class="hljs-keyword">private</span> $observers = <span class="hljs-keyword">array</span>();
 
 
   <span class="hljs-comment">/**
+   * add
    * &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306E;&#x300C;&#x8996;&#x8074;&#x5951;&#x7D04;&#x300D;
    */</span>
   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">($observer)</span>
@@ -571,17 +621,23 @@ ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class
   }
 
   <span class="hljs-comment">/**
+   * remove
    * &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306E;&#x300C;&#x8996;&#x8074;&#x89E3;&#x7D04;&#x300D;
    */</span>
   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">($observer)</span>
   </span>{
     <span class="hljs-keyword">foreach</span> ($this-&gt;observers <span class="hljs-keyword">as</span> $obs) {
       <span class="hljs-keyword">if</span> ($observer != $obs) {
-        $this-&gt;observers[] = $obs; <span class="hljs-comment">//observer&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x3066;&#x308B;&#x306E;&#x304B;&#xFF1F;&#x3053;&#x308C;&#x52D5;&#x304F;&#x306E;&#xFF1F;</span>
+        $this-&gt;observers[] = $obs;
+        <span class="hljs-comment">//&#x5408;&#x81F4;&#x3057;&#x305F;&#x8981;&#x7D20;&#x3092;&#x524A;&#x9664;</span>
       }
     }
   }
 
+<span class="hljs-comment">/**
+ * notify
+ * &#x81EA;&#x8EAB;&#x306E;&#x72B6;&#x614B;&#x5909;&#x5316;&#x3092;&#x901A;&#x77E5;&#x3059;&#x308B;
+ */</span>
   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">notify</span><span class="hljs-params">($e)</span>
   </span>{
     <span class="hljs-keyword">foreach</span> ($this-&gt;observers <span class="hljs-keyword">as</span> $obs) {
@@ -589,10 +645,19 @@ ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class
     }
   }
 
+<span class="hljs-comment">/**
+ * 
+ * &#x300C;&#x97F3;&#x697D;&#x3092;&#x304B;&#x3051;&#x308B;&#x300D;&#x3068;&#x3044;&#x3046;&#x72B6;&#x614B;&#x5909;&#x5316;
+ */</span>
   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">broadCast</span><span class="hljs-params">($music)</span>
   </span>{
     $this-&gt;notify($music);
   }
+
+
+  <span class="hljs-comment">/**
+   * &#x300C;&#x30C8;&#x30FC;&#x30AF;&#x3059;&#x308B;&#x300D;&#x72B6;&#x614B;&#x5909;&#x5316;
+   */</span>
   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">talk</span><span class="hljs-params">()</span>
   </span>{
     $this-&gt;notify(<span class="hljs-string">&quot;DJ&#x306E;&#x558B;&#x308A;&quot;</span>);
@@ -605,7 +670,7 @@ ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class
  */</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Listenter</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">IObserver</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Listenter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IObserver</span>
 </span>{
   <span class="hljs-keyword">private</span> $name;
 
@@ -620,14 +685,17 @@ ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class
   }
 }
 
-
 $radio = <span class="hljs-keyword">new</span> Radio();
-$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Larry&quot;</span>));
-$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Gates&quot;</span>));
-$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Jobs&quot;</span>));
+$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;flat&quot;</span>));
+$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Macchie&quot;</span>));
+$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Rij&quot;</span>));
 $radio-&gt;broadCast(<span class="hljs-string">&quot;SHIELD TRIGGER! ~&#x30AF;&#x30ED;&#x30C3;&#x30AF;8&#x679A;~&quot;</span>);
 $radio-&gt;talk();
 </code></pre>
+<h2 id="&#x6240;&#x611F;">&#x6240;&#x611F;</h2>
+<p>&#x4E0A;&#x306E;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;&#x9055;&#x548C;&#x611F;</p>
+<p>&#x666E;&#x901A;&#x30E9;&#x30B8;&#x30AA;&#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306F;&#x81EA;&#x5206;&#x306E;&#x805E;&#x3044;&#x3066;&#x3044;&#x308B;&#x30E9;&#x30B8;&#x30AA;&#x306E;&#x5185;&#x5BB9;&#x306F;&#x308F;&#x304B;&#x308B;&#x304C;&#x3001;&#x30E9;&#x30B8;&#x30AA;&#x30D1;&#x30FC;&#x30BD;&#x30CA;&#x30EA;&#x30C6;&#x30A3;&#x306F;&#x81EA;&#x5206;&#x3092;&#x805E;&#x3044;&#x3066;&#x3044;&#x308B;&#x30E9;&#x30B8;&#x30AA;&#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x3092;&#x628A;&#x63E1;&#x3057;&#x306A;&#x3044;&#x3060;&#x308D;&#x3046;</p>
+<p>&#x3064;&#x307E;&#x308A;&#x3001;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x9006;&#x3060;&#x308D;&#x3046;&#x3002;</p>
 
                                 
                                 </section>
@@ -671,7 +739,7 @@ $radio-&gt;talk();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Observer","level":"1.2.8","depth":2,"next":{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},"previous":{"title":"Memento","level":"1.2.7","depth":2,"path":"docs/振る舞いに関するパターン/memento.md","ref":"docs/振る舞いに関するパターン/memento.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/observer.md","mtime":"2020-05-15T22:49:14.288Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T00:36:22.092Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Observer","level":"1.2.8","depth":2,"next":{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},"previous":{"title":"Memento","level":"1.2.7","depth":2,"path":"docs/振る舞いに関するパターン/memento.md","ref":"docs/振る舞いに関するパターン/memento.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/observer.md","mtime":"2020-05-17T01:32:37.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T01:32:48.728Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
