@@ -1,6 +1,13 @@
 {
   "title": "デザインパターンお勉強",
   "description": "This is design pattern study site",
-  "plugins": ["-sharing", "hide-published-with", "copy-code-button", "navigator", "page-treeview", "intopic-toc", "back-to-top-button", "expand-active-chapter", "collapsible-chapters"],
-  "language": "ja"
+  "plugins": ["sunlight-highlighter", "-highlight", "-sharing", "include-codeblock", "hide-published-with", "navigator", "page-treeview", "intopic-toc", "back-to-top-button", "expand-active-chapter", "collapsible-chapters", "copy-code-button"],
+  "language": "ja",
+  "pluginsConfig": {
+    "page-treeview": {
+      "copyright": "",
+      "minHeaderCount": "2",
+      "minHeaderDeep": "2"
+    }
+  }
 }
