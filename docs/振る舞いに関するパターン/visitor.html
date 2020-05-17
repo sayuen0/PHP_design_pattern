@@ -218,9 +218,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="state.html">
+        <li class="chapter " data-level="1.2.9" data-path="state.md">
             
-                <a href="state.html">
+                <span>
             
                     
                     State
@@ -502,8 +502,38 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="visitor&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Visitor&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
+<blockquote>
+<p><strong>&#x69CB;&#x9020;&#x3092;&#x6E21;&#x308A;&#x6B69;&#x304D;&#x306A;&#x304C;&#x3089;&#x4ED5;&#x4E8B;&#x3092;&#x3059;&#x308B;</strong></p>
+</blockquote>
 <h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
-<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+<p>&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x3068;&#x51E6;&#x7406;&#x3092;&#x5206;&#x96E2;</p>
+<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
+<ul>
+<li>Visitor: ConcreteElement&#x3054;&#x3068;&#x8A2A;&#x554F;&#x3059;&#x308B;visit&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5BA3;&#x8A00;&#x3059;&#x308B;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;</li>
+<li>ConcreteVisitor: Visitor&#x3092;&#x5B9F;&#x88C5;</li>
+<li>Element:Visitor&#x306E;&#x8A2A;&#x554F;&#x5148;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;<ul>
+<li>Visitor&#x3092;&#x5F15;&#x6570;&#x306B;&#x3082;&#x3061;&#x53D7;&#x3051;&#x5165;&#x308C;&#x308B;accept&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3064;</li>
+</ul>
+</li>
+<li>ConcreteElement:Element&#x3092;&#x5B9F;&#x88C5;</li>
+<li>ObjectStructure: Element&#x306E;&#x96C6;&#x5408;</li>
+</ul>
+<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/VisitorClassDiagram.png" alt="VisitorClassDiagram\.png \(523&#xD7;393\)"></p>
+<h2 id="&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</h2>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
+<ul>
+<li>&#x90E8;&#x54C1;&#x3068;&#x3057;&#x3066;&#x306E;&#x72EC;&#x7ACB;&#x6027;&#x304C;&#x9AD8;&#x307E;&#x308B;<ul>
+<li>&#x5404;ConcreteElement&#x306B;&#x51E6;&#x7406;&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x306A;&#x3044;</li>
+</ul>
+</li>
+<li>&#x5168;&#x8981;&#x7D20;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x65B0;&#x3057;&#x3044;&#x51E6;&#x7406;&#x306E;&#x8FFD;&#x52A0;&#x304C;&#x7C21;&#x5358; <ul>
+<li>ConcreteVisitor&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308C;&#x3070;&#x3044;&#x3044;&#x3060;&#x3051;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h2>
+<h3 id="php">PHP</h3>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-comment">/**
@@ -531,7 +561,7 @@
 
 
 <span class="hljs-comment">/**
- * &#x8A2A;&#x554F;&#x8005;
+ * Visitor
  */</span>
 
 
@@ -542,6 +572,7 @@
 
 
 <span class="hljs-comment">/***
+ * Element
  * &#x8A2A;&#x554F;&#x8005;&#x3092;&#x53D7;&#x3051;&#x5165;&#x308C;&#x308B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3060;&#x3051;&#x7528;&#x610F;&#x3059;&#x308B;
  */</span>
 
@@ -552,12 +583,11 @@
 
 
 <span class="hljs-comment">/**
+ * ConcreteVisitor
  * &#x5177;&#x4F53;&#x7684;&#x306A;&#x8A2A;&#x554F;&#x8005;&#x306E;&#x30D3;&#x30B8;&#x30CD;&#x30B9;&#x30DE;&#x30F3;&#x3067;
  * &#x8272;&#x3005;&#x306A;&#x4F1A;&#x793E;&#x306E;&#x8272;&#x3005;&#x306A;&#x90E8;&#x7F72;&#x3092;&#x8A2A;&#x554F;
  */</span>
-
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BusinessMan</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Visitor</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BusinessMan</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Visitor</span>
 </span>{
   <span class="hljs-comment">/**
    * php&#x3067;&#x306F;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30ED;&#x30FC;&#x30C9;&#x304C;&#x306A;&#x3044;&#x306E;&#x3067;
@@ -573,6 +603,7 @@
 
   <span class="hljs-comment">/**
    * &#x30E9;&#x30B8;&#x30AA;&#x5C40;&#x305D;&#x306E;&#x3082;&#x306E;&#x306B;&#x8A2A;&#x554F;&#x3057;&#x305F;&#x3068;&#x304D;
+   * &#x6B21;&#x306E;&#x5834;&#x6240;&#x306B;&#x8A2A;&#x308C;&#x308B;
    *
    * <span class="hljs-doctag">@param</span> [type] $acceptor
    * <span class="hljs-doctag">@return</span> void
@@ -594,11 +625,12 @@
 
 
 <span class="hljs-comment">/**
+ * ConcreteElement
  * &#x30E9;&#x30B8;&#x30AA;&#x5C40;
  * visitor&#x3092;&#x53D7;&#x3051;&#x5165;&#x308C;&#x308B;
  */</span>
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RadioStation</span>   <span class="hljs-keyword">implements</span> <span class="hljs-title">Element</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RadioStation</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Element</span>
 </span>{
   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span><span class="hljs-params">()</span>
   </span>{
@@ -618,12 +650,9 @@
 
 
 <span class="hljs-comment">/**
+ * ConcreteElement
  * &#x30E9;&#x30B8;&#x30AA;&#x5C40;&#x306E;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x756A;&#x7D44;&#x3076;
  */</span>
-
-
-
-
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RadioStation_News</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">Element</span>
 </span>{
 
@@ -681,7 +710,7 @@ $radio-&gt;accept(<span class="hljs-keyword">new</span> BusinessMan());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Visitor","level":"1.2.11","depth":2,"next":{"title":"構造に関するパターン","level":"1.3","depth":1,"ref":"","articles":[{"title":"Adapter","level":"1.3.1","depth":2,"path":"docs/構造に関するパターン/adapter.md","ref":"docs/構造に関するパターン/adapter.md","articles":[]},{"title":"Bridge","level":"1.3.2","depth":2,"path":"docs/構造に関するパターン/bridge.md","ref":"docs/構造に関するパターン/bridge.md","articles":[]},{"title":"Composite","level":"1.3.3","depth":2,"path":"docs/構造に関するパターン/composite.md","ref":"docs/構造に関するパターン/composite.md","articles":[]},{"title":"Decorator","level":"1.3.4","depth":2,"path":"docs/構造に関するパターン/decorator.md","ref":"docs/構造に関するパターン/decorator.md","articles":[]},{"title":"Facade","level":"1.3.5","depth":2,"path":"docs/構造に関するパターン/facade.md","ref":"docs/構造に関するパターン/facade.md","articles":[]},{"title":"Flyweight","level":"1.3.6","depth":2,"path":"docs/構造に関するパターン/flyweight.md","ref":"docs/構造に関するパターン/flyweight.md","articles":[]},{"title":"Proxy","level":"1.3.7","depth":2,"path":"docs/構造に関するパターン/proxy.md","ref":"docs/構造に関するパターン/proxy.md","articles":[]}]},"previous":{"title":"Template Method","level":"1.2.10","depth":2,"path":"docs/振る舞いに関するパターン/templateMethod.md","ref":"docs/振る舞いに関するパターン/templateMethod.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/visitor.md","mtime":"2020-05-15T22:49:14.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-16T14:37:45.846Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Visitor","level":"1.2.11","depth":2,"next":{"title":"構造に関するパターン","level":"1.3","depth":1,"ref":"","articles":[{"title":"Adapter","level":"1.3.1","depth":2,"path":"docs/構造に関するパターン/adapter.md","ref":"docs/構造に関するパターン/adapter.md","articles":[]},{"title":"Bridge","level":"1.3.2","depth":2,"path":"docs/構造に関するパターン/bridge.md","ref":"docs/構造に関するパターン/bridge.md","articles":[]},{"title":"Composite","level":"1.3.3","depth":2,"path":"docs/構造に関するパターン/composite.md","ref":"docs/構造に関するパターン/composite.md","articles":[]},{"title":"Decorator","level":"1.3.4","depth":2,"path":"docs/構造に関するパターン/decorator.md","ref":"docs/構造に関するパターン/decorator.md","articles":[]},{"title":"Facade","level":"1.3.5","depth":2,"path":"docs/構造に関するパターン/facade.md","ref":"docs/構造に関するパターン/facade.md","articles":[]},{"title":"Flyweight","level":"1.3.6","depth":2,"path":"docs/構造に関するパターン/flyweight.md","ref":"docs/構造に関するパターン/flyweight.md","articles":[]},{"title":"Proxy","level":"1.3.7","depth":2,"path":"docs/構造に関するパターン/proxy.md","ref":"docs/構造に関するパターン/proxy.md","articles":[]}]},"previous":{"title":"Template Method","level":"1.2.10","depth":2,"path":"docs/振る舞いに関するパターン/templateMethod.md","ref":"docs/振る舞いに関するパターン/templateMethod.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/visitor.md","mtime":"2020-05-17T00:10:28.492Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T00:36:22.092Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

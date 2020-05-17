@@ -220,9 +220,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="state.html">
+        <li class="chapter " data-level="1.2.9" data-path="state.md">
             
-                <a href="state.html">
+                <span>
             
                     
                     State
@@ -503,7 +503,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
+                                <h1 id="chain-of-responsibility">Chain Of Responsibility</h1>
+<blockquote>
+<p><strong>&#x8CAC;&#x4EFB;&#x306E;&#x305F;&#x3089;&#x3044;&#x56DE;&#x3057;</strong></p>
+</blockquote>
+<h2 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h2>
+<p>&#x8907;&#x6570;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x9396;&#x7E4B;&#x304E;&#x3057;&#x3066;&#x3001;&#x305D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x9396;&#x3092;&#x9806;&#x6B21;&#x6E21;&#x308A;&#x6B69;&#x3044;&#x3066;&#x76EE;&#x7684;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x6C7A;&#x5B9A;&#x3059;&#x308B;</p>
+<h2 id="&#x767B;&#x5834;&#x4EBA;&#x7269;">&#x767B;&#x5834;&#x4EBA;&#x7269;</h2>
+<ul>
+<li>Handler: &#x8981;&#x6C42;&#x3092;&#x51E6;&#x7406;&#x3059;&#x308B;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;<ul>
+<li><strong>&#x6B21;&#x306E;Handler&#x3092;&#x6301;&#x3064;</strong></li>
+<li>&#x8981;&#x6C42;&#x304C;&#x98F2;&#x3081;&#x306A;&#x3044;&#x3068;&#x304D;<strong>&#x6B21;&#x306E;Handler&#x306B;&#x51E6;&#x7406;&#x3092;&#x6295;&#x3052;&#x308B;</strong></li>
+</ul>
+</li>
+<li>ConcreteHandler(Resolver): &#x8981;&#x6C42;&#x51E6;&#x7406;&#x3092;&#x5B9F;&#x88C5;</li>
+<li>Client(Sender): ConcreteHandler&#x306B;&#x8981;&#x6C42;&#x3092;&#x51FA;&#x3059;</li>
+</ul>
+<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;(&amp;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;)</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/W3sDesign_Chain_of_Responsibility_Design_Pattern_UML.jpg" alt="W3sDesign\_Chain\_of\_Responsibility\_Design\_Pattern\_UML\.jpg \(700&#xD7;240\)"></p>
+<h2 id="&#x3084;&#x308A;&#x65B9;">&#x3084;&#x308A;&#x65B9;</h2>
+<ul>
+<li>ConcreteHandler&#x306B;&#x89E3;&#x6C7A;&#x6761;&#x4EF6;&#x30FB;&#x89E3;&#x6C7A;&#x3067;&#x304D;&#x306A;&#x3044;&#x3068;&#x304D;&#x6B21;&#x306B;&#x6E21;&#x3059;Hanlder&#x3001;&#x89E3;&#x6C7A;&#x51E6;&#x7406;&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;</li>
+<li>Client&#x306F;&#x6700;&#x521D;&#x306E;ConcreteHandler&#x306B;&#x5BFE;&#x3057;&#x3066;&#x4E00;&#x5EA6;&#x3060;&#x3051;&#x8981;&#x6C42;&#x3092;&#x6295;&#x3052;&#x308B;</li>
+</ul>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x7528;&#x9014;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</h2>
+<ul>
+<li>&#x300C;&#x8AB0;&#x304B;&#x304C;&#x89E3;&#x6C7A;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;&#x300D;<ul>
+<li>&#x8981;&#x6C42;&#x8005;&#x3067;&#x3042;&#x308B;Client&#x304C;&#x89E3;&#x6C7A;&#x8005;&#x3092;&#x77E5;&#x3063;&#x3066;&#x3044;&#x308B;(&#x89E3;&#x6C7A;&#x8005;&#x306B;&#x4F9D;&#x5B58;&#x3059;&#x308B;)&#x306E;&#x306F;&#x3088;&#x304F;&#x306A;&#x3044;&#x304C;&#x3001;&#x305F;&#x3089;&#x3044;&#x56DE;&#x3057;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x4F9D;&#x5B58;&#x3092;&#x89E3;&#x6D88;&#x3067;&#x304D;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h2>
+<h3 id="php">PHP</h3>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);
 error_reporting(E_ALL);
@@ -549,11 +580,11 @@ error_reporting(E_ALL);
 }
 
 
-<span class="hljs-comment">// /**</span>
-<span class="hljs-comment">//  * &#x5192;&#x967A;&#x8005;&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;</span>
-<span class="hljs-comment">//  * &#x81EA;&#x5206;&#x3067;&#x306F;&#x30C0;&#x30F3;&#x30B8;&#x30E7;&#x30F3;&#x3092;&#x30AF;&#x30EA;&#x30A2;&#x3067;&#x304D;&#x306A;&#x3044;&#x3068;&#x304D;&#x306E;&#x305F;&#x3081;&#x306B;&#x6B21;&#x306E;&#x5192;&#x967A;&#x8005;&#x3092;&#x4FDD;&#x6301;</span>
-<span class="hljs-comment">//  * </span>
-<span class="hljs-comment">//  */</span>
+<span class="hljs-comment">/**
+ * &#x5192;&#x967A;&#x8005;&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;
+ * &#x81EA;&#x5206;&#x3067;&#x306F;&#x30C0;&#x30F3;&#x30B8;&#x30E7;&#x30F3;&#x3092;&#x30AF;&#x30EA;&#x30A2;&#x3067;&#x304D;&#x306A;&#x3044;&#x3068;&#x304D;&#x306E;&#x305F;&#x3081;&#x306B;&#x6B21;&#x306E;&#x5192;&#x967A;&#x8005;&#x3092;&#x4FDD;&#x6301;
+ *
+ */</span>
 
 <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adventurer</span>
 </span>{
@@ -652,6 +683,9 @@ error_reporting(E_ALL);
     $this-&gt;level  = $level;
   }
 
+<span class="hljs-comment">/**
+ * Lv.20&#x672A;&#x6E80;&#x304B;&#x3064;&#x81EA;&#x8EAB;&#x306E;&#x30EC;&#x30D9;&#x30EB;&#x672A;&#x6E80;&#x306E;&#x30C0;&#x30F3;&#x30B8;&#x30E7;&#x30F3;&#x306A;&#x3089;&#x30AF;&#x30EA;&#x30A2;&#x3067;&#x304D;&#x308B;
+*/</span>
   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canClear</span><span class="hljs-params">(Dungeon $dungeon)</span>
   </span>{
     <span class="hljs-keyword">return</span> (<span class="hljs-number">20</span> &gt; $dungeon-&gt;getLevel() &amp;&amp; $dungeon-&gt;getLevel() &lt; $this-&gt;level);
@@ -730,8 +764,9 @@ $beginner-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span clas
 $beginerB = <span class="hljs-keyword">new</span> Beginner(<span class="hljs-string">&quot;&#x521D;&#x5FC3;&#x8005;B&quot;</span>, <span class="hljs-number">5</span>);
 $interB = <span class="hljs-keyword">new</span> Intermediate(<span class="hljs-string">&quot;&#x4E2D;&#x7D1A;&#x8005;B&quot;</span>, <span class="hljs-number">24</span>);
 $expertB = <span class="hljs-keyword">new</span> Expert(<span class="hljs-string">&quot;&#x4E0A;&#x7D1A;&#x8005;B&quot;</span>);
-
 $expertB-&gt;setNext($beginerB)-&gt;setNext($interB);
+
+<span class="hljs-comment">//&#x307E;&#x3042;&#x666E;&#x901A;&#x306B;&#x8003;&#x3048;&#x3066;&#x4E0A;&#x7D1A;&#x8005;&#x304C;&#x30AF;&#x30EA;&#x30A2;&#x3067;&#x304D;&#x306A;&#x3044;&#x30C0;&#x30F3;&#x30B8;&#x30E7;&#x30F3;&#x3092;&#x4E0B;&#x4F4D;&#x306E;&#x5192;&#x967A;&#x8005;&#x304C;&#x30AF;&#x30EA;&#x30A2;&#x3067;&#x304D;&#x308B;&#x308F;&#x3051;&#x306A;&#x3044;&#x3093;&#x3060;&#x3051;&#x3069;&#x306A;</span>
 $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class="hljs-number">15</span>));
 $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class="hljs-number">4</span>));
 $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class="hljs-number">60</span>));
@@ -780,7 +815,7 @@ $expertB-&gt;challenge(<span class="hljs-keyword">new</span> Dungeon(<span class
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"COR","level":"1.2.2","depth":2,"next":{"title":"DI","level":"1.2.3","depth":2,"path":"docs/振る舞いに関するパターン/DI.md","ref":"docs/振る舞いに関するパターン/DI.md","articles":[]},"previous":{"title":"Command","level":"1.2.1","depth":2,"path":"docs/振る舞いに関するパターン/command.md","ref":"docs/振る舞いに関するパターン/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/COR.md","mtime":"2020-05-15T22:49:14.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-16T14:37:45.846Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"COR","level":"1.2.2","depth":2,"next":{"title":"DI","level":"1.2.3","depth":2,"path":"docs/振る舞いに関するパターン/DI.md","ref":"docs/振る舞いに関するパターン/DI.md","articles":[]},"previous":{"title":"Command","level":"1.2.1","depth":2,"path":"docs/振る舞いに関するパターン/command.md","ref":"docs/振る舞いに関するパターン/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/振る舞いに関するパターン/COR.md","mtime":"2020-05-17T00:34:45.149Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T00:36:22.092Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
