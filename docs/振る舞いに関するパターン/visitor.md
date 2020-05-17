@@ -5,10 +5,36 @@
 
 ## 概要
 
-データ構造と処理を分離して
+データ構造と処理を分離
+
+## 登場人物
+
+- Visitor: ConcreteElementごと訪問するvisitメソッドを宣言するインタフェース
+- ConcreteVisitor: Visitorを実装
+- Element:Visitorの訪問先インタフェース
+  - Visitorを引数にもち受け入れるacceptメソッドを持つ
+- ConcreteElement:Elementを実装
+- ObjectStructure: Elementの集合
 
 
-# ソース
+## クラス図
+
+![VisitorClassDiagram\.png \(523×393\)](https://upload.wikimedia.org/wikipedia/commons/8/8d/VisitorClassDiagram.png)
+
+
+## やり方
+
+## メリット(用途)
+
+- 部品としての独立性が高まる
+  - 各ConcreteElementに処理を持たせる必要がない
+- 全要素に対する新しい処理の追加が簡単 
+  - ConcreteVisitorを追加すればいいだけ
+
+
+## ソース
+
+### PHP
 
 ```php
 <?php
@@ -38,7 +64,7 @@
 
 
 /**
- * 訪問者
+ * Visitor
  */
 
 
@@ -49,6 +75,7 @@ interface Visitor
 
 
 /***
+ * Element
  * 訪問者を受け入れるメソッドだけ用意する
  */
 
@@ -59,12 +86,11 @@ interface Element
 
 
 /**
+ * ConcreteVisitor
  * 具体的な訪問者のビジネスマンで
  * 色々な会社の色々な部署を訪問
  */
-
-
-class BusinessMan  implements Visitor
+class BusinessMan implements Visitor
 {
   /**
    * phpではオーバーロードがないので
@@ -80,6 +106,7 @@ class BusinessMan  implements Visitor
 
   /**
    * ラジオ局そのものに訪問したとき
+   * 次の場所に訪れる
    *
    * @param [type] $acceptor
    * @return void
@@ -101,11 +128,12 @@ class BusinessMan  implements Visitor
 
 
 /**
+ * ConcreteElement
  * ラジオ局
  * visitorを受け入れる
  */
 
-class RadioStation   implements Element
+class RadioStation implements Element
 {
   public function __toString()
   {
@@ -125,12 +153,9 @@ class RadioStation   implements Element
 
 
 /**
+ * ConcreteElement
  * ラジオ局のニュース番組ぶ
  */
-
-
-
-
 class RadioStation_News  implements Element
 {
 
