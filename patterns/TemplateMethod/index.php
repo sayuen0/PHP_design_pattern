@@ -276,7 +276,3 @@ echo $user->name;
 // $_SESSION = $this->getSession();
 
 // 大事なのは、doActionとすればvalidateしてdomainが呼び出されることが共通化されている点。
-
-?>
-
-<a href="/docs/templateMethod.md">説明へ</a>
