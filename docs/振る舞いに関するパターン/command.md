@@ -1,18 +1,30 @@
 # Commandパターン
 
-
-```sql
-SELECT * FROM users
-```
+> **命令をクラスにする**
 
 
-```php
-<?php
-echo "hello world";
-?>
+## 概要
 
-<div class="container">
-```
+命令の集まりを履歴として保存して、取り消したりやり直したりできる
+
+
+
+## 登場人物
+
+- Command: インタフェース
+- ConcreteCommand
+- Reciever: Commandの命令実行対象
+- Client: ConcreteCommandを生成して、Recieverを割り当てる
+- Invoker: 命令実行開始役
+
+
+## 関連
+  
+- Composite: マクロコマンド(コマンドの集まり)も、コマンドである
+- Memento: コマンド履歴の保存に使える
+- Prototype: コマンドの複製に使える
+
+
 
 # ソース
 
@@ -73,10 +85,20 @@ class FileSystem
   }
 }
 
+/**
+ *  コマンドインタフェース
+ * 実行と取り消し
+ */
 interface ShellCommand
 {
+  /**
+   * 実行
+   */
   public function execute();
 
+/**
+ * 取り消し
+ */
   public function undo();
 }
 
@@ -119,6 +141,61 @@ class RemoveDirectoryCommand implements ShellCommand
   }
 }
 
+
+/**
+ * シェルスクリプト
+ * コマンドの集まり
+ */
+class ShellScript
+{
+  /**
+   * コマンドたち
+   */
+  public $commands  = array();
+  /**
+   * 行番号
+  */
+  private $position  = 0;
+
+// 追加
+  public function add($cmd)
+  {
+    $this->commands[] = $cmd;
+  }
+
+/**
+ * 次の行を実行
+ * @param times 実行数
+ */
+  public function next($times = 1)
+  {
+    $result = array();
+    for ($i = 0; $i < $times; $i++) {
+      $result[] = $this->commands[$this->position++]->execute();
+    }
+    return $result;
+  }
+
+/**
+ * 取り消し
+ */
+  public function undo($times = 1)
+  {
+    $result = array();
+    for ($i = 0; $i < $times; $i++) {
+      $result[] = $this->commands[--$this->position]->undo();
+    }
+    return $result;
+  }
+
+/**
+ * 全部実行
+ */
+  public function run()
+  {
+    return $this->next(count($this->commands) - $this->position);
+  }
+}
 ```
 
 

@@ -2,7 +2,6 @@
 
 > **抽象的な部品を組み合わせて抽象的な製品を作る**
 
-//TODO: [#2](https://github.com/sayuen0/design-pattern-study/issues/2)
 //TODO: [#1](https://github.com/sayuen0/design-pattern-study/issues/1)
 
 
