@@ -1,12 +1,35 @@
 # Mediatorパターン
 
+> **相手は相談役一人だけ**
 
 ## 概要
 
-Mediator:調停者に全て投げる
+Mediator:調停者(相談役)に全て投げる
+
+相談役は各人からの要求をすべて受け取り、各人に指示を出す
+
+ただし相談役は仕事の詳細についてはとやかく言わない
+
+## 登場人物
+
+- Mediator: 相談役。Colleagueに指示を出すインタフェース
+- ConcreteMediator
+- Colleage: 仕事をするインタフェース
+- ConcreteColleage
+
+## クラス図
+
+![Mediator\_design\_pattern\.png \(634×192\)](https://upload.wikimedia.org/wikipedia/commons/e/e4/Mediator_design_pattern.png)
+
+## やり方
 
 
-## メリット
+
+
+## メリット(用途)
+
+- お互いがお互いをコントロールしようとして依存し合う状況を解消できる
+- 
 
 ### 疎結合の実現
 
