@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
@@ -38,10 +42,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -525,7 +525,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+                                <div class="treeview__container"><ul>
 <li><div><a href="#adapter">Adapter</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x76EE;&#x7684;">&#x76EE;&#x7684;</a><i></i></div></li>
@@ -585,138 +585,138 @@
 <p>&#x305F;&#x3060;&#x3057;Decorator&#x306E;&#x76EE;&#x7684;&#x306F;&#x300C;&#x672C;&#x6765;&#x306E;&#x6A5F;&#x80FD;&#x306E;&#x62E1;&#x5F35;&#x300D;&#x3002;&#x610F;&#x5473;&#x5408;&#x3044;&#x306F;&#x300C;&#x53F3;&#x3068;&#x5DE6;&#x306E;&#x7AEF;&#x5B50;&#x304C;&#x3042;&#x3063;&#x3066;&#x3044;&#x308B;&#x3068;&#x3053;&#x308D;&#x306B;&#x3001;&#x540C;&#x3058;&#x304F;&#x7AEF;&#x5B50;&#x306E;&#x3042;&#x3046;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x4E2D;&#x9593;&#x88C5;&#x7F6E;&#x3092;&#x304B;&#x307E;&#x3059;&#x300D;</p>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
 <h2 id="PHP">6. PHP</h2>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-openTag">&lt;?php</span>
 
-<span class="hljs-comment">/**
- * ;&#x7D99;&#x627F;&#x306B;&#x3088;&#x308B;Adapter
- */</span>
-
-
-<span class="hljs-comment">/**
- * &#x30D1;&#x30A4;&#x76BF;
- * MakePie&#x3092;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x3051;&#x308C;&#x3069;&#x3082;&#x3001;
- * &#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x304C;&#x601D;&#x60D1;&#x3068;&#x305A;&#x308C;&#x308B;
- * cookPie&#x3068;&#x3044;&#x3046;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3067;&#x30D1;&#x30A4;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x3044;
- */</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PieDish</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MakePie</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x30D1;&#x30A4;&#x3092;&#x4F5C;&#x308B;&quot;</span>;
-  }
-}
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;;&#x7D99;&#x627F;&#x306B;&#x3088;&#x308B;Adapter
+&#xA0;*/</span>
 
 
-<span class="hljs-comment">// cookPie&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3064;&#x30A2;&#x30C0;&#x30D7;&#x30BF;&#x30FC;</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Adapter</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cookPie</span><span class="hljs-params">()</span></span>;
-}
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30D1;&#x30A4;&#x76BF;
+&#xA0;*&#xA0;MakePie&#x3092;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x3051;&#x308C;&#x3069;&#x3082;&#x3001;
+&#xA0;*&#xA0;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x304C;&#x601D;&#x60D1;&#x3068;&#x305A;&#x308C;&#x308B;
+&#xA0;*&#xA0;cookPie&#x3068;&#x3044;&#x3046;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3067;&#x30D1;&#x30A4;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x3044;
+&#xA0;*/</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">PieDish</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">MakePie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-string">&quot;&#x30D1;&#x30A4;&#x3092;&#x4F5C;&#x308B;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-
-<span class="hljs-comment">/**
- * &#x30A2;&#x30C0;&#x30D7;&#x30BF;&#x3092;&#x9069;&#x7528;&#x3055;&#x305B;&#x305F;&#x65B0;&#x3057;&#x3044;&#x30D1;&#x30A4;&#x76BF;
- */</span>
-
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PieDishWithAdapter</span>  <span class="hljs-keyword">extends</span> <span class="hljs-title">PieDish</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Adapter</span>
-</span>{
-
-
-  <span class="hljs-comment">/**PieDish&#x30AF;&#x30E9;&#x30B9;&#x306E;makePie&#x3092;&#x547C;&#x3076; */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cookPie</span><span class="hljs-params">()</span>
-  </span>{
-    $this-&gt;makePie();
-  }
-}
-
-
-$pieDish = <span class="hljs-keyword">new</span> PieDishWithAdapter();
-$pieDish-&gt;cookPie();
+<span class="sunlight-comment">//&#xA0;cookPie&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3064;&#x30A2;&#x30C0;&#x30D7;&#x30BF;&#x30FC;</span>
+<span class="sunlight-keyword">interface</span>&#xA0;<span class="sunlight-named-ident">Adapter</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">cookPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
 
 
 
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30A2;&#x30C0;&#x30D7;&#x30BF;&#x3092;&#x9069;&#x7528;&#x3055;&#x305B;&#x305F;&#x65B0;&#x3057;&#x3044;&#x30D1;&#x30A4;&#x76BF;
+&#xA0;*/</span>
 
 
-<span class="hljs-comment">/**
- * &#x59D4;&#x8B72;&#x306B;&#x3088;&#x308B;&#x30A2;&#x30C0;&#x30D7;&#x30BF;&#x30FC;
- */</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">PieDishWithAdapter</span>&#xA0;&#xA0;<span class="sunlight-keyword">extends</span>&#xA0;<span class="sunlight-named-ident">PieDish</span>&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">Adapter</span>
+<span class="sunlight-punctuation">{</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PieDish2</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makePie</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x30D1;&#x30A4;&#x3092;&#x4F5C;&#x308B;&quot;</span>;
-  }
-}
-
-<span class="hljs-comment">/**
- * &#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3067;&#x306A;&#x304F;abstract class
- */</span>
+&#xA0;&#xA0;<span class="sunlight-comment">/**PieDish&#x30AF;&#x30E9;&#x30B9;&#x306E;makePie&#x3092;&#x547C;&#x3076;&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">cookPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">makePie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adapter2</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cookPie</span><span class="hljs-params">()</span></span>;
-}
-
-
-<span class="hljs-comment">/**
- * &#x5148;&#x307B;&#x3069;&#x306E;&#x7D99;&#x627F;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3068;&#x540C;&#x69D8;&#x306B;
- * &#x5143;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x5909;&#x66F4;&#x305B;&#x305A;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;cookPie&#x306B;&#x9069;&#x5408;&#x3055;&#x305B;&#x308B;
- */</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PieDishWithAdapter2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter2</span>
-</span>{
-  <span class="hljs-keyword">private</span> $target;
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($target)</span>
-  </span>{
-    $this-&gt;target = $target;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cookPie</span><span class="hljs-params">()</span>
-  </span>{
-    $this-&gt;target-&gt;makePie();
-  }
-}
-
-$pieDish2 = <span class="hljs-keyword">new</span> PieDishWithAdapter2(<span class="hljs-keyword">new</span> PieDish2());
-$pieDish2-&gt;cookPie();
+<span class="sunlight-variable">$pieDish</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">PieDishWithAdapter</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$pieDish</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">cookPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
 
 
 
-<span class="hljs-comment">// &#x3053;&#x308C;&#x307E;&#x3067;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3082;&#x3044;&#x3044;&#x306E;&#x3060;&#x304C;&#x3001;</span>
-<span class="hljs-comment">// adapter&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x306E;&#x771F;&#x9AA8;&#x9802;&#x306F;&#x3053;&#x3053;&#x304B;&#x3089;</span>
-<span class="hljs-comment">// &#x30AA;&#x30FC;&#x30D6;&#x30F3;&#x306F;Adapter&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3057;&#x304B;&#x53D7;&#x3051;&#x4ED8;&#x3051;&#x306A;&#x3044;</span>
-<span class="hljs-comment">// &#x5143;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x307E;&#x307E;&#x3060;&#x3068;&#x713C;&#x3051;&#x306A;&#x3044;&#x3068;&#x3053;&#x308D;&#x3092;</span>
-<span class="hljs-comment">// &#x5143;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x4F55;&#x3082;&#x624B;&#x3092;&#x5165;&#x308C;&#x305A;&#x30AA;&#x30FC;&#x30D6;&#x30F3;&#x3067;&#x713C;&#x3051;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x305F;</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x59D4;&#x8B72;&#x306B;&#x3088;&#x308B;&#x30A2;&#x30C0;&#x30D7;&#x30BF;&#x30FC;
+&#xA0;*/</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Oven</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bake</span><span class="hljs-params">(Adapter $adapter)</span>
-  </span>{
-    $adapter-&gt;cookPie();
-  }
-}
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">PieDish2</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">makePie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-string">&quot;&#x30D1;&#x30A4;&#x3092;&#x4F5C;&#x308B;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3067;&#x306A;&#x304F;abstract&#xA0;class
+&#xA0;*/</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Oven2</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bake</span><span class="hljs-params">(Adapter2 $adapter2)</span>
-  </span>{
-    $adapter2-&gt;cookPie();
-  }
-}
+<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">Adapter2</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">cookPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
 
 
-Oven::bake(<span class="hljs-keyword">new</span> PieDishWithAdapter());
-Oven2::bake(<span class="hljs-keyword">new</span> PieDishWithAdapter2(<span class="hljs-keyword">new</span> PieDish2()));
-</code></pre>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x5148;&#x307B;&#x3069;&#x306E;&#x7D99;&#x627F;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3068;&#x540C;&#x69D8;&#x306B;
+&#xA0;*&#xA0;&#x5143;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x5909;&#x66F4;&#x305B;&#x305A;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;cookPie&#x306B;&#x9069;&#x5408;&#x3055;&#x305B;&#x308B;
+&#xA0;*/</span>
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">PieDishWithAdapter2</span>&#xA0;<span class="sunlight-keyword">extends</span>&#xA0;<span class="sunlight-named-ident">Adapter2</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$target</span><span class="sunlight-punctuation">;</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$target</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">target</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$target</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">cookPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">target</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">makePie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-variable">$pieDish2</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">PieDishWithAdapter2</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">PieDish2</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$pieDish2</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">cookPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+
+
+
+<span class="sunlight-comment">//&#xA0;&#x3053;&#x308C;&#x307E;&#x3067;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3082;&#x3044;&#x3044;&#x306E;&#x3060;&#x304C;&#x3001;</span>
+<span class="sunlight-comment">//&#xA0;adapter&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x306E;&#x771F;&#x9AA8;&#x9802;&#x306F;&#x3053;&#x3053;&#x304B;&#x3089;</span>
+<span class="sunlight-comment">//&#xA0;&#x30AA;&#x30FC;&#x30D6;&#x30F3;&#x306F;Adapter&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3057;&#x304B;&#x53D7;&#x3051;&#x4ED8;&#x3051;&#x306A;&#x3044;</span>
+<span class="sunlight-comment">//&#xA0;&#x5143;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x307E;&#x307E;&#x3060;&#x3068;&#x713C;&#x3051;&#x306A;&#x3044;&#x3068;&#x3053;&#x308D;&#x3092;</span>
+<span class="sunlight-comment">//&#xA0;&#x5143;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x4F55;&#x3082;&#x624B;&#x3092;&#x5165;&#x308C;&#x305A;&#x30AA;&#x30FC;&#x30D6;&#x30F3;&#x3067;&#x713C;&#x3051;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x305F;</span>
+
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">Oven</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">bake</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">Adapter</span>&#xA0;<span class="sunlight-variable">$adapter</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$adapter</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">cookPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">Oven2</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">bake</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">Adapter2</span>&#xA0;<span class="sunlight-variable">$adapter2</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$adapter2</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">cookPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+
+<span class="sunlight-named-ident">Oven</span><span class="sunlight-operator">::</span><span class="sunlight-ident">bake</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">PieDishWithAdapter</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-named-ident">Oven2</span><span class="sunlight-operator">::</span><span class="sunlight-ident">bake</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">PieDishWithAdapter2</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">PieDish2</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+</span></pre></div></div></code></pre>
 <div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x76EE;&#x7684;">1. &#x76EE;&#x7684;</a></li><li><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</a></li><li><a href="#&#x3084;&#x308A;&#x65B9;">3. &#x3084;&#x308A;&#x65B9;</a></li><ul><li><a href="#1__&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x88C5;">3.1. 1. &#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x88C5;</a></li><li><a href="#2__&#x59D4;&#x8B72;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x88C5;">3.2. 2. &#x59D4;&#x8B72;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x88C5;</a></li></ul><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)">4. &#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</a></li><li><a href="#&#x4ED6;&#x3068;&#x306E;&#x95A2;&#x9023;">5. &#x4ED6;&#x3068;&#x306E;&#x95A2;&#x9023;</a></li><ul><li><a href="#Decorator">5.1. Decorator</a></li></ul><li><a href="#PHP">6. PHP</a></li></ul></div><a href="#&#x76EE;&#x7684;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
@@ -756,7 +756,7 @@ Oven2::bake(<span class="hljs-keyword">new</span> PieDishWithAdapter2(<span clas
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Adapter","level":"1.3.1","depth":2,"next":{"title":"Bridge","level":"1.3.2","depth":2,"path":"docs/構造に関するパターン/bridge.md","ref":"docs/構造に関するパターン/bridge.md","articles":[]},"previous":{"title":"構造に関するパターン","level":"1.3","depth":1,"ref":"","articles":[{"title":"Adapter","level":"1.3.1","depth":2,"path":"docs/構造に関するパターン/adapter.md","ref":"docs/構造に関するパターン/adapter.md","articles":[]},{"title":"Bridge","level":"1.3.2","depth":2,"path":"docs/構造に関するパターン/bridge.md","ref":"docs/構造に関するパターン/bridge.md","articles":[]},{"title":"Composite","level":"1.3.3","depth":2,"path":"docs/構造に関するパターン/composite.md","ref":"docs/構造に関するパターン/composite.md","articles":[]},{"title":"Decorator","level":"1.3.4","depth":2,"path":"docs/構造に関するパターン/decorator.md","ref":"docs/構造に関するパターン/decorator.md","articles":[]},{"title":"Facade","level":"1.3.5","depth":2,"path":"docs/構造に関するパターン/facade.md","ref":"docs/構造に関するパターン/facade.md","articles":[]},{"title":"Flyweight","level":"1.3.6","depth":2,"path":"docs/構造に関するパターン/flyweight.md","ref":"docs/構造に関するパターン/flyweight.md","articles":[]},{"title":"Proxy","level":"1.3.7","depth":2,"path":"docs/構造に関するパターン/proxy.md","ref":"docs/構造に関するパターン/proxy.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/構造に関するパターン/adapter.md","mtime":"2020-05-15T23:28:28.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Adapter","level":"1.3.1","depth":2,"next":{"title":"Bridge","level":"1.3.2","depth":2,"path":"docs/構造に関するパターン/bridge.md","ref":"docs/構造に関するパターン/bridge.md","articles":[]},"previous":{"title":"構造に関するパターン","level":"1.3","depth":1,"ref":"","articles":[{"title":"Adapter","level":"1.3.1","depth":2,"path":"docs/構造に関するパターン/adapter.md","ref":"docs/構造に関するパターン/adapter.md","articles":[]},{"title":"Bridge","level":"1.3.2","depth":2,"path":"docs/構造に関するパターン/bridge.md","ref":"docs/構造に関するパターン/bridge.md","articles":[]},{"title":"Composite","level":"1.3.3","depth":2,"path":"docs/構造に関するパターン/composite.md","ref":"docs/構造に関するパターン/composite.md","articles":[]},{"title":"Decorator","level":"1.3.4","depth":2,"path":"docs/構造に関するパターン/decorator.md","ref":"docs/構造に関するパターン/decorator.md","articles":[]},{"title":"Facade","level":"1.3.5","depth":2,"path":"docs/構造に関するパターン/facade.md","ref":"docs/構造に関するパターン/facade.md","articles":[]},{"title":"Flyweight","level":"1.3.6","depth":2,"path":"docs/構造に関するパターン/flyweight.md","ref":"docs/構造に関するパターン/flyweight.md","articles":[]},{"title":"Proxy","level":"1.3.7","depth":2,"path":"docs/構造に関するパターン/proxy.md","ref":"docs/構造に関するパターン/proxy.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/構造に関するパターン/adapter.md","mtime":"2020-05-15T23:28:28.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:15:30.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

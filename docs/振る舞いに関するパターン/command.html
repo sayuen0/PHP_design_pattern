@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
@@ -38,10 +42,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -525,7 +525,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+                                <div class="treeview__container"><ul>
 <li><div><a href="#command&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Command&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
@@ -557,173 +557,173 @@
 <li>Prototype: &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x8907;&#x88FD;&#x306B;&#x4F7F;&#x3048;&#x308B;</li>
 </ul>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
-<pre><code class="lang-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
-</span>{
-  $sh = <span class="hljs-keyword">new</span> ShellScript();
-  $fs = <span class="hljs-keyword">new</span> FileSystem(<span class="hljs-string">&quot;./tmp/sample/&quot;</span>);
-  $sh-&gt;add(<span class="hljs-keyword">new</span> MakeDirectoryCommand($fs));
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">main</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-variable">$sh</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">ShellScript</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-variable">$fs</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">FileSystem</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;./tmp/sample/&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-variable">$sh</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">add</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">MakeDirectoryCommand</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$fs</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
-  var_dump($sh-&gt;run());
-  var_dump($sh-&gt;undo());
-  var_dump($sh-&gt;next());
+&#xA0;&#xA0;<span class="sunlight-function">var_dump</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$sh</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">run</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-function">var_dump</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$sh</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">undo</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-function">var_dump</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$sh</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-function">next</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
-  <span class="hljs-comment">// var_dump($sh-&gt;undo());</span>
-  <span class="hljs-comment">// var_dump($sh-&gt;undo());</span>
-}
+&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;var_dump($sh-&gt;undo());</span>
+&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;var_dump($sh-&gt;undo());</span>
+<span class="sunlight-punctuation">}</span>
 
-main();
-
-
-
-<span class="hljs-comment">/**
- * Reciever
- */</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileSystem</span>
-</span>{
-  <span class="hljs-keyword">private</span> $path;
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($path)</span>
-  </span>{
-    $this-&gt;path = $path;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeDirectory</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;cd $this-&gt;path&quot;</span>;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeDirectory</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> exec(<span class="hljs-string">&quot;mkdir -p $this-&gt;path&quot;</span>);
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeDirectory</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> exec(<span class="hljs-string">&quot;rm -r  $this-&gt;path&quot;</span>);
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createFile</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;touch $this-&gt;path&quot;</span>;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeFile</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;rm $this-&gt;path&quot;</span>;
-  }
-}
-
-<span class="hljs-comment">/**
- *  &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;
- * &#x5B9F;&#x884C;&#x3068;&#x53D6;&#x308A;&#x6D88;&#x3057;
- */</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ShellCommand</span>
-</span>{
-  <span class="hljs-comment">/**
-   * &#x5B9F;&#x884C;
-   */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span></span>;
-
-<span class="hljs-comment">/**
- * &#x53D6;&#x308A;&#x6D88;&#x3057;
- */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">undo</span><span class="hljs-params">()</span></span>;
-}
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MakeDirectoryCommand</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ShellCommand</span>
-</span>{
-  <span class="hljs-keyword">private</span> $fileSystem;
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($fileSystem)</span>
-  </span>{
-    $this-&gt;fileSystem = $fileSystem;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;fileSystem-&gt;makeDirectory();
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">undo</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;fileSystem-&gt;removeDirectory();
-  }
-}
+<span class="sunlight-ident">main</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RemoveDirectoryCommand</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ShellCommand</span>
-</span>{
-  <span class="hljs-keyword">private</span> $fileSystem;
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($fileSystem)</span>
-  </span>{
-    $this-&gt;fileSystem = $fileSystem;
-  }
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;Reciever
+&#xA0;*/</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">FileSystem</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$path</span><span class="sunlight-punctuation">;</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;fileSystem-&gt;removeDirectory();
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">undo</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;fileSystem-&gt;makeDirectory();
-  }
-}
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$path</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">path</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$path</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">changeDirectory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;cd&#xA0;$this-&gt;path&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">makeDirectory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-function">exec</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;mkdir&#xA0;-p&#xA0;$this-&gt;path&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">removeDirectory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-function">exec</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;rm&#xA0;-r&#xA0;&#xA0;$this-&gt;path&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">createFile</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;touch&#xA0;$this-&gt;path&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">removeFile</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-string">&quot;rm&#xA0;$this-&gt;path&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#xA0;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;
+&#xA0;*&#xA0;&#x5B9F;&#x884C;&#x3068;&#x53D6;&#x308A;&#x6D88;&#x3057;
+&#xA0;*/</span>
+<span class="sunlight-keyword">interface</span>&#xA0;<span class="sunlight-named-ident">ShellCommand</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-comment">/**
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x5B9F;&#x884C;
+&#xA0;&#xA0;&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">execute</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x53D6;&#x308A;&#x6D88;&#x3057;
+&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">undo</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">MakeDirectoryCommand</span>&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">ShellCommand</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$fileSystem</span><span class="sunlight-punctuation">;</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$fileSystem</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fileSystem</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$fileSystem</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">execute</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fileSystem</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">makeDirectory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">undo</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fileSystem</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">removeDirectory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-comment">/**
- * &#x30B7;&#x30A7;&#x30EB;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;
- * &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x96C6;&#x307E;&#x308A;
- */</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShellScript</span>
-</span>{
-  <span class="hljs-comment">/**
-   * &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x305F;&#x3061;
-   */</span>
-  <span class="hljs-keyword">public</span> $commands  = <span class="hljs-keyword">array</span>();
-  <span class="hljs-comment">/**
-   * &#x884C;&#x756A;&#x53F7;
-  */</span>
-  <span class="hljs-keyword">private</span> $position  = <span class="hljs-number">0</span>;
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">RemoveDirectoryCommand</span>&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">ShellCommand</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$fileSystem</span><span class="sunlight-punctuation">;</span>
 
-<span class="hljs-comment">// &#x8FFD;&#x52A0;</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">($cmd)</span>
-  </span>{
-    $this-&gt;commands[] = $cmd;
-  }
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$fileSystem</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fileSystem</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$fileSystem</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-<span class="hljs-comment">/**
- * &#x6B21;&#x306E;&#x884C;&#x3092;&#x5B9F;&#x884C;
- * <span class="hljs-doctag">@param</span> times &#x5B9F;&#x884C;&#x6570;
- */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span><span class="hljs-params">($times = <span class="hljs-number">1</span>)</span>
-  </span>{
-    $result = <span class="hljs-keyword">array</span>();
-    <span class="hljs-keyword">for</span> ($i = <span class="hljs-number">0</span>; $i &lt; $times; $i++) {
-      $result[] = $this-&gt;commands[$this-&gt;position++]-&gt;execute();
-    }
-    <span class="hljs-keyword">return</span> $result;
-  }
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">execute</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fileSystem</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">removeDirectory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">undo</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fileSystem</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">makeDirectory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
-<span class="hljs-comment">/**
- * &#x53D6;&#x308A;&#x6D88;&#x3057;
- */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">undo</span><span class="hljs-params">($times = <span class="hljs-number">1</span>)</span>
-  </span>{
-    $result = <span class="hljs-keyword">array</span>();
-    <span class="hljs-keyword">for</span> ($i = <span class="hljs-number">0</span>; $i &lt; $times; $i++) {
-      $result[] = $this-&gt;commands[--$this-&gt;position]-&gt;undo();
-    }
-    <span class="hljs-keyword">return</span> $result;
-  }
 
-<span class="hljs-comment">/**
- * &#x5168;&#x90E8;&#x5B9F;&#x884C;
- */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;next(count($this-&gt;commands) - $this-&gt;position);
-  }
-}
-</code></pre>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30B7;&#x30A7;&#x30EB;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;
+&#xA0;*&#xA0;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x96C6;&#x307E;&#x308A;
+&#xA0;*/</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ShellScript</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-comment">/**
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x305F;&#x3061;
+&#xA0;&#xA0;&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-variable">$commands</span>&#xA0;&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-comment">/**
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x884C;&#x756A;&#x53F7;
+&#xA0;&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$position</span>&#xA0;&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-number">0</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-comment">//&#xA0;&#x8FFD;&#x52A0;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">add</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$cmd</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">commands</span><span class="sunlight-punctuation">[</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$cmd</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x6B21;&#x306E;&#x884C;&#x3092;&#x5B9F;&#x884C;
+&#xA0;*&#xA0;@param&#xA0;times&#xA0;&#x5B9F;&#x884C;&#x6570;
+&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-function">next</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$times</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-number">1</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$result</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">for</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$i</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-number">0</span><span class="sunlight-punctuation">;</span>&#xA0;<span class="sunlight-variable">$i</span>&#xA0;<span class="sunlight-operator">&lt;</span>&#xA0;<span class="sunlight-variable">$times</span><span class="sunlight-punctuation">;</span>&#xA0;<span class="sunlight-variable">$i</span><span class="sunlight-operator">++</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$result</span><span class="sunlight-punctuation">[</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">commands</span><span class="sunlight-punctuation">[</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">position</span><span class="sunlight-operator">++</span><span class="sunlight-punctuation">]</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">execute</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$result</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x53D6;&#x308A;&#x6D88;&#x3057;
+&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">undo</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$times</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-number">1</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$result</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">for</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$i</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-number">0</span><span class="sunlight-punctuation">;</span>&#xA0;<span class="sunlight-variable">$i</span>&#xA0;<span class="sunlight-operator">&lt;</span>&#xA0;<span class="sunlight-variable">$times</span><span class="sunlight-punctuation">;</span>&#xA0;<span class="sunlight-variable">$i</span><span class="sunlight-operator">++</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$result</span><span class="sunlight-punctuation">[</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">commands</span><span class="sunlight-punctuation">[</span><span class="sunlight-operator">--</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">position</span><span class="sunlight-punctuation">]</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">undo</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$result</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x5168;&#x90E8;&#x5B9F;&#x884C;
+&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">run</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-function">next</span><span class="sunlight-punctuation">(</span><span class="sunlight-function">count</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">commands</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">-</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">position</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+</span></pre></div></div></code></pre>
 <div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</a></li><li><a href="#&#x95A2;&#x9023;">3. &#x95A2;&#x9023;</a></li></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
@@ -763,7 +763,7 @@ main();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Command","level":"1.2.1","depth":2,"next":{"title":"COR","level":"1.2.2","depth":2,"path":"docs/振る舞いに関するパターン/COR.md","ref":"docs/振る舞いに関するパターン/COR.md","articles":[]},"previous":{"title":"振る舞いに関するパターン","level":"1.2","depth":1,"ref":"","articles":[{"title":"Command","level":"1.2.1","depth":2,"path":"docs/振る舞いに関するパターン/command.md","ref":"docs/振る舞いに関するパターン/command.md","articles":[]},{"title":"COR","level":"1.2.2","depth":2,"path":"docs/振る舞いに関するパターン/COR.md","ref":"docs/振る舞いに関するパターン/COR.md","articles":[]},{"title":"DI","level":"1.2.3","depth":2,"path":"docs/振る舞いに関するパターン/DI.md","ref":"docs/振る舞いに関するパターン/DI.md","articles":[]},{"title":"Interpreter","level":"1.2.4","depth":2,"path":"docs/振る舞いに関するパターン/interpreter.md","ref":"docs/振る舞いに関するパターン/interpreter.md","articles":[]},{"title":"Iterator","level":"1.2.5","depth":2,"path":"docs/振る舞いに関するパターン/iterator.md","ref":"docs/振る舞いに関するパターン/iterator.md","articles":[]},{"title":"Mediator","level":"1.2.6","depth":2,"path":"docs/振る舞いに関するパターン/mediator.md","ref":"docs/振る舞いに関するパターン/mediator.md","articles":[]},{"title":"Memento","level":"1.2.7","depth":2,"path":"docs/振る舞いに関するパターン/memento.md","ref":"docs/振る舞いに関するパターン/memento.md","articles":[]},{"title":"Observer","level":"1.2.8","depth":2,"path":"docs/振る舞いに関するパターン/observer.md","ref":"docs/振る舞いに関するパターン/observer.md","articles":[]},{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},{"title":"Template Method","level":"1.2.10","depth":2,"path":"docs/振る舞いに関するパターン/templateMethod.md","ref":"docs/振る舞いに関するパターン/templateMethod.md","articles":[]},{"title":"Visitor","level":"1.2.11","depth":2,"path":"docs/振る舞いに関するパターン/visitor.md","ref":"docs/振る舞いに関するパターン/visitor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/command.md","mtime":"2020-05-17T12:42:38.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Command","level":"1.2.1","depth":2,"next":{"title":"COR","level":"1.2.2","depth":2,"path":"docs/振る舞いに関するパターン/COR.md","ref":"docs/振る舞いに関するパターン/COR.md","articles":[]},"previous":{"title":"振る舞いに関するパターン","level":"1.2","depth":1,"ref":"","articles":[{"title":"Command","level":"1.2.1","depth":2,"path":"docs/振る舞いに関するパターン/command.md","ref":"docs/振る舞いに関するパターン/command.md","articles":[]},{"title":"COR","level":"1.2.2","depth":2,"path":"docs/振る舞いに関するパターン/COR.md","ref":"docs/振る舞いに関するパターン/COR.md","articles":[]},{"title":"DI","level":"1.2.3","depth":2,"path":"docs/振る舞いに関するパターン/DI.md","ref":"docs/振る舞いに関するパターン/DI.md","articles":[]},{"title":"Interpreter","level":"1.2.4","depth":2,"path":"docs/振る舞いに関するパターン/interpreter.md","ref":"docs/振る舞いに関するパターン/interpreter.md","articles":[]},{"title":"Iterator","level":"1.2.5","depth":2,"path":"docs/振る舞いに関するパターン/iterator.md","ref":"docs/振る舞いに関するパターン/iterator.md","articles":[]},{"title":"Mediator","level":"1.2.6","depth":2,"path":"docs/振る舞いに関するパターン/mediator.md","ref":"docs/振る舞いに関するパターン/mediator.md","articles":[]},{"title":"Memento","level":"1.2.7","depth":2,"path":"docs/振る舞いに関するパターン/memento.md","ref":"docs/振る舞いに関するパターン/memento.md","articles":[]},{"title":"Observer","level":"1.2.8","depth":2,"path":"docs/振る舞いに関するパターン/observer.md","ref":"docs/振る舞いに関するパターン/observer.md","articles":[]},{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},{"title":"Template Method","level":"1.2.10","depth":2,"path":"docs/振る舞いに関するパターン/templateMethod.md","ref":"docs/振る舞いに関するパターン/templateMethod.md","articles":[]},{"title":"Visitor","level":"1.2.11","depth":2,"path":"docs/振る舞いに関するパターン/visitor.md","ref":"docs/振る舞いに関するパターン/visitor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/command.md","mtime":"2020-05-17T12:42:38.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:15:30.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

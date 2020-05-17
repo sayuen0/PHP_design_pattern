@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
@@ -38,10 +42,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -527,7 +527,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+                                <div class="treeview__container"><ul>
 <li><div><a href="#template-method">template method</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</a><i></i></div></li>
@@ -538,8 +538,8 @@
 <li><div><a href="#factory-method">Factory Method</a><i></i></div></li>
 <li><div><a href="#strategy">Strategy</a><i></i></div></li>
 </ul></li>
-</ul></li>
 <li><div><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a><i></i></div></li>
+</ul></li>
 </ul>
 </div>
 
@@ -601,291 +601,16 @@
 </ul>
 </li>
 </ul>
-<h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">say</span><span class="hljs-params">($i)</span>
-</span>{
-  <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;$i \n&quot;</span>;
-}
-
-<span class="hljs-comment">// template method </span>
-<span class="hljs-comment">/**
- * &#x51E6;&#x7406;&#x306E;&#x6D41;&#x308C;&#x306E;&#x6CD5;&#x5247;&#x6027;&#x3068;&#x5177;&#x4F53;&#x7684;&#x306A;&#x5B9F;&#x88C5;&#x3092;&#x5206;&#x3051;&#x308B;&#x3053;&#x3068;&#x3067;&#x6C4E;&#x7528;&#x6027;&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;
- * 
- */</span>
-
-
-<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractAction</span>
-</span>{
-  <span class="hljs-keyword">private</span> $request = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">private</span> $session = <span class="hljs-keyword">array</span>();
-  <span class="hljs-keyword">private</span> $assigned  = <span class="hljs-keyword">array</span>();
-  <span class="hljs-keyword">private</span> $errors = <span class="hljs-keyword">array</span>();
-  <span class="hljs-keyword">private</span> $errorPageName = <span class="hljs-string">&quot;error.view&quot;</span>;
-  <span class="hljs-keyword">private</span> $modelFactory = <span class="hljs-keyword">null</span>;
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
-  </span>{
-  }
-  <span class="hljs-comment">// &#x5165;&#x529B;&#x5024;&#x306E;&#x691C;&#x8A3C;</span>
-  <span class="hljs-keyword">abstract</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span><span class="hljs-params">()</span></span>;
-
-  <span class="hljs-comment">// &#x5B9F;&#x51E6;&#x7406;</span>
-  <span class="hljs-keyword">abstract</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMain</span><span class="hljs-params">()</span></span>;
-
-  <span class="hljs-comment">/**
-   *
-   * &#x5165;&#x529B;&#x5024;&#x3092;&#x691C;&#x8A3C;&#x3057;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x30DA;&#x30FC;&#x30B8;&#x306B;&#x9077;&#x79FB;&#x3059;&#x308B;&#x304B;
-   * &#x5B9F;&#x51E6;&#x7406;&#x3092;&#x884C;&#x3046;&#x304B;&#x3092;&#x51E6;&#x7406;
-   * &#x3053;&#x306E;&#x90E8;&#x5206;&#x304C;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30E1;&#x30BD;&#x30C3;&#x30C9;
-   * validate&#x3057;&#x3066;&#x3001;&#x305D;&#x306E;&#x7D50;&#x679C;&#x304B;&#x3089;
-   * &#x30A8;&#x30E9;&#x30FC;&#x3092;&#x6295;&#x3052;&#x308B;&#x304B;domain&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3068;&#x3044;&#x3046;&#x624B;&#x9806;&#x306F;&#x307E;&#x3068;&#x3081;&#x3066;&#x3044;&#x308B;
-   * <span class="hljs-doctag">@return</span> void
-   */</span>
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doAction</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">if</span> (!$this-&gt;validate()) <span class="hljs-keyword">return</span> $this-&gt;errorPageName;
-    <span class="hljs-keyword">return</span> $this-&gt;doMain();
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">assign</span><span class="hljs-params">($key, $val)</span>
-  </span>{
-    $this-&gt;assigned[$key] = $val;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAssigned</span><span class="hljs-params">($key)</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;assigned[$key];
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRequestValue</span><span class="hljs-params">($key)</span>
-  </span>{
-    <span class="hljs-keyword">return</span> @$this-&gt;request[$key];
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setSessionValue</span><span class="hljs-params">($key, $val)</span>
-  </span>{
-    $this-&gt;session[$key] = $val;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSessionValue</span><span class="hljs-params">($key)</span>
-  </span>{
-    <span class="hljs-keyword">return</span> @$this-&gt;session[$key];
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setRequest</span><span class="hljs-params">($request)</span>
-  </span>{
-    <span class="hljs-keyword">if</span> (!is_array($request)) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x914D;&#x5217;&#x3058;&#x3083;&#x306A;&#x3044;&#x3058;&#x3083;&#x306A;&#x3044;&#x304B;&quot;</span>, <span class="hljs-number">1</span>);
-    <span class="hljs-keyword">if</span> ($this-&gt;request) {
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x3059;&#x3067;&#x306B;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x308B;&#x3058;&#x3083;&#x306A;&#x3044;&#x304B;&quot;</span>);
-    }
-    $this-&gt;request = $request;
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setSession</span><span class="hljs-params">($session)</span>
-  </span>{
-    <span class="hljs-keyword">if</span> (!is_array($session)) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x914D;&#x5217;&#x3058;&#x3083;&#x306A;&#x3044;&#x3058;&#x3083;&#x306A;&#x3044;&#x304B;&quot;</span>, <span class="hljs-number">1</span>);
-    <span class="hljs-keyword">if</span> ($this-&gt;session) {
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x3059;&#x3067;&#x306B;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x308B;&#x3058;&#x3083;&#x306A;&#x3044;&#x304B;&quot;</span>);
-    }
-    $this-&gt;session = $session;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setError</span><span class="hljs-params">($key, $val)</span>
-  </span>{
-    $this-&gt;errors[$key] = $val;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getError</span><span class="hljs-params">($key)</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;errors[$key];
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasError</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> count($this-&gt;errors);
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getErrors</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;errors;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getModel</span><span class="hljs-params">($key)</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;modelFactory-&gt;create($key);
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setModelFactory</span><span class="hljs-params">($obj)</span>
-  </span>{
-    <span class="hljs-keyword">if</span> (!$obj <span class="hljs-keyword">instanceof</span> ModelFactory) {
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">&quot;&#x3053;&#x3093;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x7121;&#x7406;&#x3060;&quot;</span>);
-    }
-    $this-&gt;modelFactory = $obj;
-  }
-}
-
-
-<span class="hljs-comment">// /user/index &#x5B9F;&#x88C5;&#x30AF;&#x30E9;&#x30B9;</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserIndexAction</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractAction</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
-  </span>{
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMain</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;index.view&quot;</span>;
-  }
-}
-
-
-<span class="hljs-comment">// /user/entry</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserEntryAction</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractAction</span>
-</span>{
-  <span class="hljs-keyword">protected</span> $errorPageName = <span class="hljs-string">&quot;redirect: /UserForm&quot;</span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
-  </span>{
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">if</span> (!$this-&gt;getRequestValue(<span class="hljs-string">&quot;name&quot;</span>)) {
-      $this-&gt;setError(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;not_required&quot;</span>);
-    }
-    <span class="hljs-keyword">if</span> (!$this-&gt;getRequestValue(<span class="hljs-string">&quot;mail_address&quot;</span>)) {
-      $this-&gt;setError(<span class="hljs-string">&quot;mail_address&quot;</span>, <span class="hljs-string">&quot;not_required&quot;</span>);
-    } <span class="hljs-keyword">elseif</span> (!preg_match(<span class="hljs-string">&quot;/^[a-zA-Z0-9.!#$%&amp;&apos;*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/&quot;</span>, $this-&gt;getRequestValue(<span class="hljs-string">&quot;mail_address&quot;</span>))) {
-      $this-&gt;setError(<span class="hljs-string">&quot;mail_address&quot;</span>, <span class="hljs-string">&quot;invalid_format&quot;</span>);
-    }
-    <span class="hljs-keyword">return</span> !$this-&gt;hasError();
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doMain</span><span class="hljs-params">()</span>
-  </span>{
-    $user = $this-&gt;getModel(<span class="hljs-string">&quot;User&quot;</span>);
-    $this-&gt;name = $this-&gt;getRequestValue(<span class="hljs-string">&quot;name&quot;</span>);
-    $this-&gt;mail_address = $this-&gt;getRequestValue(<span class="hljs-string">&quot;mail_address&quot;</span>);
-    $user-&gt;save();
-    $this-&gt;assign(<span class="hljs-string">&quot;User&quot;</span>, $user);
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;redirect: /UserFinished&quot;</span>;
-  }
-}
-
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModelFactory</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
-  </span>{
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">($class)</span>
-  </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> $class;
-  }
-}
-
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>
-</span>{
-  <span class="hljs-keyword">private</span> $values = <span class="hljs-keyword">array</span>();
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
-  </span>{
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">($key, $val)</span>
-  </span>{
-    $this-&gt;values[$key] = $val;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">($key)</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;values[<span class="hljs-string">&quot;key&quot;</span>];
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">save</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
-  }
-}
-
-
-
-<span class="hljs-comment">// index&#x304C;&#x666E;&#x901A;&#x306B;&#x8D70;&#x308B;</span>
-
-$index = <span class="hljs-keyword">new</span> UserIndexAction();
-$index-&gt;setModelFactory(<span class="hljs-keyword">new</span> ModelFactory());
-say($index-&gt;validate() == <span class="hljs-keyword">true</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-say($index-&gt;doMain() == <span class="hljs-string">&quot;index.view&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-
-<span class="hljs-comment">// validate&#x306B;&#x5F15;&#x3063;&#x304B;&#x304B;&#x3089;&#x306A;&#x3044;&#x306E;&#x3067;doMain&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;</span>
-say($index-&gt;doAction() == <span class="hljs-string">&quot;index.view&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-
-<span class="hljs-comment">// entry&#x304C;validate&#x3067;&#x5F15;&#x3063;&#x304B;&#x304B;&#x308B;&#x30C6;&#x30B9;&#x30C8;</span>
-<span class="hljs-comment">// name&#x3068;email&#x304C;&#x672A;&#x5165;&#x529B;&#x306E;&#x72B6;&#x614B;&#x3067;POST&#x3055;&#x308C;&#x308B;</span>
-
-$entry  = <span class="hljs-keyword">new</span> UserEntryAction();
-$entry-&gt;setModelFactory(<span class="hljs-keyword">new</span> ModelFactory());
-say($entry-&gt;validate() == <span class="hljs-keyword">false</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-say($entry-&gt;getError(<span class="hljs-string">&quot;name&quot;</span>) == <span class="hljs-string">&quot;not_required&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-say($entry-&gt;getError(<span class="hljs-string">&quot;mail_address&quot;</span>) == <span class="hljs-string">&quot;not_required&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-
-
-
-<span class="hljs-comment">// entry&#x304C;validate&#x3067;&#x5F15;&#x3063;&#x304B;&#x304B;&#x308B;&#x30C6;&#x30B9;&#x30C8;</span>
-<span class="hljs-comment">// email&#x672A;&#x5165;&#x529B;</span>
-$entry = <span class="hljs-keyword">new</span> UserEntryAction();
-$entry-&gt;setModelFactory(<span class="hljs-keyword">new</span> ModelFactory());
-$entry-&gt;setRequest(<span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;name&quot;</span> =&gt; <span class="hljs-string">&quot;hoge&quot;</span>));
-say($entry-&gt;validate() == <span class="hljs-keyword">false</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-say($entry-&gt;getError(<span class="hljs-string">&quot;mail_address&quot;</span>) == <span class="hljs-string">&quot;not_required&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-
-
-
-<span class="hljs-comment">// name email&#x3069;&#x3061;&#x3089;&#x3082;&#x3042;&#x308B; format error</span>
-$entry = <span class="hljs-keyword">new</span> UserEntryAction();
-$entry-&gt;setModelFactory(<span class="hljs-keyword">new</span> ModelFactory());
-$entry-&gt;setRequest(<span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;name&quot;</span> =&gt; <span class="hljs-string">&quot;hoge&quot;</span>, <span class="hljs-string">&quot;mail_address&quot;</span> =&gt; <span class="hljs-string">&quot;hoge&quot;</span>));
-say($entry-&gt;validate() == <span class="hljs-keyword">false</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-say($entry-&gt;getError(<span class="hljs-string">&quot;mail_address&quot;</span>) == <span class="hljs-string">&quot;invalid_format&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-
-<span class="hljs-comment">// name email &#x6B63;&#x3057;&#x304F;&#x307D;&#x3059;&#x3068;</span>
-
-
-$entry = <span class="hljs-keyword">new</span> UserEntryAction();
-$entry-&gt;setModelFactory(<span class="hljs-keyword">new</span> ModelFactory());
-$entry-&gt;setRequest(<span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;name&quot;</span> =&gt; <span class="hljs-string">&quot;hoge&quot;</span>, <span class="hljs-string">&quot;mail_address&quot;</span> =&gt; <span class="hljs-string">&quot;sayuen0@gmail.com&quot;</span>));
-say($entry-&gt;validate() == <span class="hljs-keyword">true</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-say($entry-&gt;doAction() == <span class="hljs-string">&quot;redirect: /UserFinished&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-
-
-$entry-&gt;assign(<span class="hljs-string">&quot;User&quot;</span>, <span class="hljs-keyword">new</span> User());
-$user = $entry-&gt;getAssigned(<span class="hljs-string">&quot;User&quot;</span>);
-say($user <span class="hljs-keyword">instanceof</span> User ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-say($user-&gt;name == <span class="hljs-string">&quot;hoge&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-say($user-&gt;mail_address == <span class="hljs-string">&quot;sayuen0@gmail.com&quot;</span> ? <span class="hljs-string">&quot;OK&quot;</span> : <span class="hljs-string">&quot;NG&quot;</span>);
-
-<span class="hljs-keyword">echo</span> $user-&gt;name;
-
-
-
-<span class="hljs-comment">// web&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x969B;&#x306F;</span>
-<span class="hljs-comment">// $class = new class();</span>
-<span class="hljs-comment">// $class-&gt;setRequest($_REQUEST);</span>
-<span class="hljs-comment">// $class-&gt;setSession($_SESSION);</span>
-<span class="hljs-comment">// $view = $class-&gt;doAction()</span>
-<span class="hljs-comment">// $_SESSION = $this-&gt;getSession();</span>
-
-<span class="hljs-comment">// &#x5927;&#x4E8B;&#x306A;&#x306E;&#x306F;&#x3001;doAction&#x3068;&#x3059;&#x308C;&#x3070;validate&#x3057;&#x3066;domain&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x304C;&#x5171;&#x901A;&#x5316;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x70B9;&#x3002;</span>
-
-<span class="hljs-meta">?&gt;</span>
-
-&lt;a href=<span class="hljs-string">&quot;/docs/templateMethod.md&quot;</span>&gt;&#x8AAC;&#x660E;&#x3078;&lt;/a&gt;
-</code></pre>
-<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x6982;&#x5FF5;">1. &#x6982;&#x5FF5;</a></li><li><a href="#&#x3084;&#x308A;&#x65B9;">2. &#x3084;&#x308A;&#x65B9;</a></li><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)">3. &#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</a></li><li><a href="#&#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;">4. &#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a></li><ul><li><a href="#Factory_Method">4.1. Factory Method</a></li><li><a href="#Strategy">4.2. Strategy</a></li></ul></ul></div><a href="#&#x6982;&#x5FF5;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+<h2 id="&#x30BD;&#x30FC;&#x30B9;">5. &#x30BD;&#x30FC;&#x30B9;</h2>
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-ident">Error</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-function">file</span>&#xA0;<span class="sunlight-ident">not</span>&#xA0;<span class="sunlight-ident">found</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-operator">/</span><span class="sunlight-ident">patterns</span><span class="sunlight-operator">/</span><span class="sunlight-ident">TemplateMethod</span><span class="sunlight-operator">/</span><span class="sunlight-ident">index</span><span class="sunlight-operator">.</span><span class="sunlight-ident">php</span>
+</span></pre></div></div></code></pre>
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-ident">Error</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-function">file</span>&#xA0;<span class="sunlight-ident">not</span>&#xA0;<span class="sunlight-ident">found</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-operator">/</span><span class="sunlight-ident">Applications</span><span class="sunlight-operator">/</span><span class="sunlight-ident">MAMP</span><span class="sunlight-operator">/</span><span class="sunlight-ident">htdocs</span><span class="sunlight-operator">/</span><span class="sunlight-ident">design_patterns</span><span class="sunlight-operator">/</span><span class="sunlight-ident">docs</span><span class="sunlight-operator">/</span><span class="sunlight-punctuation">&#x632F;</span><span class="sunlight-punctuation">&#x308B;</span><span class="sunlight-punctuation">&#x821E;</span><span class="sunlight-punctuation">&#x3044;</span><span class="sunlight-punctuation">&#x306B;</span><span class="sunlight-punctuation">&#x95A2;</span><span class="sunlight-punctuation">&#x3059;</span><span class="sunlight-punctuation">&#x308B;</span><span class="sunlight-punctuation">&#x30D1;</span><span class="sunlight-punctuation">&#x30BF;</span><span class="sunlight-punctuation">&#x30FC;</span><span class="sunlight-punctuation">&#x30F3;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">patterns</span><span class="sunlight-operator">/</span><span class="sunlight-ident">TemplateMethod</span><span class="sunlight-operator">/</span><span class="sunlight-ident">index</span><span class="sunlight-operator">.</span><span class="sunlight-ident">php</span>
+</span></pre></div></div></code></pre>
+<p><code>php
+Error: file not found: /patterns/TemplateMethod/index.php</code>;
+<code>php
+Error: file not found: /Applications/MAMP/htdocs/design_patterns/docs/&#x632F;&#x308B;&#x821E;&#x3044;&#x306B;&#x95A2;&#x3059;&#x308B;&#x30D1;&#x30BF;&#x30FC;&#x30F3;/patterns/TemplateMethod/index.php</code>;</p>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#template_method">template method</a></p><li><a href="#&#x6982;&#x5FF5;">1. &#x6982;&#x5FF5;</a></li><li><a href="#&#x3084;&#x308A;&#x65B9;">2. &#x3084;&#x308A;&#x65B9;</a></li><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)">3. &#x30E1;&#x30EA;&#x30C3;&#x30C8;(&#x7528;&#x9014;)</a></li><li><a href="#&#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;">4. &#x95A2;&#x9023;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a></li><ul><li><a href="#Factory_Method">4.1. Factory Method</a></li><li><a href="#Strategy">4.2. Strategy</a></li></ul><li><a href="#&#x30BD;&#x30FC;&#x30B9;">5. &#x30BD;&#x30FC;&#x30B9;</a></li></ul></div><a href="#&#x6982;&#x5FF5;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -928,7 +653,7 @@ say($user-&gt;mail_address == <span class="hljs-string">&quot;sayuen0@gmail.com&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Template Method","level":"1.2.10","depth":2,"next":{"title":"Visitor","level":"1.2.11","depth":2,"path":"docs/振る舞いに関するパターン/visitor.md","ref":"docs/振る舞いに関するパターン/visitor.md","articles":[]},"previous":{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/templateMethod.md","mtime":"2020-05-15T22:49:14.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Template Method","level":"1.2.10","depth":2,"next":{"title":"Visitor","level":"1.2.11","depth":2,"path":"docs/振る舞いに関するパターン/visitor.md","ref":"docs/振る舞いに関するパターン/visitor.md","articles":[]},"previous":{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/templateMethod.md","mtime":"2020-05-17T14:15:15.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:15:30.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

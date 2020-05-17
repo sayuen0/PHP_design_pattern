@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
@@ -38,10 +42,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -527,7 +527,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+                                <div class="treeview__container"><ul>
 <li><div><a href="#flyweight&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Flyweight&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
@@ -578,96 +578,96 @@
 <li>&#x30A8;&#x30AF;&#x30B9;&#x30C8;&#x30EA;&#x30F3;&#x30B8;&#x30C3;&#x30AF;: &#x5834;&#x6240;&#x3084;&#x72B6;&#x6CC1;&#x306B;&#x5FDC;&#x3058;&#x5909;&#x308F;&#x308B;&#x60C5;&#x5831;&#x3002;&#x5171;&#x6709;&#x3055;&#x308C;&#x308B;&#x3068;&#x304A;&#x304B;&#x3057;&#x3044;&#x306E;&#x3067;&#x3001;&#x7D44;&#x307F;&#x8FBC;&#x3093;&#x3067;&#x306F;&#x3044;&#x3051;&#x306A;&#x3044;</li>
 </ul>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-openTag">&lt;?php</span>
 
 
-<span class="hljs-comment">/**
- * &#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x306E;&#x8CA0;&#x8377;&#x3092;&#x6E1B;&#x3089;&#x3059;
- * &#x8981;&#x3059;&#x308B;&#x306B;&#x3086;&#x308B;&#x3044;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;
- * &#x3080;&#x3057;&#x308D;&#x3053;&#x3044;&#x3064;&#x306E;&#x304D;&#x3064;&#x3044;&#x7248;&#x304C;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;
- * &#x3082;&#x3057;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3092;&#x691C;&#x8A0E;&#x3059;&#x308B;&#x3068;&#x304D;&#x306F;&#x3001;
- * &#x307E;&#x305A;&#x5148;&#x306B;&#x3053;&#x3044;&#x3064;&#x3092;&#x691C;&#x8A0E;&#x3057;&#x3066;
- */</span>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x306E;&#x8CA0;&#x8377;&#x3092;&#x6E1B;&#x3089;&#x3059;
+&#xA0;*&#xA0;&#x8981;&#x3059;&#x308B;&#x306B;&#x3086;&#x308B;&#x3044;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;
+&#xA0;*&#xA0;&#x3080;&#x3057;&#x308D;&#x3053;&#x3044;&#x3064;&#x306E;&#x304D;&#x3064;&#x3044;&#x7248;&#x304C;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;
+&#xA0;*&#xA0;&#x3082;&#x3057;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3092;&#x691C;&#x8A0E;&#x3059;&#x308B;&#x3068;&#x304D;&#x306F;&#x3001;
+&#xA0;*&#xA0;&#x307E;&#x305A;&#x5148;&#x306B;&#x3053;&#x3044;&#x3064;&#x3092;&#x691C;&#x8A0E;&#x3057;&#x3066;
+&#xA0;*/</span>
 
-<span class="hljs-comment">/**
- * &#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x306F;&#x81EA;&#x5206;&#x304C;&#x552F;&#x4E00;&#x8907;&#x88FD;&#x3055;&#x308C;&#x306A;&#x3044;
- * &#x30D5;&#x30E9;&#x30A4;&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x306F;&#x4ED6;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x8907;&#x88FD;&#x3057;&#x306A;&#x3044;
- * &#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x7684;&#x306A;&#x3084;&#x3064;&#x306B;&#x5F15;&#x6570;&#x3092;&#x6E21;&#x3057;&#x3066;&#x72B6;&#x6CC1;&#x306B;&#x5FDC;&#x3058;&#x3066;
- * &#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x304B;&#x3089;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3057;&#x305F;&#x308A;
- * &#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3057;&#x306A;&#x304C;&#x3089;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3057;&#x305F;&#x308A;&#x3059;&#x308B;
- */</span>
-
-
-<span class="hljs-comment">/**
- * &#x8179;&#x5FC3;
- */</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Confidant</span>
-</span>{
-  <span class="hljs-keyword">private</span> $name;
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($key)</span>
-  </span>{
-    $this-&gt;name = $key;
-  }
-}
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x306F;&#x81EA;&#x5206;&#x304C;&#x552F;&#x4E00;&#x8907;&#x88FD;&#x3055;&#x308C;&#x306A;&#x3044;
+&#xA0;*&#xA0;&#x30D5;&#x30E9;&#x30A4;&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x306F;&#x4ED6;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x8907;&#x88FD;&#x3057;&#x306A;&#x3044;
+&#xA0;*&#xA0;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x7684;&#x306A;&#x3084;&#x3064;&#x306B;&#x5F15;&#x6570;&#x3092;&#x6E21;&#x3057;&#x3066;&#x72B6;&#x6CC1;&#x306B;&#x5FDC;&#x3058;&#x3066;
+&#xA0;*&#xA0;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x304B;&#x3089;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3057;&#x305F;&#x308A;
+&#xA0;*&#xA0;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3057;&#x306A;&#x304C;&#x3089;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3057;&#x305F;&#x308A;&#x3059;&#x308B;
+&#xA0;*/</span>
 
 
-<span class="hljs-comment">/**
- * &#x8179;&#x5FC3;&#x3092;&#x96C7;&#x3044;&#x3001;
- * &#x4E00;&#x5EA6;&#x4F5C;&#x3063;&#x305F;&#x3082;&#x306E;&#x306F;&#x5171;&#x6709;&#x3055;&#x308C;&#x308B;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x30FC;
- * &#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3067;&#x5B9F;&#x88C5;
- */</span>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x8179;&#x5FC3;
+&#xA0;*/</span>
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">Confidant</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$name</span><span class="sunlight-punctuation">;</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$key</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">name</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$key</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfidantFactory</span>
-</span>{
-  <span class="hljs-keyword">private</span> $confidant = <span class="hljs-keyword">array</span>();
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> $instance = <span class="hljs-keyword">null</span>;
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x8179;&#x5FC3;&#x3092;&#x96C7;&#x3044;&#x3001;
+&#xA0;*&#xA0;&#x4E00;&#x5EA6;&#x4F5C;&#x3063;&#x305F;&#x3082;&#x306E;&#x306F;&#x5171;&#x6709;&#x3055;&#x308C;&#x308B;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x30FC;
+&#xA0;*&#xA0;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3067;&#x5B9F;&#x88C5;
+&#xA0;*/</span>
 
-<span class="hljs-comment">/**
-*private &#x306A;&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ConfidantFactory</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$confidant</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-variable">$instance</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-comment">/**
+*private&#xA0;&#x306A;&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;
 */</span>
-  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
-  </span>{
-  }
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-<span class="hljs-comment">/**
-* &#x552F;&#x4E00;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x53D6;&#x5F97;&#x30E1;&#x30BD;&#x30C3;&#x30C9;
+<span class="sunlight-comment">/**
+*&#xA0;&#x552F;&#x4E00;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x53D6;&#x5F97;&#x30E1;&#x30BD;&#x30C3;&#x30C9;
 */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInstance</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>::$instance) {
-      <span class="hljs-keyword">self</span>::$instance = <span class="hljs-keyword">new</span> ConfidantFactory();
-    }
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>::$instance;
-  }
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getInstance</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-operator">!</span><span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">ConfidantFactory</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instance</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-  <span class="hljs-comment">/**
-   * &#x521D;&#x3081;&#x3066;&#x96C7;&#x3046;&#x3082;&#x306E;&#x306F;
-   * &#x751F;&#x6210;&#x3055;&#x308C;&#x3001;&#x3059;&#x3067;&#x306B;&#x96C7;&#x3063;&#x3066;&#x3044;&#x308B;&#x3082;&#x306E;&#x306F;&#x4F5C;&#x3063;&#x305F;&#x3082;&#x306E;&#x304C;&#x5171;&#x6709;&#x3055;&#x308C;&#x308B;
-   */</span>
+&#xA0;&#xA0;<span class="sunlight-comment">/**
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x521D;&#x3081;&#x3066;&#x96C7;&#x3046;&#x3082;&#x306E;&#x306F;
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x751F;&#x6210;&#x3055;&#x308C;&#x3001;&#x3059;&#x3067;&#x306B;&#x96C7;&#x3063;&#x3066;&#x3044;&#x308B;&#x3082;&#x306E;&#x306F;&#x4F5C;&#x3063;&#x305F;&#x3082;&#x306E;&#x304C;&#x5171;&#x6709;&#x3055;&#x308C;&#x308B;
+&#xA0;&#xA0;&#xA0;*/</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span><span class="hljs-params">($key)</span>
-  </span>{
-    <span class="hljs-keyword">if</span> (!$this-&gt;confidant[$key]) {
-      $this-&gt;confidant[$key] = <span class="hljs-keyword">new</span> Confidant($key);
-      <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;[$key]&#x3092;&#x65B0;&#x305F;&#x306B;&#x96C7;&#x3046;&#x306E;&#x3067;&#x3059;&#x3002;&lt;br&gt;&quot;</span>;
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x3059;&#x3067;&#x306B;&#x3044;&#x308B;&#x306E;&#x3067;&#x4F7F;&#x3044;&#x307E;&#x308F;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&lt;br&gt;&quot;</span>;
-    }
-    <span class="hljs-keyword">return</span> $this-&gt;confidant[$key];
-  }
-}
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">get</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$key</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-operator">!</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">confidant</span><span class="sunlight-punctuation">[</span><span class="sunlight-variable">$key</span><span class="sunlight-punctuation">]</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">confidant</span><span class="sunlight-punctuation">[</span><span class="sunlight-variable">$key</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">Confidant</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$key</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-string">&quot;[$key]&#x3092;&#x65B0;&#x305F;&#x306B;&#x96C7;&#x3046;&#x306E;&#x3067;&#x3059;&#x3002;&lt;br&gt;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>&#xA0;<span class="sunlight-keyword">else</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-string">&quot;&#x3059;&#x3067;&#x306B;&#x3044;&#x308B;&#x306E;&#x3067;&#x4F7F;&#x3044;&#x307E;&#x308F;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&lt;br&gt;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">confidant</span><span class="sunlight-punctuation">[</span><span class="sunlight-variable">$key</span><span class="sunlight-punctuation">]</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
-$factory = ConfidantFactory::getInstance();
-<span class="hljs-keyword">if</span> ($factory-&gt;get(<span class="hljs-string">&quot;&#x57F7;&#x4E8B;&quot;</span>) === $factory-&gt;getInstance()-&gt;get(<span class="hljs-string">&quot;&#x57F7;&#x4E8B;&quot;</span>)) {
-  <span class="hljs-keyword">print</span>  <span class="hljs-string">&quot;&#x540C;&#x3058;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306A;&#x306E;&#x3067;&#x3059;&quot;</span>;
-  <span class="hljs-comment"># code...</span>
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x5225;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3059;&quot;</span>;
-}
-</code></pre>
+<span class="sunlight-variable">$factory</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-named-ident">ConfidantFactory</span><span class="sunlight-operator">::</span><span class="sunlight-ident">getInstance</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$factory</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">get</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x57F7;&#x4E8B;&quot;</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">===</span>&#xA0;<span class="sunlight-variable">$factory</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">getInstance</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">get</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x57F7;&#x4E8B;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;&#xA0;<span class="sunlight-string">&quot;&#x540C;&#x3058;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306A;&#x306E;&#x3067;&#x3059;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-comment">#&#xA0;code...</span>
+<span class="sunlight-punctuation">}</span>&#xA0;<span class="sunlight-keyword">else</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-string">&quot;&#x5225;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3059;&quot;</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
+</span></pre></div></div></code></pre>
 <div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</a></li><li><a href="#&#x3084;&#x308A;&#x65B9;">3. &#x3084;&#x308A;&#x65B9;</a></li><li><a href="#&#x30AF;&#x30E9;&#x30B9;&#x56F3;">4. &#x30AF;&#x30E9;&#x30B9;&#x56F3;</a></li><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;">5. &#x30E1;&#x30EA;&#x30C3;&#x30C8;</a></li><li><a href="#&#x6CE8;&#x610F;&#x70B9;">6. &#x6CE8;&#x610F;&#x70B9;</a></li><ul><li><a href="#intrinsic(&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;)&#x304B;extrinsic(&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;)&#x304B;">6.1. intrinsic(&#x672C;&#x6765;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x60C5;&#x5831;)&#x304B;extrinsic(&#x5916;&#x304B;&#x3089;&#x3084;&#x3063;&#x3066;&#x304D;&#x305F;&#x60C5;&#x5831;)&#x304B;</a></li></ul></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
@@ -711,7 +711,7 @@ $factory = ConfidantFactory::getInstance();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Flyweight","level":"1.3.6","depth":2,"next":{"title":"Proxy","level":"1.3.7","depth":2,"path":"docs/構造に関するパターン/proxy.md","ref":"docs/構造に関するパターン/proxy.md","articles":[]},"previous":{"title":"Facade","level":"1.3.5","depth":2,"path":"docs/構造に関するパターン/facade.md","ref":"docs/構造に関するパターン/facade.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/構造に関するパターン/flyweight.md","mtime":"2020-05-17T12:10:25.065Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Flyweight","level":"1.3.6","depth":2,"next":{"title":"Proxy","level":"1.3.7","depth":2,"path":"docs/構造に関するパターン/proxy.md","ref":"docs/構造に関するパターン/proxy.md","articles":[]},"previous":{"title":"Facade","level":"1.3.5","depth":2,"path":"docs/構造に関するパターン/facade.md","ref":"docs/構造に関するパターン/facade.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/構造に関するパターン/flyweight.md","mtime":"2020-05-17T12:10:25.065Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:15:30.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
@@ -38,10 +42,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -527,7 +527,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+                                <div class="treeview__container"><ul>
 <li><div><a href="#observer&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Observer&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
@@ -599,141 +599,141 @@
 </ul>
 <h2 id="&#x30BD;&#x30FC;&#x30B9;">7. &#x30BD;&#x30FC;&#x30B9;</h2>
 <h3 id="PHP">7.1. PHP</h3>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-number">1</span>);
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-openTag">&lt;?php</span>
+<span class="sunlight-function">ini_set</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;display_errors&quot;</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-number">1</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
 
 
-<span class="hljs-comment">/**
- * &#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x30EA;&#x30B9;&#x30CA;&#x30FC;
- * &#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3078;
- * &#x6307;&#x5B9A;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;
- * &#x4E8B;&#x524D;&#x767B;&#x9332;
- * &#x6307;&#x5B9A;&#x306E;&#x30BF;&#x30A4;&#x30DF;&#x30F3;&#x30B0;&#x3067;&#x51E6;&#x7406;&#x3092;&#x50CD;&#x304D;&#x304B;&#x3051;&#x308B;
- * 
- * JS&#x306E;DOM&#x306F;&#x3060;&#x3044;&#x305F;&#x3044;&#x3053;&#x308C;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x308B;
- * 
- */</span>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x30EA;&#x30B9;&#x30CA;&#x30FC;
+&#xA0;*&#xA0;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3078;
+&#xA0;*&#xA0;&#x6307;&#x5B9A;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;
+&#xA0;*&#xA0;&#x4E8B;&#x524D;&#x767B;&#x9332;
+&#xA0;*&#xA0;&#x6307;&#x5B9A;&#x306E;&#x30BF;&#x30A4;&#x30DF;&#x30F3;&#x30B0;&#x3067;&#x51E6;&#x7406;&#x3092;&#x50CD;&#x304D;&#x304B;&#x3051;&#x308B;
+&#xA0;*&#xA0;
+&#xA0;*&#xA0;JS&#x306E;DOM&#x306F;&#x3060;&#x3044;&#x305F;&#x3044;&#x3053;&#x308C;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x308B;
+&#xA0;*&#xA0;
+&#xA0;*/</span>
 
 
 
-<span class="hljs-comment">/**
- * &#x30E9;&#x30B8;&#x30AA;&#x305D;&#x306E;&#x3082;&#x306E;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;
- * &#x767A;&#x4FE1;&#x5F79;
- */</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ISubject</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">($obserrer)</span></span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">($obserrer)</span></span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">notify</span><span class="hljs-params">($e)</span></span>;
-}
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30E9;&#x30B8;&#x30AA;&#x305D;&#x306E;&#x3082;&#x306E;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;
+&#xA0;*&#xA0;&#x767A;&#x4FE1;&#x5F79;
+&#xA0;*/</span>
+<span class="sunlight-keyword">interface</span>&#xA0;<span class="sunlight-named-ident">ISubject</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">add</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$obserrer</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">remove</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$obserrer</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">notify</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$e</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-comment">/**
- * &#x30EA;&#x30B9;&#x30CA;&#x30FC;
- * &#x805E;&#x304F;&#x4F53;&#x52E2;&#x3060;&#x3051;&#x6301;&#x3063;&#x3066;&#x308C;&#x3070;&#x3044;&#x3044;
- * 
- */</span>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30EA;&#x30B9;&#x30CA;&#x30FC;
+&#xA0;*&#xA0;&#x805E;&#x304F;&#x4F53;&#x52E2;&#x3060;&#x3051;&#x6301;&#x3063;&#x3066;&#x308C;&#x3070;&#x3044;&#x3044;
+&#xA0;*&#xA0;
+&#xA0;*/</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IObserver</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">receive</span><span class="hljs-params">($music)</span></span>;
-}
+<span class="sunlight-keyword">interface</span>&#xA0;<span class="sunlight-named-ident">IObserver</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">receive</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$music</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-comment">/**
- * &#x5B9F;&#x969B;&#x306E;&#x30E9;&#x30B8;&#x30AA;
- */</span>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x5B9F;&#x969B;&#x306E;&#x30E9;&#x30B8;&#x30AA;
+&#xA0;*/</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Radio</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ISubject</span>
-</span>{
-  <span class="hljs-comment">// &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x5168;&#x54E1;</span>
-  <span class="hljs-keyword">private</span> $observers = <span class="hljs-keyword">array</span>();
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">Radio</span>&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">ISubject</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x5168;&#x54E1;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$observers</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
 
-  <span class="hljs-comment">/**
-   * add
-   * &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306E;&#x300C;&#x8996;&#x8074;&#x5951;&#x7D04;&#x300D;
-   */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">($observer)</span>
-  </span>{
-    $this-&gt;observers[] = $observer;
-  }
+&#xA0;&#xA0;<span class="sunlight-comment">/**
+&#xA0;&#xA0;&#xA0;*&#xA0;add
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306E;&#x300C;&#x8996;&#x8074;&#x5951;&#x7D04;&#x300D;
+&#xA0;&#xA0;&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">add</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$observer</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">observers</span><span class="sunlight-punctuation">[</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$observer</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-  <span class="hljs-comment">/**
-   * remove
-   * &#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306E;&#x300C;&#x8996;&#x8074;&#x89E3;&#x7D04;&#x300D;
-   */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">($observer)</span>
-  </span>{
-    <span class="hljs-keyword">foreach</span> ($this-&gt;observers <span class="hljs-keyword">as</span> $obs) {
-      <span class="hljs-keyword">if</span> ($observer != $obs) {
-        $this-&gt;observers[] = $obs;
-        <span class="hljs-comment">//&#x5408;&#x81F4;&#x3057;&#x305F;&#x8981;&#x7D20;&#x3092;&#x524A;&#x9664;</span>
-      }
-    }
-  }
+&#xA0;&#xA0;<span class="sunlight-comment">/**
+&#xA0;&#xA0;&#xA0;*&#xA0;remove
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306E;&#x300C;&#x8996;&#x8074;&#x89E3;&#x7D04;&#x300D;
+&#xA0;&#xA0;&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">remove</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$observer</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">foreach</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">observers</span>&#xA0;<span class="sunlight-keyword">as</span>&#xA0;<span class="sunlight-variable">$obs</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$observer</span>&#xA0;<span class="sunlight-operator">!=</span>&#xA0;<span class="sunlight-variable">$obs</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">observers</span><span class="sunlight-punctuation">[</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$obs</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#x5408;&#x81F4;&#x3057;&#x305F;&#x8981;&#x7D20;&#x3092;&#x524A;&#x9664;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-<span class="hljs-comment">/**
- * notify
- * &#x81EA;&#x8EAB;&#x306E;&#x72B6;&#x614B;&#x5909;&#x5316;&#x3092;&#x901A;&#x77E5;&#x3059;&#x308B;
- */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">notify</span><span class="hljs-params">($e)</span>
-  </span>{
-    <span class="hljs-keyword">foreach</span> ($this-&gt;observers <span class="hljs-keyword">as</span> $obs) {
-      $obs-&gt;receive($e);
-    }
-  }
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;notify
+&#xA0;*&#xA0;&#x81EA;&#x8EAB;&#x306E;&#x72B6;&#x614B;&#x5909;&#x5316;&#x3092;&#x901A;&#x77E5;&#x3059;&#x308B;
+&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">notify</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$e</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">foreach</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">observers</span>&#xA0;<span class="sunlight-keyword">as</span>&#xA0;<span class="sunlight-variable">$obs</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$obs</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">receive</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$e</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-<span class="hljs-comment">/**
- * 
- * &#x300C;&#x97F3;&#x697D;&#x3092;&#x304B;&#x3051;&#x308B;&#x300D;&#x3068;&#x3044;&#x3046;&#x72B6;&#x614B;&#x5909;&#x5316;
- */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">broadCast</span><span class="hljs-params">($music)</span>
-  </span>{
-    $this-&gt;notify($music);
-  }
-
-
-  <span class="hljs-comment">/**
-   * &#x300C;&#x30C8;&#x30FC;&#x30AF;&#x3059;&#x308B;&#x300D;&#x72B6;&#x614B;&#x5909;&#x5316;
-   */</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">talk</span><span class="hljs-params">()</span>
-  </span>{
-    $this-&gt;notify(<span class="hljs-string">&quot;DJ&#x306E;&#x558B;&#x308A;&quot;</span>);
-  }
-}
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;
+&#xA0;*&#xA0;&#x300C;&#x97F3;&#x697D;&#x3092;&#x304B;&#x3051;&#x308B;&#x300D;&#x3068;&#x3044;&#x3046;&#x72B6;&#x614B;&#x5909;&#x5316;
+&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">broadCast</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$music</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">notify</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$music</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-comment">/**
- * &#x30EA;&#x30B9;&#x30CA;&#x30FC;
- */</span>
+&#xA0;&#xA0;<span class="sunlight-comment">/**
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x300C;&#x30C8;&#x30FC;&#x30AF;&#x3059;&#x308B;&#x300D;&#x72B6;&#x614B;&#x5909;&#x5316;
+&#xA0;&#xA0;&#xA0;*/</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">talk</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">notify</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;DJ&#x306E;&#x558B;&#x308A;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Listenter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IObserver</span>
-</span>{
-  <span class="hljs-keyword">private</span> $name;
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30EA;&#x30B9;&#x30CA;&#x30FC;
+&#xA0;*/</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($name)</span>
-  </span>{
-    $this-&gt;name = $name;
-  }
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">receive</span><span class="hljs-params">($music)</span>
-  </span>{
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x30E9;&#x30B8;&#x30AA;&#x30CD;&#x30FC;&#x30E0; $this-&gt;name &#x3055;&#x3093;&#x304C; $music &quot;</span> . <span class="hljs-string">&quot;&#x3092;&#x805E;&#x304D;&#x307E;&#x3057;&#x305F; &lt;br&gt;&quot;</span>;
-  }
-}
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">Listenter</span>&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">IObserver</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$name</span><span class="sunlight-punctuation">;</span>
 
-$radio = <span class="hljs-keyword">new</span> Radio();
-$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;flat&quot;</span>));
-$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Macchie&quot;</span>));
-$radio-&gt;add(<span class="hljs-keyword">new</span> Listenter(<span class="hljs-string">&quot;Rij&quot;</span>));
-$radio-&gt;broadCast(<span class="hljs-string">&quot;SHIELD TRIGGER! ~&#x30AF;&#x30ED;&#x30C3;&#x30AF;8&#x679A;~&quot;</span>);
-$radio-&gt;talk();
-</code></pre>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$name</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">name</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$name</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">receive</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$music</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-string">&quot;&#x30E9;&#x30B8;&#x30AA;&#x30CD;&#x30FC;&#x30E0;&#xA0;$this-&gt;name&#xA0;&#x3055;&#x3093;&#x304C;&#xA0;$music&#xA0;&quot;</span>&#xA0;<span class="sunlight-operator">.</span>&#xA0;<span class="sunlight-string">&quot;&#x3092;&#x805E;&#x304D;&#x307E;&#x3057;&#x305F;&#xA0;&lt;br&gt;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-variable">$radio</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">Radio</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$radio</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">add</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">Listenter</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;flat&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$radio</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">add</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">Listenter</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;Macchie&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$radio</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">add</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">Listenter</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;Rij&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$radio</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">broadCast</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;SHIELD&#xA0;TRIGGER!&#xA0;~&#x30AF;&#x30ED;&#x30C3;&#x30AF;8&#x679A;~&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$radio</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">talk</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+</span></pre></div></div></code></pre>
 <h2 id="&#x6240;&#x611F;">8. &#x6240;&#x611F;</h2>
 <p>&#x4E0A;&#x306E;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;&#x9055;&#x548C;&#x611F;</p>
 <p>&#x666E;&#x901A;&#x30E9;&#x30B8;&#x30AA;&#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x306F;&#x81EA;&#x5206;&#x306E;&#x805E;&#x3044;&#x3066;&#x3044;&#x308B;&#x30E9;&#x30B8;&#x30AA;&#x306E;&#x5185;&#x5BB9;&#x306F;&#x308F;&#x304B;&#x308B;&#x304C;&#x3001;&#x30E9;&#x30B8;&#x30AA;&#x30D1;&#x30FC;&#x30BD;&#x30CA;&#x30EA;&#x30C6;&#x30A3;&#x306F;&#x81EA;&#x5206;&#x3092;&#x805E;&#x3044;&#x3066;&#x3044;&#x308B;&#x30E9;&#x30B8;&#x30AA;&#x30EA;&#x30B9;&#x30CA;&#x30FC;&#x3092;&#x628A;&#x63E1;&#x3057;&#x306A;&#x3044;&#x3060;&#x308D;&#x3046;</p>
@@ -781,7 +781,7 @@ $radio-&gt;talk();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Observer","level":"1.2.8","depth":2,"next":{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},"previous":{"title":"Memento","level":"1.2.7","depth":2,"path":"docs/振る舞いに関するパターン/memento.md","ref":"docs/振る舞いに関するパターン/memento.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/observer.md","mtime":"2020-05-17T01:32:37.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Observer","level":"1.2.8","depth":2,"next":{"title":"State","level":"1.2.9","depth":2,"path":"docs/振る舞いに関するパターン/state.md","ref":"docs/振る舞いに関するパターン/state.md","articles":[]},"previous":{"title":"Memento","level":"1.2.7","depth":2,"path":"docs/振る舞いに関するパターン/memento.md","ref":"docs/振る舞いに関するパターン/memento.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/振る舞いに関するパターン/observer.md","mtime":"2020-05-17T01:32:37.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:15:30.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

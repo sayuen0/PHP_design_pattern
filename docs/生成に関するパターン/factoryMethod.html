@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
@@ -38,10 +42,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -527,7 +527,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+                                <div class="treeview__container"><ul>
 <li><div><a href="#factory-method&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Factory Method&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
@@ -608,173 +608,173 @@ POS&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306A;&#x3089;&#x305D;&#x306E;&#x9053;&#x30
 <p>&#x3067;&#x3001;&#x3053;&#x3053;&#x6CE8;&#x610F;! &#x540D;&#x524D;&#x306F;&#x4F3C;&#x3066;&#x3044;&#x308B;&#x3051;&#x308C;&#x3069;&#x3001;&#x4F5C;&#x308A;&#x65B9;&#x3088;&#x308A;&#x5148;&#x306B;&#x4F7F;&#x3044;&#x65B9;&#x306B;&#x7740;&#x76EE;&#x3059;&#x308B; <a href="https://qiita.com/tanakahisateru/items/af019c95295469c6606b" target="_blank">Abstract Factory</a> &#x3068;&#x306F;&#x9055;&#x3044;&#x3001;&#x3053;&#x3063;&#x3061;&#x306F;&#x3001;&#x7D42;&#x59CB;&#x4F5C;&#x308A;&#x65B9;&#x306B;&#x7740;&#x76EE;&#x3059;&#x308B;&#x306E;&#x304C;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#x3067;&#x3059;&#x3088;&#x3002;&#x3053;&#x306E;&#x5DEE;&#x304C;&#x3081;&#x3061;&#x3083;&#x304F;&#x3061;&#x3083;&#x91CD;&#x8981;&#x3002;</p>
 <p>&#x610F;&#x5473;&#x304C;&#x6392;&#x4ED6;&#x7684;&#x306A;&#x95A2;&#x4FC2;&#x3058;&#x3083;&#x306A;&#x3044;&#x3001;&#x3068;&#x3044;&#x3046;&#x304B;&#x3080;&#x3057;&#x308D;&#x88DC;&#x5B8C;&#x95A2;&#x4FC2;&#x306A;&#x306E;&#x3067;&#x3001; &#x300C;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x6C42;&#x3081;&#x308B; Abstract Factory &#x3092;&#x3001;Factory Method &#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3067;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x300D;&#x306A;&#x3093;&#x3066;&#x3053;&#x3068;&#x3082;&#x666E;&#x901A;&#x306B;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x4F55;&#x306E;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x304B;&#x3001;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x95A2;&#x4FC2;&#x306B;&#x7740;&#x76EE;&#x3057;&#x3066;&#x3069;&#x3046;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3092;&#x898B;&#x51FA;&#x3059;&#x304B;&#x3001;&#x306A;&#x306E;&#x3067;&#x3059;&#x3002;</p>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-openTag">&lt;?php</span>
+<span class="sunlight-function">ini_set</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;display_errors&quot;</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-string">&quot;1&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
 
-<span class="hljs-comment">/**
- * &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;
- * 
- * &#x5358;&#x7D14;&#x306A;&#x751F;&#x6210;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x306F;&#x306A;&#x304F;
- * &#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x7684;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6E96;&#x5099;&#x306E;&#x904E;&#x7A0B;&#x3092;
- * absract&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3001;
- * &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x751F;&#x6210;&#x3068;&#x6E96;&#x5099;&#x3092;&#x62BD;&#x8C61;&#x5316;
- * &#x591A;&#x69D8;&#x306A;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x3092;&#x8ACB;&#x3051;&#x8CA0;&#x3046;
- * &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x751F;&#x6210;&#x306F;&#x5F37;&#x3044;&#x4F9D;&#x5B58;&#x3092;&#x751F;&#x3080;&#x306E;&#x3067;&#x3001;
- * &#x5207;&#x308A;&#x96E2;&#x3059;&#x3060;&#x3051;&#x3067;&#x3082;&#x5927;&#x304D;&#x306A;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x304C;&#x3042;&#x308B;
- */</span>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;
+&#xA0;*&#xA0;
+&#xA0;*&#xA0;&#x5358;&#x7D14;&#x306A;&#x751F;&#x6210;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x306F;&#x306A;&#x304F;
+&#xA0;*&#xA0;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x7684;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6E96;&#x5099;&#x306E;&#x904E;&#x7A0B;&#x3092;
+&#xA0;*&#xA0;absract&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3001;
+&#xA0;*&#xA0;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x751F;&#x6210;&#x3068;&#x6E96;&#x5099;&#x3092;&#x62BD;&#x8C61;&#x5316;
+&#xA0;*&#xA0;&#x591A;&#x69D8;&#x306A;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x3092;&#x8ACB;&#x3051;&#x8CA0;&#x3046;
+&#xA0;*&#xA0;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x751F;&#x6210;&#x306F;&#x5F37;&#x3044;&#x4F9D;&#x5B58;&#x3092;&#x751F;&#x3080;&#x306E;&#x3067;&#x3001;
+&#xA0;*&#xA0;&#x5207;&#x308A;&#x96E2;&#x3059;&#x3060;&#x3051;&#x3067;&#x3082;&#x5927;&#x304D;&#x306A;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x304C;&#x3042;&#x308B;
+&#xA0;*/</span>
 
 
-<span class="hljs-comment">/**
- * &#x5FA9;&#x7FD2;:
- * templatemethod&#x3067;&#x306F;&#x3001;&#x51E6;&#x7406;&#x306E;&#x6D41;&#x308C;&#x3092;&#x5B9F;&#x969B;&#x306E;&#x51E6;&#x7406;&#x304B;&#x3089;&#x62BD;&#x8C61;&#x5316;&#x3057;&#x305F;
- * &#x305D;&#x308C;&#x305E;&#x308C;doAction&#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x3067;&#x3001;
- * validate&#x3057;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x3042;&#x308C;&#x3070;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x6295;&#x3052;&#x3066;&#x3001;
- * &#x306A;&#x3051;&#x308C;&#x3070;doMain&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x6D41;&#x308C;&#x3092;&#x8E0F;&#x3093;&#x3060;
- */</span>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x5FA9;&#x7FD2;:
+&#xA0;*&#xA0;templatemethod&#x3067;&#x306F;&#x3001;&#x51E6;&#x7406;&#x306E;&#x6D41;&#x308C;&#x3092;&#x5B9F;&#x969B;&#x306E;&#x51E6;&#x7406;&#x304B;&#x3089;&#x62BD;&#x8C61;&#x5316;&#x3057;&#x305F;
+&#xA0;*&#xA0;&#x305D;&#x308C;&#x305E;&#x308C;doAction&#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x3067;&#x3001;
+&#xA0;*&#xA0;validate&#x3057;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x3042;&#x308C;&#x3070;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x6295;&#x3052;&#x3066;&#x3001;
+&#xA0;*&#xA0;&#x306A;&#x3051;&#x308C;&#x3070;doMain&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x6D41;&#x308C;&#x3092;&#x8E0F;&#x3093;&#x3060;
+&#xA0;*/</span>
 
 
-<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModelFactoryBase</span>
-</span>{
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> $instances = <span class="hljs-keyword">array</span>();
-  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
-  </span>{
-  }
+<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ModelFactoryBase</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-variable">$instances</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInstance</span><span class="hljs-params">($class)</span>
-  </span>{
-    <span class="hljs-keyword">if</span> (!in_array($class, <span class="hljs-keyword">self</span>::$instances)) {
-      <span class="hljs-keyword">self</span>::$instances[$class] = <span class="hljs-keyword">new</span> $class;
-    }
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>::$instances[$class];
-  }
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">static</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getInstance</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$class</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-operator">!</span><span class="sunlight-function">in_array</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$class</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instances</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instances</span><span class="sunlight-punctuation">[</span><span class="sunlight-variable">$class</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-variable">$class</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-keyword">self</span><span class="sunlight-operator">::</span><span class="sunlight-variable">$instances</span><span class="sunlight-punctuation">[</span><span class="sunlight-variable">$class</span><span class="sunlight-punctuation">]</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">($name)</span>
-  </span>{
-    $class = <span class="hljs-string">&quot;${name}Model&quot;</span>;
-    <span class="hljs-keyword">if</span> (!class_exists($class)) {
-      <span class="hljs-keyword">require</span> <span class="hljs-string">&quot;$class.php&quot;</span>;
-      $obj = <span class="hljs-keyword">new</span> $class;
-      $this-&gt;setProperties($obj);
-      <span class="hljs-keyword">return</span> $obj;
-    }
-  }
-  <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setProperties</span><span class="hljs-params">($obj)</span></span>;
-}
-
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModelFactoryA</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ModelFactoryBase</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setProperties</span><span class="hljs-params">($obj)</span>
-  </span>{
-    $obj-&gt;setName(<span class="hljs-string">&quot;FromA&quot;</span>);
-  }
-}
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModelFactoryB</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ModelFactoryBase</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setProperties</span><span class="hljs-params">($obj)</span>
-  </span>{
-    $obj-&gt;setName(<span class="hljs-string">&quot;FromB&quot;</span>);
-  }
-}
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">create</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$name</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$class</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-string">&quot;${name}Model&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-operator">!</span><span class="sunlight-function">class_exists</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$class</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">require</span>&#xA0;<span class="sunlight-string">&quot;$class.php&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$obj</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-variable">$class</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setProperties</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$obj</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$obj</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setProperties</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$obj</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModelBase</span>
-</span>{
-  <span class="hljs-keyword">protected</span> $rows  = <span class="hljs-keyword">array</span>();
-  <span class="hljs-keyword">private</span> $name = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setName</span><span class="hljs-params">($name)</span>
-  </span>{
-    $this-&gt;name = $name;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;name;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
-  </span>{
-    $this-&gt;fillData();
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fillData</span><span class="hljs-params">()</span></span>;
-}
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ModelFactoryA</span>&#xA0;<span class="sunlight-keyword">extends</span>&#xA0;<span class="sunlight-named-ident">ModelFactoryBase</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setProperties</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$obj</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$obj</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setName</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;FromA&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ModelFactoryB</span>&#xA0;<span class="sunlight-keyword">extends</span>&#xA0;<span class="sunlight-named-ident">ModelFactoryBase</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setProperties</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$obj</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$obj</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setName</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;FromB&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CSVModel</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ModelBase</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fillData</span><span class="hljs-params">()</span>
-  </span>{
-    ob_start();
-<span class="hljs-meta">?&gt;</span>
-    <span class="hljs-number">1</span>, name1, hoge@example.com
-    <span class="hljs-number">2</span>, name2, fuga@example.com
-    <span class="hljs-number">2</span>, name3, piyo@example.com
-    <span class="hljs-meta">&lt;?php</span>
-    <span class="hljs-keyword">foreach</span> (explode(<span class="hljs-string">&quot;\n&quot;</span>, ob_get_clean()) <span class="hljs-keyword">as</span> $line) {
-      <span class="hljs-keyword">if</span> (!trim($line)) {
-        <span class="hljs-keyword">continue</span>;
-      }
-      $row = str_getcsv($line);
-      $this-&gt;rows[trim($row[<span class="hljs-number">0</span>])] =  (object) <span class="hljs-keyword">array</span>(
-        <span class="hljs-string">&quot;id&quot;</span> =&gt; trim($row[<span class="hljs-number">0</span>]),
-        <span class="hljs-string">&quot;name&quot;</span> =&gt; trim($row[<span class="hljs-number">1</span>]),
-        <span class="hljs-string">&quot;mailAddress&quot;</span> =&gt; trim($row[<span class="hljs-number">2</span>]),
-      );
-    }
-  }
-}
+<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ModelBase</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">protected</span>&#xA0;<span class="sunlight-variable">$rows</span>&#xA0;&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$name</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setName</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$name</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">name</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$name</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getName</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">name</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fillData</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">fillData</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">XMLModel</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ModelBase</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fillData</span><span class="hljs-params">()</span>
-  </span>{
-
-    ob_start();
-    <span class="hljs-meta">?&gt;</span>
-    <span class="hljs-meta">&lt;?</span>= <span class="hljs-string">&apos;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&apos;</span> <span class="hljs-meta">?&gt;</span>
-    &lt;rows&gt;
-      &lt;row id=<span class="hljs-string">&quot;1&quot;</span> name=<span class="hljs-string">&quot;name1&quot;</span> mailAddress=<span class="hljs-string">&quot;hoge@example.com&quot;</span> /&gt;
-      &lt;row id=<span class="hljs-string">&quot;2&quot;</span> name=<span class="hljs-string">&quot;name2&quot;</span> mailAddress=<span class="hljs-string">&quot;fizz@example.com&quot;</span> /&gt;
-      &lt;row id=<span class="hljs-string">&quot;3&quot;</span> name=<span class="hljs-string">&quot;name3&quot;</span> mailAddress=<span class="hljs-string">&quot;buzz@example.com&quot;</span> /&gt;
-    &lt;/rows&gt;
-<span class="hljs-meta">&lt;?php</span>
-    <span class="hljs-keyword">foreach</span> (simplexml_load_string(ob_get_clean())-&gt;row  <span class="hljs-keyword">as</span> $row) {
-      $obj = <span class="hljs-keyword">new</span> stdClass();
-      <span class="hljs-keyword">foreach</span> ($row-&gt;attributes() <span class="hljs-keyword">as</span> $key =&gt; $value) {
-        $obj-&gt;key = (string) $value;
-      }
-      $this-&gt;rows[$obj-&gt;id] = $obj;
-    }
-  }
-}
-
-
-<span class="hljs-comment">// foreach (array(&quot;ModelFactoryA&quot;, &quot;ModelFactoryB&quot;) as $factoryName) {</span>
-<span class="hljs-comment">//   $model = ModelFactoryBase::getInstance($factoryName);</span>
-<span class="hljs-comment">//   foreach (array(&quot;XML&quot;, &quot;CSV&quot;) as $modelName) {</span>
-<span class="hljs-comment">//     var_dump($model);</span>
-<span class="hljs-comment">//     echo  &quot;&lt;&lt;&quot; . $modelName . &quot;&#x306E;&#x51E6;&#x7406; &gt;&gt; &lt;br&gt;&quot;;</span>
-<span class="hljs-comment">//     var_dump($model-&gt;find(1));</span>
-<span class="hljs-comment">//     $model-&gt;delete(1);</span>
-<span class="hljs-comment">//     $model-&gt;save((object) array(</span>
-<span class="hljs-comment">//       &quot;id&quot; =&gt; 4,</span>
-<span class="hljs-comment">//       &quot;name&quot; =&gt; &quot;name4&quot;,</span>
-<span class="hljs-comment">//       &quot;mailAddress&quot; =&gt; &quot;xyzzy@example.com&quot;</span>
-<span class="hljs-comment">//     ));</span>
-<span class="hljs-comment">//     var_dump($model);</span>
-<span class="hljs-comment">//   }</span>
-<span class="hljs-comment">// }</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">CSVModel</span>&#xA0;<span class="sunlight-keyword">extends</span>&#xA0;<span class="sunlight-named-ident">ModelBase</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">fillData</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-function">ob_start</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-closeTag">?&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-number">1</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">name1</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">hoge</span><span class="sunlight-punctuation">@</span><span class="sunlight-ident">example</span><span class="sunlight-operator">.</span><span class="sunlight-ident">com</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-number">2</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">name2</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">fuga</span><span class="sunlight-punctuation">@</span><span class="sunlight-ident">example</span><span class="sunlight-operator">.</span><span class="sunlight-ident">com</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-number">2</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">name3</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">piyo</span><span class="sunlight-punctuation">@</span><span class="sunlight-ident">example</span><span class="sunlight-operator">.</span><span class="sunlight-ident">com</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-openTag">&lt;?php</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">foreach</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-function">explode</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;\n&quot;</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-function">ob_get_clean</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-keyword">as</span>&#xA0;<span class="sunlight-variable">$line</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-operator">!</span><span class="sunlight-function">trim</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$line</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">continue</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$row</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-function">str_getcsv</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$line</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">rows</span><span class="sunlight-punctuation">[</span><span class="sunlight-function">trim</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$row</span><span class="sunlight-punctuation">[</span><span class="sunlight-number">0</span><span class="sunlight-punctuation">]</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-ident">object</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-string">&quot;id&quot;</span>&#xA0;<span class="sunlight-operator">=&gt;</span>&#xA0;<span class="sunlight-function">trim</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$row</span><span class="sunlight-punctuation">[</span><span class="sunlight-number">0</span><span class="sunlight-punctuation">]</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">,</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-string">&quot;name&quot;</span>&#xA0;<span class="sunlight-operator">=&gt;</span>&#xA0;<span class="sunlight-function">trim</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$row</span><span class="sunlight-punctuation">[</span><span class="sunlight-number">1</span><span class="sunlight-punctuation">]</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">,</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-string">&quot;mailAddress&quot;</span>&#xA0;<span class="sunlight-operator">=&gt;</span>&#xA0;<span class="sunlight-function">trim</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$row</span><span class="sunlight-punctuation">[</span><span class="sunlight-number">2</span><span class="sunlight-punctuation">]</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">,</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-meta">?&gt;</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">XMLModel</span>&#xA0;<span class="sunlight-keyword">extends</span>&#xA0;<span class="sunlight-named-ident">ModelBase</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">fillData</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
 
-&lt;a href=<span class="hljs-string">&quot;client.php&quot;</span>&gt;&#x5225;&#x4E8B;&#x4F8B;&#x3078;&lt;/a&gt;
-&lt;br&gt;
-&lt;a href=<span class="hljs-string">&quot;/docs/factoryMethod.md&quot;</span>&gt;&#x8AAC;&#x660E;&#x3078;&lt;/a&gt;
-</code></pre>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-function">ob_start</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-closeTag">?&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-shortOpenTag">&lt;?=</span>&#xA0;<span class="sunlight-string">&apos;&lt;?xml&#xA0;version=&quot;1.0&quot;&#xA0;encoding=&quot;UTF-8&quot;?&gt;&apos;</span>&#xA0;<span class="sunlight-closeTag">?&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">rows</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">row</span>&#xA0;<span class="sunlight-ident">id</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;1&quot;</span>&#xA0;<span class="sunlight-ident">name</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;name1&quot;</span>&#xA0;<span class="sunlight-ident">mailAddress</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;hoge@example.com&quot;</span>&#xA0;<span class="sunlight-operator">/</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">row</span>&#xA0;<span class="sunlight-ident">id</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;2&quot;</span>&#xA0;<span class="sunlight-ident">name</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;name2&quot;</span>&#xA0;<span class="sunlight-ident">mailAddress</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;fizz@example.com&quot;</span>&#xA0;<span class="sunlight-operator">/</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">row</span>&#xA0;<span class="sunlight-ident">id</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;3&quot;</span>&#xA0;<span class="sunlight-ident">name</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;name3&quot;</span>&#xA0;<span class="sunlight-ident">mailAddress</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;buzz@example.com&quot;</span>&#xA0;<span class="sunlight-operator">/</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">rows</span><span class="sunlight-operator">&gt;</span>
+<span class="sunlight-openTag">&lt;?php</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">foreach</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-function">simplexml_load_string</span><span class="sunlight-punctuation">(</span><span class="sunlight-function">ob_get_clean</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">row</span>&#xA0;&#xA0;<span class="sunlight-keyword">as</span>&#xA0;<span class="sunlight-variable">$row</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$obj</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">stdClass</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">foreach</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$row</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">attributes</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-keyword">as</span>&#xA0;<span class="sunlight-variable">$key</span>&#xA0;<span class="sunlight-operator">=&gt;</span>&#xA0;<span class="sunlight-variable">$value</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$obj</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-function">key</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">string</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-variable">$value</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">rows</span><span class="sunlight-punctuation">[</span><span class="sunlight-variable">$obj</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">id</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$obj</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+
+<span class="sunlight-comment">//&#xA0;foreach&#xA0;(array(&quot;ModelFactoryA&quot;,&#xA0;&quot;ModelFactoryB&quot;)&#xA0;as&#xA0;$factoryName)&#xA0;{</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;$model&#xA0;=&#xA0;ModelFactoryBase::getInstance($factoryName);</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;foreach&#xA0;(array(&quot;XML&quot;,&#xA0;&quot;CSV&quot;)&#xA0;as&#xA0;$modelName)&#xA0;{</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;var_dump($model);</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;echo&#xA0;&#xA0;&quot;&lt;&lt;&quot;&#xA0;.&#xA0;$modelName&#xA0;.&#xA0;&quot;&#x306E;&#x51E6;&#x7406;&#xA0;&gt;&gt;&#xA0;&lt;br&gt;&quot;;</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;var_dump($model-&gt;find(1));</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;$model-&gt;delete(1);</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;$model-&gt;save((object)&#xA0;array(</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;id&quot;&#xA0;=&gt;&#xA0;4,</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;name&quot;&#xA0;=&gt;&#xA0;&quot;name4&quot;,</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;mailAddress&quot;&#xA0;=&gt;&#xA0;&quot;xyzzy@example.com&quot;</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;));</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;var_dump($model);</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;&#xA0;}</span>
+<span class="sunlight-comment">//&#xA0;}</span>
+
+
+<span class="sunlight-closeTag">?&gt;</span>
+
+<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">a</span>&#xA0;<span class="sunlight-ident">href</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;client.php&quot;</span><span class="sunlight-operator">&gt;</span><span class="sunlight-punctuation">&#x5225;</span><span class="sunlight-punctuation">&#x4E8B;</span><span class="sunlight-punctuation">&#x4F8B;</span><span class="sunlight-punctuation">&#x3078;</span><span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">a</span><span class="sunlight-operator">&gt;</span>
+<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">br</span><span class="sunlight-operator">&gt;</span>
+<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">a</span>&#xA0;<span class="sunlight-ident">href</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;/docs/factoryMethod.md&quot;</span><span class="sunlight-operator">&gt;</span><span class="sunlight-punctuation">&#x8AAC;</span><span class="sunlight-punctuation">&#x660E;</span><span class="sunlight-punctuation">&#x3078;</span><span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">a</span><span class="sunlight-operator">&gt;</span>
+</span></pre></div></div></code></pre>
 <div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;">1. &#x30E1;&#x30EA;&#x30C3;&#x30C8;</a></li><ul><li><a href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;">1.1. &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;</a></li></ul><li><a href="#&#x30B7;&#x30CA;&#x30EA;&#x30AA;_CSV&#x304B;XML&#x304B;&#x306E;&#x65B9;">2. &#x30B7;&#x30CA;&#x30EA;&#x30AA; CSV&#x304B;XML&#x304B;&#x306E;&#x65B9;</a></li><li><a href="#&#x30B7;&#x30CA;&#x30EA;&#x30AA;_&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;">3. &#x30B7;&#x30CA;&#x30EA;&#x30AA; &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;</a></li><li><a href="#&#x30B7;&#x30CA;&#x30EA;&#x30AA;_&#x6599;&#x7406;">4. &#x30B7;&#x30CA;&#x30EA;&#x30AA; &#x6599;&#x7406;</a></li><li><a href="#&#x30AF;&#x30E9;&#x30B9;&#x56F3;">5. &#x30AF;&#x30E9;&#x30B9;&#x56F3;</a></li><li><a href="#&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;_Factory_Method">6. &#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Factory Method</a></li></ul></div><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
@@ -818,7 +818,7 @@ ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Factory Method","level":"1.4.3","depth":2,"next":{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},"previous":{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/factoryMethod.md","mtime":"2020-05-15T22:47:32.547Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Factory Method","level":"1.4.3","depth":2,"next":{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},"previous":{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/factoryMethod.md","mtime":"2020-05-15T22:47:32.547Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:15:30.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

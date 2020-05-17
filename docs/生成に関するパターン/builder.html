@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
@@ -38,10 +42,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -527,7 +527,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+                                <div class="treeview__container"><ul>
 <li><div><a href="#builder&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Builder&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
@@ -599,238 +599,238 @@ wikipedia&#x3088;&#x308A;</p>
 </ul>
 <p>&#x306A;&#x3069;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3068;&#x3001;&#x30D3;&#x30EB;&#x30C0;&#x304C;&#x52DD;&#x624B;&#x306B;SQL&#x3092;&#x7D44;&#x307F;&#x7ACB;&#x3066;&#x3066;&#x304F;&#x308C;&#x308B;</p>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-openTag">&lt;?php</span>
 
-<span class="hljs-comment">/**
- * &#x8907;&#x6570;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x3068;&#x8907;&#x6570;&#x306E;&#x30D3;&#x30EB;&#x30C0;
- * &#x591A;&#x7A2E;&#x591A;&#x69D8;&#x306A;&#x3053;&#x3068;&#x3092;&#x5B9F;&#x73FE;&#x3059;&#x308B;
- * 
- * &#x6BD4;&#x8F03;&#x7684;&#x696D;&#x52D9;&#x306B;&#x843D;&#x3068;&#x3057;&#x8FBC;&#x307F;&#x3084;&#x3059;&#x3044;&#x304C;&#x3001;
- * &#x6700;&#x521D;&#x304B;&#x3089;Builder&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x898B;&#x8D8A;&#x3059;&#x306E;&#x306F;&#x96E3;&#x3057;&#x3044;
- * &#x30EA;&#x30D5;&#x30A1;&#x30AF;&#x30BF;&#x30EA;&#x30F3;&#x30B0;&#x6642;&#x306B;&#x69CB;&#x9020;&#x3092;&#x898B;&#x6975;&#x3081;&#x308B;&#x306E;&#x304C;&#x73FE;&#x5B9F;&#x7684;
- * 
- * &#x30D3;&#x30EB;&#x30C0;&#x306E;&#x69CB;&#x9020;
- * &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#xFF1A;&#x30D3;&#x30EB;&#x30C0;&#x3092;&#x4F7F;&#x3046;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x3064; &#x305D;&#x306E;&#x4E0A;&#x3067;&#x4E2D;&#x8EAB;&#x3092;&#x4F5C;&#x308B;
- * &#x30D3;&#x30EB;&#x30C0;&#xFF1A;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x751F;&#x6210;&#x3001;&#x76EE;&#x7684;&#x306B;&#x5FDC;&#x3058;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x4ED8;&#x4E0E;
- * &#x30D3;&#x30EB;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#xFF1A;&#x751F;&#x6210;&#x7269;
- * 
- */</span>
-
-
-
-<span class="hljs-comment">//  Builder</span>
-
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DocumentBuilder</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setTitle</span><span class="hljs-params">($str)</span></span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHeader</span><span class="hljs-params">($str)</span></span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBody</span><span class="hljs-params">($str)</span></span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setFooter</span><span class="hljs-params">($str)</span></span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getResult</span><span class="hljs-params">()</span></span>;
-}
-
-
-<span class="hljs-comment">// Director &#x4E2D;&#x8EAB;&#x3092;&#x4F5C;&#x308B;</span>
-<span class="hljs-comment">// &#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x66F8;&#x304D;&#x305F;&#x3044;&#x4EBA;</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReportDirector</span>
-</span>{
-  <span class="hljs-keyword">private</span> $builder;
-
-<span class="hljs-comment">//PHP&#x306F;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5909;&#x6570;&#x578B;&#x306B;&#x3067;&#x304D;&#x308B;?</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(DocumentBuilder $builder)</span>
-  </span>{
-    $this-&gt;builder = $builder;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">()</span>
-  </span>{
-    $this-&gt;builder-&gt;setTitle(<span class="hljs-string">&quot;&#x5831;&#x544A;&#x66F8;&quot;</span>);
-    $this-&gt;builder-&gt;setHeader(<span class="hljs-string">&quot;&#x5931;&#x6557;&quot;</span>);
-    $this-&gt;builder-&gt;setBody(<span class="hljs-string">&quot;&#x30D7;&#x30ED;&#x30C8;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x7121;&#x99C4;&#x306B;&#x3059;&#x308B;&quot;</span>);
-    $this-&gt;builder-&gt;setFooter(<span class="hljs-string">&quot;&#x6B21;&#x9811;&#x5F35;&#x308A;&#x307E;&#x3057;&#x3087;&#x3046;&quot;</span>);
-    <span class="hljs-keyword">return</span> $this-&gt;builder-&gt;getResult();
-  }
-}
-
-
-<span class="hljs-comment">// director2 </span>
-<span class="hljs-comment">// &#x65E5;&#x8A18;&#x66F8;&#x304D;&#x305F;&#x3044;&#x4EBA;</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DiaryDirector</span>
-</span>{
-  <span class="hljs-keyword">private</span> $builder;
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(DocumentBuilder $builder)</span>
-  </span>{
-    $this-&gt;builder = $builder;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">()</span>
-  </span>{
-    $this-&gt;builder-&gt;setTitle(<span class="hljs-string">&quot;&#x65E5;&#x8A18;2020/03/12&quot;</span>);
-    $this-&gt;builder-&gt;setHeader(<span class="hljs-string">&quot;&#x3044;&#x3044;&#x65E5;&#x3060;&#x3063;&#x305F;&quot;</span>);
-    $this-&gt;builder-&gt;setBody(<span class="hljs-string">&quot;&#x30D7;&#x30ED;&#x30C8;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x591A;&#x6570;&#x751F;&#x6210;&quot;</span>);
-    $this-&gt;builder-&gt;setFooter(<span class="hljs-string">&quot;&#x660E;&#x65E5;&#x3082;&#x9811;&#x5F35;&#x308B;&quot;</span>);
-    <span class="hljs-keyword">return</span> $this-&gt;builder-&gt;getResult();
-  }
-}
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x8907;&#x6570;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#x3068;&#x8907;&#x6570;&#x306E;&#x30D3;&#x30EB;&#x30C0;
+&#xA0;*&#xA0;&#x591A;&#x7A2E;&#x591A;&#x69D8;&#x306A;&#x3053;&#x3068;&#x3092;&#x5B9F;&#x73FE;&#x3059;&#x308B;
+&#xA0;*&#xA0;
+&#xA0;*&#xA0;&#x6BD4;&#x8F03;&#x7684;&#x696D;&#x52D9;&#x306B;&#x843D;&#x3068;&#x3057;&#x8FBC;&#x307F;&#x3084;&#x3059;&#x3044;&#x304C;&#x3001;
+&#xA0;*&#xA0;&#x6700;&#x521D;&#x304B;&#x3089;Builder&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x898B;&#x8D8A;&#x3059;&#x306E;&#x306F;&#x96E3;&#x3057;&#x3044;
+&#xA0;*&#xA0;&#x30EA;&#x30D5;&#x30A1;&#x30AF;&#x30BF;&#x30EA;&#x30F3;&#x30B0;&#x6642;&#x306B;&#x69CB;&#x9020;&#x3092;&#x898B;&#x6975;&#x3081;&#x308B;&#x306E;&#x304C;&#x73FE;&#x5B9F;&#x7684;
+&#xA0;*&#xA0;
+&#xA0;*&#xA0;&#x30D3;&#x30EB;&#x30C0;&#x306E;&#x69CB;&#x9020;
+&#xA0;*&#xA0;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30BF;&#xFF1A;&#x30D3;&#x30EB;&#x30C0;&#x3092;&#x4F7F;&#x3046;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x3064;&#xA0;&#x305D;&#x306E;&#x4E0A;&#x3067;&#x4E2D;&#x8EAB;&#x3092;&#x4F5C;&#x308B;
+&#xA0;*&#xA0;&#x30D3;&#x30EB;&#x30C0;&#xFF1A;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x751F;&#x6210;&#x3001;&#x76EE;&#x7684;&#x306B;&#x5FDC;&#x3058;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x4ED8;&#x4E0E;
+&#xA0;*&#xA0;&#x30D3;&#x30EB;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#xFF1A;&#x751F;&#x6210;&#x7269;
+&#xA0;*&#xA0;
+&#xA0;*/</span>
 
 
 
-<span class="hljs-comment">// builder1 HTML&#x30D3;&#x30EB;&#x30C0;</span>
+<span class="sunlight-comment">//&#xA0;&#xA0;Builder</span>
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HtmlBuilder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DocumentBuilder</span>
-</span>{
-  <span class="hljs-keyword">private</span> $header = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">private</span> $body = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">private</span> $footer = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">private</span> $title = <span class="hljs-keyword">null</span>;
+<span class="sunlight-keyword">interface</span>&#xA0;<span class="sunlight-named-ident">DocumentBuilder</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setTitle</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$str</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setHeader</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$str</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setBody</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$str</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setFooter</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$str</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getResult</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBody</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;body;
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFooter</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;footer;
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getHeader</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;header;
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTitle</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;title;
-  }
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setTitle</span><span class="hljs-params">($title)</span>
-  </span>{
-    $this-&gt;title = $title;
-  }
+<span class="sunlight-comment">//&#xA0;Director&#xA0;&#x4E2D;&#x8EAB;&#x3092;&#x4F5C;&#x308B;</span>
+<span class="sunlight-comment">//&#xA0;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x66F8;&#x304D;&#x305F;&#x3044;&#x4EBA;</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHeader</span><span class="hljs-params">($header)</span>
-  </span>{
-    $this-&gt;header = $header;
-  }
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ReportDirector</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$builder</span><span class="sunlight-punctuation">;</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBody</span><span class="hljs-params">($body)</span>
-  </span>{
-    $this-&gt;body = $body;
-  }
+<span class="sunlight-comment">//PHP&#x306F;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5909;&#x6570;&#x578B;&#x306B;&#x3067;&#x304D;&#x308B;?</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">DocumentBuilder</span>&#xA0;<span class="sunlight-variable">$builder</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$builder</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setFooter</span><span class="hljs-params">($footer)</span>
-  </span>{
-    $this-&gt;footer = $footer;
-  }
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">build</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setTitle</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x5831;&#x544A;&#x66F8;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setHeader</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x5931;&#x6557;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setBody</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x30D7;&#x30ED;&#x30C8;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x7121;&#x99C4;&#x306B;&#x3059;&#x308B;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setFooter</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x6B21;&#x9811;&#x5F35;&#x308A;&#x307E;&#x3057;&#x3087;&#x3046;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">getResult</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getResult</span><span class="hljs-params">()</span>
-  </span>{
-    ob_start();
-<span class="hljs-meta">?&gt;</span>
-    &lt;html&gt;
 
-    &lt;head&gt;
-      &lt;title&gt;<span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;title, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>&lt;/title&gt;
-    &lt;/head&gt;
+<span class="sunlight-comment">//&#xA0;director2&#xA0;</span>
+<span class="sunlight-comment">//&#xA0;&#x65E5;&#x8A18;&#x66F8;&#x304D;&#x305F;&#x3044;&#x4EBA;</span>
 
-    &lt;body&gt;
-      &lt;h1&gt;<span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;header, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>&lt;/h1&gt;
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">DiaryDirector</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$builder</span><span class="sunlight-punctuation">;</span>
 
-      &lt;div&gt;
-        &lt;p&gt;
-          <span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;body) <span class="hljs-meta">?&gt;</span>
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;hr&gt;
-      &lt;div&gt;<span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;footer, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>&lt;/div&gt;
-    &lt;/body&gt;
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">DocumentBuilder</span>&#xA0;<span class="sunlight-variable">$builder</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$builder</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-    &lt;/html&gt;
-  <span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">return</span> ob_get_clean();
-  }
-}
-
-<span class="hljs-comment">// builder2 &#x30DE;&#x30FC;&#x30AF;&#x30C0;&#x30A6;&#x30F3; &#x30D3;&#x30EB;&#x30C0;</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MarkdownBuilder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DocumentBuilder</span>
-</span>{
-  <span class="hljs-keyword">private</span> $header = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">private</span> $body = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">private</span> $footer = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">private</span> $title = <span class="hljs-keyword">null</span>;
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBody</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;body;
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFooter</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;footer;
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getHeader</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;header;
-  }
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTitle</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">return</span> $this-&gt;title;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setTitle</span><span class="hljs-params">($title)</span>
-  </span>{
-    $this-&gt;title = $title;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHeader</span><span class="hljs-params">($header)</span>
-  </span>{
-    $this-&gt;header = $header;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBody</span><span class="hljs-params">($body)</span>
-  </span>{
-    $this-&gt;body = $body;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setFooter</span><span class="hljs-params">($footer)</span>
-  </span>{
-    $this-&gt;footer = $footer;
-  }
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getResult</span><span class="hljs-params">()</span>
-  </span>{
-    ob_start();
-  <span class="hljs-meta">?&gt;</span>
-    <span class="hljs-comment"># &lt;?= htmlspecialchars($this-&gt;title, ENT_QUOTES) ?&gt;</span>
-    <span class="hljs-comment">## &lt;?= htmlspecialchars($this-&gt;header, ENT_QUOTES) ?&gt;</span>
-
-    <span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;body, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>
-
-    ------------------------------------------
-    <span class="hljs-meta">&lt;?</span>= htmlspecialchars($this-&gt;footer, ENT_QUOTES) <span class="hljs-meta">?&gt;</span>
-<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">return</span> ob_get_clean();
-  }
-}
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">build</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setTitle</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x65E5;&#x8A18;2020/03/12&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setHeader</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x3044;&#x3044;&#x65E5;&#x3060;&#x3063;&#x305F;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setBody</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x30D7;&#x30ED;&#x30C8;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x591A;&#x6570;&#x751F;&#x6210;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">setFooter</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x660E;&#x65E5;&#x3082;&#x9811;&#x5F35;&#x308B;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">builder</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">getResult</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
 
-$hr = <span class="hljs-keyword">new</span> ReportDirector(<span class="hljs-keyword">new</span> HtmlBuilder());<span class="hljs-comment">//HTML&#x3067;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</span>
-$mr = <span class="hljs-keyword">new</span> ReportDirector(<span class="hljs-keyword">new</span> MarkdownBuilder());<span class="hljs-comment">//Markdown&#x3067;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</span>
+<span class="sunlight-comment">//&#xA0;builder1&#xA0;HTML&#x30D3;&#x30EB;&#x30C0;</span>
 
-<span class="hljs-keyword">print</span>($hr-&gt;build());
-<span class="hljs-keyword">print</span>($mr-&gt;build());
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">HtmlBuilder</span>&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">DocumentBuilder</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$header</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$body</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$footer</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$title</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
 
-<span class="hljs-comment">// &#x65E5;&#x8A18;&#x3092;&#x751F;&#x6210;</span>
-$hd = <span class="hljs-keyword">new</span> DiaryDirector(<span class="hljs-keyword">new</span> HtmlBuilder());
-$md = <span class="hljs-keyword">new</span> DiaryDirector(<span class="hljs-keyword">new</span> MarkdownBuilder());
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getBody</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">body</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getFooter</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">footer</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getHeader</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-function">header</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getTitle</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">title</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setTitle</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$title</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">title</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$title</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setHeader</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$header</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-function">header</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$header</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setBody</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$body</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">body</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$body</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setFooter</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$footer</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">footer</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$footer</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getResult</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-function">ob_start</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-closeTag">?&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">html</span><span class="sunlight-operator">&gt;</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">head</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">title</span><span class="sunlight-operator">&gt;</span><span class="sunlight-shortOpenTag">&lt;?=</span>&#xA0;<span class="sunlight-function">htmlspecialchars</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">title</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-constant">ENT_QUOTES</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-closeTag">?&gt;</span><span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">title</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">head</span><span class="sunlight-operator">&gt;</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">body</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">h1</span><span class="sunlight-operator">&gt;</span><span class="sunlight-shortOpenTag">&lt;?=</span>&#xA0;<span class="sunlight-function">htmlspecialchars</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-function">header</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-constant">ENT_QUOTES</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-closeTag">?&gt;</span><span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">h1</span><span class="sunlight-operator">&gt;</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">div</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">p</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-shortOpenTag">&lt;?=</span>&#xA0;<span class="sunlight-function">htmlspecialchars</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">body</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-closeTag">?&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">p</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">div</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">hr</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-ident">div</span><span class="sunlight-operator">&gt;</span><span class="sunlight-shortOpenTag">&lt;?=</span>&#xA0;<span class="sunlight-function">htmlspecialchars</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">footer</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-constant">ENT_QUOTES</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-closeTag">?&gt;</span><span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">div</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">body</span><span class="sunlight-operator">&gt;</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">html</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;<span class="sunlight-openTag">&lt;?php</span>&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-function">ob_get_clean</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+<span class="sunlight-comment">//&#xA0;builder2&#xA0;&#x30DE;&#x30FC;&#x30AF;&#x30C0;&#x30A6;&#x30F3;&#xA0;&#x30D3;&#x30EB;&#x30C0;</span>
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">MarkdownBuilder</span>&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">DocumentBuilder</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$header</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$body</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$footer</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$title</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getBody</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">body</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getFooter</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">footer</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getHeader</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-function">header</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getTitle</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">title</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setTitle</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$title</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">title</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$title</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setHeader</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$header</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-function">header</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$header</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setBody</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$body</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">body</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$body</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">setFooter</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$footer</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">footer</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$footer</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">getResult</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-function">ob_start</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-closeTag">?&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">#&#xA0;&lt;?=&#xA0;htmlspecialchars($this-&gt;title,&#xA0;ENT_QUOTES)&#xA0;?&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">##&#xA0;&lt;?=&#xA0;htmlspecialchars($this-&gt;header,&#xA0;ENT_QUOTES)&#xA0;?&gt;</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-shortOpenTag">&lt;?=</span>&#xA0;<span class="sunlight-function">htmlspecialchars</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">body</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-constant">ENT_QUOTES</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-closeTag">?&gt;</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span><span class="sunlight-operator">--</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-shortOpenTag">&lt;?=</span>&#xA0;<span class="sunlight-function">htmlspecialchars</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">footer</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-constant">ENT_QUOTES</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-closeTag">?&gt;</span>
+<span class="sunlight-openTag">&lt;?php</span>&#xA0;<span class="sunlight-languageConstruct">return</span>&#xA0;<span class="sunlight-function">ob_get_clean</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-keyword">echo</span> $hd-&gt;build();<span class="hljs-comment">//director&#x304C;build&#x3059;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3066;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;builder&#x304C;&#x624B;&#x9806;&#x306B;&#x5F93;&#x3063;&#x3066;build&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;</span>
-<span class="hljs-keyword">echo</span> $md-&gt;build();
+
+<span class="sunlight-variable">$hr</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">ReportDirector</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">HtmlBuilder</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span><span class="sunlight-comment">//HTML&#x3067;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</span>
+<span class="sunlight-variable">$mr</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">ReportDirector</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">MarkdownBuilder</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span><span class="sunlight-comment">//Markdown&#x3067;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</span>
+
+<span class="sunlight-languageConstruct">print</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$hr</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">build</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-languageConstruct">print</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$mr</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">build</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-comment">//&#xA0;&#x65E5;&#x8A18;&#x3092;&#x751F;&#x6210;</span>
+<span class="sunlight-variable">$hd</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">DiaryDirector</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">HtmlBuilder</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$md</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">DiaryDirector</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">MarkdownBuilder</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
 
-<span class="hljs-comment">// !&#x3044;&#x305A;&#x308C;&#x3082;build()&#x3068;&#x3044;&#x3046;API&#x3060;&#x3051;&#x3067;&#x751F;&#x6210;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3042;&#x308B;&#x3002;</span>
-</code></pre>
+<span class="sunlight-languageConstruct">echo</span>&#xA0;<span class="sunlight-variable">$hd</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">build</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span><span class="sunlight-comment">//director&#x304C;build&#x3059;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3066;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;builder&#x304C;&#x624B;&#x9806;&#x306B;&#x5F93;&#x3063;&#x3066;build&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;</span>
+<span class="sunlight-languageConstruct">echo</span>&#xA0;<span class="sunlight-variable">$md</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">build</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+
+
+<span class="sunlight-comment">//&#xA0;!&#x3044;&#x305A;&#x308C;&#x3082;build()&#x3068;&#x3044;&#x3046;API&#x3060;&#x3051;&#x3067;&#x751F;&#x6210;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3042;&#x308B;&#x3002;</span>
+</span></pre></div></div></code></pre>
 <h2 id="&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30E1;&#x30E2;&#x66F8;&#x304D;">7. &#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30E1;&#x30E2;&#x66F8;&#x304D;</h2>
 <ul>
 <li><p>&#x8907;&#x96D1;&#x306A;&#x69CB;&#x9020;&#x7269;&#x3068;&#x304B;&#x6587;&#x6CD5;&#x3092;&#x6301;&#x3063;&#x305F;&#x8A00;&#x8A9E;&#x306E;&#x751F;&#x6210;&#x3092;&#x3001;&#x6709;&#x80FD;&#x306A;&#x30ED;&#x30DC;&#x30C3;&#x30C8;(&#x30D3;&#x30EB;&#x30C0;&#x306B;&#x4EFB;&#x305B;&#x308B;)</p>
@@ -889,7 +889,7 @@ $md = <span class="hljs-keyword">new</span> DiaryDirector(<span class="hljs-keyw
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Builder","level":"1.4.2","depth":2,"next":{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},"previous":{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/builder.md","mtime":"2020-05-16T09:12:31.431Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Builder","level":"1.4.2","depth":2,"next":{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},"previous":{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/builder.md","mtime":"2020-05-16T09:12:31.431Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:15:30.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

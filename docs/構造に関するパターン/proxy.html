@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
@@ -38,10 +42,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -525,7 +525,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+                                <div class="treeview__container"><ul>
 <li><div><a href="#proxy">Proxy</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x6982;&#x8981;">&#x6982;&#x8981;</a><i></i></div></li>
@@ -590,104 +590,104 @@
 <li>Flyweight&#x306E;&#x5B9F;&#x73FE;&#x624B;&#x6BB5;&#x3068;&#x3057;&#x3066;&#x306E;Proxy&#x3002;&#x30AF;&#x30BD;&#x91CD;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x3092;&#x3001;Proxy&#x3092;&#x4EE3;&#x308F;&#x308A;&#x306B;&#x751F;&#x6210;&#x3057;&#x3066;&#x540C;&#x3058;&#x30AF;&#x30BD;&#x91CD;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3055;&#x305B;&#x308B;&#x306A;&#x3069;</li>
 </ul>
 <h1 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h1>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-number">1</span>);
+<pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-openTag">&lt;?php</span>
+<span class="sunlight-function">ini_set</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;display_errors&quot;</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-number">1</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
-<span class="hljs-comment">// &#x521D;&#x671F;&#x5316;&#x306B;&#x6642;&#x9593;&#x306E;&#x304B;&#x304B;&#x308B;&#x3082;&#x306E;&#x3092;&#x5FC5;&#x8981;&#x306B;&#x306A;&#x308B;&#x307E;&#x3067;&#x5F8C;&#x56DE;&#x3057;</span>
-<span class="hljs-comment">// &#x4EE3;&#x7406;&#x4EBA;&#x3067;&#x51E6;&#x7406;&#x3092;&#x30C7;&#x30B3;&#x30EC;&#x30FC;&#x30C8;&#x3057;&#x305F;&#x308A;</span>
+<span class="sunlight-comment">//&#xA0;&#x521D;&#x671F;&#x5316;&#x306B;&#x6642;&#x9593;&#x306E;&#x304B;&#x304B;&#x308B;&#x3082;&#x306E;&#x3092;&#x5FC5;&#x8981;&#x306B;&#x306A;&#x308B;&#x307E;&#x3067;&#x5F8C;&#x56DE;&#x3057;</span>
+<span class="sunlight-comment">//&#xA0;&#x4EE3;&#x7406;&#x4EBA;&#x3067;&#x51E6;&#x7406;&#x3092;&#x30C7;&#x30B3;&#x30EC;&#x30FC;&#x30C8;&#x3057;&#x305F;&#x308A;</span>
 
-<span class="hljs-comment">/**
- * &#x30D1;&#x30A4;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;
- * 
- * 
- */</span>
-
-
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IPie</span>
-</span>{
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addMaterial</span><span class="hljs-params">(String $material)</span></span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fill</span><span class="hljs-params">()</span></span>;
-}
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x30D1;&#x30A4;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;
+&#xA0;*&#xA0;
+&#xA0;*&#xA0;
+&#xA0;*/</span>
 
 
-<span class="hljs-comment">/**
- * &#x4EE3;&#x7406;&#x306E;&#x30D1;&#x30A4;
- * &#x6750;&#x6599;&#x306E;&#x8FFD;&#x52A0;&#x306F;&#x4EEE;&#x306E;&#x30D1;&#x30A4;&#x306B;&#x4EFB;&#x305B;&#x308B;
- * &#x6750;&#x6599;&#x3092;&#x6DF7;&#x305C;&#x8FBC;&#x3080;&#x6642;&#x306B;&#x672C;&#x7269;&#x306E;&#x30D1;&#x30A4;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;
- */</span>
+<span class="sunlight-keyword">interface</span>&#xA0;<span class="sunlight-named-ident">IPie</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">addMaterial</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">String</span>&#xA0;<span class="sunlight-variable">$material</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">fill</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span>
 
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProxyPie</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">IPie</span>
-</span>{
-  <span class="hljs-keyword">private</span> $realPie = <span class="hljs-keyword">null</span>;
-  <span class="hljs-keyword">private</span> $materials = <span class="hljs-keyword">array</span>();
-
-  <span class="hljs-comment">/**&#x6750;&#x6599;&#x8FFD;&#x52A0; */</span>
-
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addMaterial</span><span class="hljs-params">(String $m)</span>
-  </span>{
-    <span class="hljs-keyword">if</span> ($this-&gt;realPie != <span class="hljs-keyword">null</span>) {
-      $this-&gt;realPie-&gt;addMaterial($m);
-    }
-    $this-&gt;materials[] = $m;
-    <span class="hljs-keyword">print</span> $m . <span class="hljs-string">&quot;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3088;&lt;br&gt;&quot;</span>;
-  }
-  <span class="hljs-comment">/**
-   * &#x6750;&#x6599;&#x3092;&#x6DF7;&#x305C;&#x8FBC;&#x3080;
-   * 
-   */</span>
-
-  <span class="hljs-comment">//  fill&#x3059;&#x308B;&#x3068;&#x304D;&#x306B;&#x521D;&#x3081;&#x3066;&#x672C;&#x7269;&#x306E;&#x30D1;&#x30A4;&#x306E;fill&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fill</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">if</span> ($this-&gt;realPie == <span class="hljs-keyword">null</span>) {
-      $this-&gt;realPie = <span class="hljs-keyword">new</span> RealPie($this-&gt;materials);
-    }
-    $this-&gt;realPie-&gt;fill();
-  }
-}
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x4EE3;&#x7406;&#x306E;&#x30D1;&#x30A4;
+&#xA0;*&#xA0;&#x6750;&#x6599;&#x306E;&#x8FFD;&#x52A0;&#x306F;&#x4EEE;&#x306E;&#x30D1;&#x30A4;&#x306B;&#x4EFB;&#x305B;&#x308B;
+&#xA0;*&#xA0;&#x6750;&#x6599;&#x3092;&#x6DF7;&#x305C;&#x8FBC;&#x3080;&#x6642;&#x306B;&#x672C;&#x7269;&#x306E;&#x30D1;&#x30A4;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;
+&#xA0;*/</span>
 
 
-<span class="hljs-comment">/**
- * &#x672C;&#x7269;&#x306E;&#x30D1;&#x30A4;
- * &#x751F;&#x6210;&#x306B;&#x6642;&#x9593;&#x304C;&#x304B;&#x304B;&#x308B;
- */</span>
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">ProxyPie</span>&#xA0;&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">IPie</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$realPie</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$materials</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-languageConstruct">array</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RealPie</span>  <span class="hljs-keyword">implements</span> <span class="hljs-title">IPie</span>
-</span>{
-  <span class="hljs-keyword">private</span> $materials;
+&#xA0;&#xA0;<span class="sunlight-comment">/**&#x6750;&#x6599;&#x8FFD;&#x52A0;&#xA0;*/</span>
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($materials)</span>
-  </span>{
-    $this-&gt;materials = $materials;
-    <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;&#x5B9F;&#x7269;&#x306E;&#x30D1;&#x30A4;&#x751F;&#x5730;&#x3092;&#x4F5C;&#x308A;&#x59CB;&#x3081;&#x308B;&lt;br&gt;&quot;</span>);
-    sleep(<span class="hljs-number">2</span>);
-    <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;&#x5B9F;&#x7269;&#x306E;&#x30D1;&#x30A4;&#x751F;&#x5730;&#x3092;&#x4F5C;&#x6210;&#x3002;&lt;br&gt;&quot;</span>);
-  }
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">addMaterial</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">String</span>&#xA0;<span class="sunlight-variable">$m</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">realPie</span>&#xA0;<span class="sunlight-operator">!=</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">realPie</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">addMaterial</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$m</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">materials</span><span class="sunlight-punctuation">[</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$m</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-variable">$m</span>&#xA0;<span class="sunlight-operator">.</span>&#xA0;<span class="sunlight-string">&quot;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3088;&lt;br&gt;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-comment">/**
+&#xA0;&#xA0;&#xA0;*&#xA0;&#x6750;&#x6599;&#x3092;&#x6DF7;&#x305C;&#x8FBC;&#x3080;
+&#xA0;&#xA0;&#xA0;*&#xA0;
+&#xA0;&#xA0;&#xA0;*/</span>
 
-  <span class="hljs-comment">// &#x6750;&#x6599;&#x8FFD;&#x52A0;</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addMaterial</span><span class="hljs-params">($m)</span>
-  </span>{
-    $this-&gt;materials[] = $m;
-  }
-  <span class="hljs-comment">// &#x6DF7;&#x305C;&#x308B;</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fill</span><span class="hljs-params">()</span>
-  </span>{
-    <span class="hljs-keyword">foreach</span> ($this-&gt;materials <span class="hljs-keyword">as</span> $m) {
-      <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;$m &lt;br&gt;&quot;</span>;
-    }
-
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&#x6750;&#x6599;&#x3092;&#x30D1;&#x30A4;&#x306B;&#x8A70;&#x3081;&#x8FBC;&#x3080;&#x3088; &lt;br&gt;&quot;</span>;
-  }
-}
+&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#xA0;fill&#x3059;&#x308B;&#x3068;&#x304D;&#x306B;&#x521D;&#x3081;&#x3066;&#x672C;&#x7269;&#x306E;&#x30D1;&#x30A4;&#x306E;fill&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">fill</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">realPie</span>&#xA0;<span class="sunlight-operator">==</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">realPie</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">RealPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">materials</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">realPie</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fill</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 
 
-$proxy = <span class="hljs-keyword">new</span> ProxyPie();
-$proxy-&gt;addMaterial(<span class="hljs-string">&quot;&#x4EBA;&#x53C2;&quot;</span>);
-$proxy-&gt;addMaterial(<span class="hljs-string">&quot;&#x3088;&#x304F;&#x308F;&#x304B;&#x3089;&#x3093;&#x3082;&#x306E;&quot;</span>);
-$proxy-&gt;addMaterial(<span class="hljs-string">&quot;&#x30B1;&#x30DF;&#x30AB;&#x30EB;X&quot;</span>);
-$proxy-&gt;fill();
-</code></pre>
+<span class="sunlight-comment">/**
+&#xA0;*&#xA0;&#x672C;&#x7269;&#x306E;&#x30D1;&#x30A4;
+&#xA0;*&#xA0;&#x751F;&#x6210;&#x306B;&#x6642;&#x9593;&#x304C;&#x304B;&#x304B;&#x308B;
+&#xA0;*/</span>
+
+<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">RealPie</span>&#xA0;&#xA0;<span class="sunlight-keyword">implements</span>&#xA0;<span class="sunlight-named-ident">IPie</span>
+<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-variable">$materials</span><span class="sunlight-punctuation">;</span>
+
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">__construct</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$materials</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">materials</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$materials</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x5B9F;&#x7269;&#x306E;&#x30D1;&#x30A4;&#x751F;&#x5730;&#x3092;&#x4F5C;&#x308A;&#x59CB;&#x3081;&#x308B;&lt;br&gt;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-function">sleep</span><span class="sunlight-punctuation">(</span><span class="sunlight-number">2</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x5B9F;&#x7269;&#x306E;&#x30D1;&#x30A4;&#x751F;&#x5730;&#x3092;&#x4F5C;&#x6210;&#x3002;&lt;br&gt;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x6750;&#x6599;&#x8FFD;&#x52A0;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">addMaterial</span><span class="sunlight-punctuation">(</span><span class="sunlight-variable">$m</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">materials</span><span class="sunlight-punctuation">[</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-variable">$m</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x6DF7;&#x305C;&#x308B;</span>
+&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-ident">fill</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">foreach</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-variable">$this</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">materials</span>&#xA0;<span class="sunlight-keyword">as</span>&#xA0;<span class="sunlight-variable">$m</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-string">&quot;$m&#xA0;&lt;br&gt;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-languageConstruct">print</span>&#xA0;<span class="sunlight-string">&quot;&#x6750;&#x6599;&#x3092;&#x30D1;&#x30A4;&#x306B;&#x8A70;&#x3081;&#x8FBC;&#x3080;&#x3088;&#xA0;&lt;br&gt;&quot;</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
+
+
+<span class="sunlight-variable">$proxy</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">ProxyPie</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$proxy</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">addMaterial</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x4EBA;&#x53C2;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$proxy</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">addMaterial</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x3088;&#x304F;&#x308F;&#x304B;&#x3089;&#x3093;&#x3082;&#x306E;&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$proxy</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">addMaterial</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;&#x30B1;&#x30DF;&#x30AB;&#x30EB;X&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-variable">$proxy</span><span class="sunlight-operator">-&gt;</span><span class="sunlight-ident">fill</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+</span></pre></div></div></code></pre>
 <div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x767B;&#x5834;&#x4EBA;&#x7269;">2. &#x767B;&#x5834;&#x4EBA;&#x7269;</a></li><li><a href="#&#x30AF;&#x30E9;&#x30B9;&#x56F3;">3. &#x30AF;&#x30E9;&#x30B9;&#x56F3;</a></li><li><a href="#&#x3084;&#x308A;&#x65B9;">4. &#x3084;&#x308A;&#x65B9;</a></li><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;">5. &#x30E1;&#x30EA;&#x30C3;&#x30C8;</a></li><ul><li><a href="#&#x30E1;&#x30E2;&#x30EA;&#x7BC0;&#x7D04;">5.1. &#x30E1;&#x30E2;&#x30EA;&#x7BC0;&#x7D04;</a></li><li><a href="#&#x5206;&#x5272;&#x7D71;&#x6CBB;">5.2. &#x5206;&#x5272;&#x7D71;&#x6CBB;</a></li></ul><li><a href="#&#x95A2;&#x9023;">6. &#x95A2;&#x9023;</a></li><ul><li><a href="#Flyweight">6.1. Flyweight</a></li></ul></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
@@ -727,7 +727,7 @@ $proxy-&gt;fill();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Proxy","level":"1.3.7","depth":2,"next":{"title":"生成に関するパターン","level":"1.4","depth":1,"ref":"","articles":[{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},{"title":"Singleton","level":"1.4.5","depth":2,"path":"docs/生成に関するパターン/singleton.md","ref":"docs/生成に関するパターン/singleton.md","articles":[]}]},"previous":{"title":"Flyweight","level":"1.3.6","depth":2,"path":"docs/構造に関するパターン/flyweight.md","ref":"docs/構造に関するパターン/flyweight.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/構造に関するパターン/proxy.md","mtime":"2020-05-17T12:32:00.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:04:28.899Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Proxy","level":"1.3.7","depth":2,"next":{"title":"生成に関するパターン","level":"1.4","depth":1,"ref":"","articles":[{"title":"Abstract Factory","level":"1.4.1","depth":2,"path":"docs/生成に関するパターン/abstractFactory.md","ref":"docs/生成に関するパターン/abstractFactory.md","articles":[]},{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},{"title":"Factory Method","level":"1.4.3","depth":2,"path":"docs/生成に関するパターン/factoryMethod.md","ref":"docs/生成に関するパターン/factoryMethod.md","articles":[]},{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},{"title":"Singleton","level":"1.4.5","depth":2,"path":"docs/生成に関するパターン/singleton.md","ref":"docs/生成に関するパターン/singleton.md","articles":[]}]},"previous":{"title":"Flyweight","level":"1.3.6","depth":2,"path":"docs/構造に関するパターン/flyweight.md","ref":"docs/構造に関するパターン/flyweight.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","copy-code-button","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/構造に関するパターン/proxy.md","mtime":"2020-05-17T12:32:00.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T14:15:30.407Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
