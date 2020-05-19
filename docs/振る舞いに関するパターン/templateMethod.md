@@ -1,10 +1,11 @@
-
 # Template Method
+
+> *具体的な処理をサブクラスに任せる*
+
 
 ## 概念
 
-振る舞いを歯抜けで抽象させて、
-それをサブクラスが具体で補う
+振る舞いを歯抜けで抽象させて、それをサブクラスが具体で補う
 
 これに関しては漫画があまりにわかりやすいのでそれを半睡
 
@@ -18,7 +19,7 @@
 
 それを継承した具象が歯抜けを埋めて、個々の機能に対応させる。
 
-```
+
 TwitterBot抽象
 
 - トークンの管理
@@ -27,25 +28,37 @@ TwitterBot抽象
 - HTTP通信
 - (送信内容決定)
 - エラー処理
-```
+
 
 以上の部分を
 
-```
+
 PRボット具象
+
 - 「ドロリッチなう」と呟いた人
 - PRリプ
-```
 
-```
+
+
 引用許可願い具象
+
 - 10000ファボのツイートをした人
 - 引用願い
-```
+
 
 で穴埋めして運用する
 
+## 登場人物
 
+- 抽象クラス
+- 具象クラス
+
+これだけ！
+
+
+## クラス図
+
+![Template Method pattern](https://upload.wikimedia.org/wikipedia/commons/2/2a/Template_Method_UML_class_diagram.svg)
 
 ## やり方
 
@@ -62,8 +75,6 @@ PRボット具象
 
 **抽象クラスのテンプレートメソッドに誤りが見つかったら、(具象には手をつけず)それだけ直せば済む。**
 もしコピペ実装していたら修正クラスファイルが増える。
-
-
 
 ## 関連パターン
 
@@ -83,6 +94,16 @@ Template Methodをインスタンス生成に使うとFactory Method。
 
 ## ソース
 
+### Java 
+
+[include](../../patterns/dpsrc_2009-10-10/src/TemplateMethod/Sample/AbstractDisplay.java)
+
+[include](../../patterns/dpsrc_2009-10-10/src/TemplateMethod/Sample/CharDisplay.java)
+
+[include](../../patterns/dpsrc_2009-10-10/src/TemplateMethod/Sample/StringDisplay.java)
+
+[include](../../patterns/dpsrc_2009-10-10/src/TemplateMethod/Sample/Main.java)
+
+### PHP
+
 [include](../../patterns/TemplateMethod/index.php)
-
-

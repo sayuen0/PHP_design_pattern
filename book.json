@@ -1,7 +1,7 @@
 {
   "title": "デザインパターンお勉強",
   "description": "This is design pattern study site",
-  "plugins": ["sunlight-highlighter", "-highlight", "-sharing", "include-codeblock", "hide-published-with", "navigator", "page-treeview", "intopic-toc", "back-to-top-button", "expand-active-chapter", "collapsible-chapters", "copy-code-button"],
+  "plugins": ["sunlight-highlighter", "-highlight", "-sharing", "include-codeblock", "hide-published-with", "page-treeview", "intopic-toc", "back-to-top-button", "expand-active-chapter", "collapsible-chapters", "copy-code-button"],
   "language": "ja",
   "pluginsConfig": {
     "page-treeview": {
