@@ -9,7 +9,7 @@
         "spec": "1.1.1",
         "type": "version"
       },
-      "/Applications/MAMP/htdocs/design_patterns"
+      "/Users/aki/Desktop/design-pattern-study"
     ]
   ],
   "_from": "gitbook-plugin-navigator@1.1.1",
@@ -37,13 +37,13 @@
     "type": "version"
   },
   "_requiredBy": [
-    "#USER"
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/gitbook-plugin-navigator/-/gitbook-plugin-navigator-1.1.1.tgz",
   "_shasum": "b5e17ce78d89cbecce430599f91c9ee0450a0b95",
   "_shrinkwrap": null,
   "_spec": "gitbook-plugin-navigator@1.1.1",
-  "_where": "/Applications/MAMP/htdocs/design_patterns",
+  "_where": "/Users/aki/Desktop/design-pattern-study",
   "author": {
     "name": "zhangzq"
   },
