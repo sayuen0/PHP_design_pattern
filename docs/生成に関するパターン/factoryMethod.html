@@ -21,10 +21,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-navigator/plugin.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-treeview/style.css">
                 
             
@@ -547,14 +543,14 @@
 </ul>
 </div>
 
-<h1 id="Factory_Method&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Factory Method&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
+<h1 id="factory-method&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Factory Method&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h1>
 <p>&#x672C;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x306B;&#x8AA4;&#x308A;&#x304C;&#x3042;&#x308A;&#x3001;&#x8DA3;&#x65E8;&#x304C;&#x3088;&#x304F;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x30A8;&#x30C3;&#x30BB;&#x30F3;&#x30B9;&#x3060;&#x3051;&#x3092;&#x629C;&#x304D;&#x51FA;&#x3057;</p>
 <p>&#x5225;&#x4E8B;&#x4F8B;</p>
 <ul>
 <li><a href="http://shimooka.hateblo.jp/entry/20141215/1418620242" target="_blank">PHP&#x306B;&#x3088;&#x308B;&#x30C7;&#x30B6;&#x30A4;&#x30F3;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x5165;&#x9580; - Factory Method&#x301C;&#x751F;&#x6210;&#x51E6;&#x7406;&#x3068;&#x4F7F;&#x7528;&#x51E6;&#x7406;&#x3092;&#x5206;&#x96E2;&#x3059;&#x308B; - Do You PHP &#x306F;&#x3066;&#x30D6;&#x30ED;</a></li>
 </ul>
-<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;">1. &#x30E1;&#x30EA;&#x30C3;&#x30C8;</h2>
-<h3 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;">1.1. &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;</h3>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;</h2>
+<h3 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;</h3>
 <p>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x751F;&#x6210;&#x306E;&#x65B9;&#x6CD5;&#x306B;&#x6CE8;&#x76EE;&#x3057;&#x305F;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</p>
 <p>&#x5358;&#x7D14;&#x306A;&#x751F;&#x6210;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x306F;&#x306A;&#x304F;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x7684;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6E96;&#x5099;&#x306E;&#x904E;&#x7A0B;&#x3092;absract&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3001;<strong>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x751F;&#x6210;&#x3068;&#x6E96;&#x5099;&#x3092;&#x62BD;&#x8C61;&#x5316;</strong></p>
 <p>&#x591A;&#x69D8;&#x306A;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x751F;&#x6210;&#x3092;&#x8ACB;&#x3051;&#x8CA0;&#x3046;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x751F;&#x6210;&#x306F;&#x5F37;&#x3044;&#x4F9D;&#x5B58;&#x3092;&#x751F;&#x3080;&#x306E;&#x3067;&#x3001;&#x5207;&#x308A;&#x96E2;&#x3059;&#x3060;&#x3051;&#x3067;&#x3082;&#x5927;&#x304D;&#x306A;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x304C;&#x3042;&#x308B;</p>
@@ -564,7 +560,7 @@ templatemethod&#x3067;&#x306F;&#x3001;&#x51E6;&#x7406;&#x306E;&#x6D41;&#x308C;&#
 &#x305D;&#x308C;&#x305E;&#x308C;doAction&#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x3067;&#x3001;
 validate&#x3057;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x3042;&#x308C;&#x3070;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x6295;&#x3052;&#x3066;&#x3001;
 &#x306A;&#x3051;&#x308C;&#x3070;doMain&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x6D41;&#x308C;&#x3092;&#x8E0F;&#x3093;&#x3060;</p>
-<h2 id="&#x30B7;&#x30CA;&#x30EA;&#x30AA;_CSV&#x304B;XML&#x304B;&#x306E;&#x65B9;">2. &#x30B7;&#x30CA;&#x30EA;&#x30AA; CSV&#x304B;XML&#x304B;&#x306E;&#x65B9;</h2>
+<h2 id="&#x30B7;&#x30CA;&#x30EA;&#x30AA;-csv&#x304B;xml&#x304B;&#x306E;&#x65B9;">&#x30B7;&#x30CA;&#x30EA;&#x30AA; CSV&#x304B;XML&#x304B;&#x306E;&#x65B9;</h2>
 <p>&#x4ECA;&#x56DE;&#x306E;&#x5B9F;&#x88C5;&#x3002;&#x4E0A;&#x8A18;&#x30EA;&#x30F3;&#x30AF;&#x304B;&#x3089;&#x8DA3;&#x65E8;&#x3092;&#x629C;&#x304D;&#x51FA;&#x3059;</p>
 <ul>
 <li>&#x3042;&#x308B;&#x65E2;&#x5B58;&#x306E;CSV&#x51FA;&#x529B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;,XML&#x306B;&#x3082;&#x5BFE;&#x5FDC;&#x3055;&#x305B;&#x305F;&#x3044;&#x3068;&#x3059;&#x308B;</li>
@@ -578,7 +574,7 @@ validate&#x3057;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x3042;&#x308C;&#x3070;
 </ol>
 <p>&#x3053;&#x308C;&#x3060;&#x3051;&#x3002;</p>
 <p>&#x5177;&#x4F53;&#x7684;&#x306A;&#x8AAD;&#x307F;&#x8FBC;&#x307F;&#x65B9;&#x6CD5;&#x3084;&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x306F;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x5F62;&#x5F0F;&#x306B;&#x5BFE;&#x5FDC;&#x3055;&#x305B;&#x305F;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x4EFB;&#x305B;&#x308B;</p>
-<h2 id="&#x30B7;&#x30CA;&#x30EA;&#x30AA;_&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;">3. &#x30B7;&#x30CA;&#x30EA;&#x30AA; &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;</h2>
+<h2 id="&#x30B7;&#x30CA;&#x30EA;&#x30AA;-&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;">&#x30B7;&#x30CA;&#x30EA;&#x30AA; &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;</h2>
 <p>&#x30D9;&#x30F3;&#x30C0;&#x30FC;&#x4F01;&#x696D;&#x3068;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x304C;&#x3044;&#x308B;</p>
 <p>&#x3068;&#x3042;&#x308B;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30F3;&#x30BF;&#x30FC;&#x3092;&#x904B;&#x55B6;&#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x3066;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30F3;&#x30BF;&#x30FC;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3092;&#x5916;&#x6CE8;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3002;
 &#x3068;&#x3042;&#x308B;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x306F;POS&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3092;&#x5916;&#x6CE8;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3002;</p>
@@ -588,7 +584,7 @@ validate&#x3057;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x3042;&#x308C;&#x3070;
 &#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30F3;&#x30BF;&#x30FC;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x53D7;&#x6CE8;&#x306A;&#x3089;&#x305D;&#x306E;&#x9053;&#x306E;&#x30B9;&#x30DA;&#x30B7;&#x30E3;&#x30EA;&#x30B9;&#x30C8;&#x306B;&#x3001;
 POS&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306A;&#x3089;&#x305D;&#x306E;&#x9053;&#x306E;&#x30B9;&#x30DA;&#x30B7;&#x30E3;&#x30EA;&#x30B9;&#x30C8;&#x306B;&#x958B;&#x767A;&#x3092;&#x3055;&#x305B;&#x308B;&#x3002;</p>
 <p>&#x30D9;&#x30F3;&#x30C0;&#x30FC;&#x306E;&#x30A8;&#x30F3;&#x30B8;&#x30CB;&#x30A2;&#x306F;&#x5171;&#x901A;&#x3057;&#x3066;&#x300C;&#x958B;&#x767A;&#x300D;&#x3068;&#x300C;&#x7D0D;&#x54C1;&#x300D;&#x304C;&#x3067;&#x304D;&#x308B;&#x304C;&#x3001;&#x305D;&#x308C;&#x305E;&#x308C;&#x624B;&#x6CD5;&#x306F;&#x5C02;&#x9580;&#x9818;&#x57DF;&#x3084;&#x958B;&#x767A;&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x304B;&#x3089;&#x5B8C;&#x5168;&#x306B;&#x7570;&#x306A;&#x308B;</p>
-<h2 id="&#x30B7;&#x30CA;&#x30EA;&#x30AA;_&#x6599;&#x7406;">4. &#x30B7;&#x30CA;&#x30EA;&#x30AA; &#x6599;&#x7406;</h2>
+<h2 id="&#x30B7;&#x30CA;&#x30EA;&#x30AA;-&#x6599;&#x7406;">&#x30B7;&#x30CA;&#x30EA;&#x30AA; &#x6599;&#x7406;</h2>
 <p>&#x91E3;&#x308A;&#x304C;&#x8DA3;&#x5473;&#x306E;&#x304A;&#x3063;&#x3055;&#x3093;&#x3068;&#x6301;&#x8FBC;OK&#x30EC;&#x30B9;&#x30C8;&#x30E9;&#x30F3;</p>
 <p>&#x304A;&#x3063;&#x3055;&#x3093;&#x306F;&#x91E3;&#x3063;&#x305F;&#x9B5A;&#x3092;&#x30EC;&#x30B9;&#x30C8;&#x30E9;&#x30F3;&#x306B;&#x6E21;&#x3057;&#x3066;&#x3001;&#x8ABF;&#x7406;&#x6E08;&#x307F;&#x306E;&#x9B5A;&#x6599;&#x7406;&#x3092;&#x3082;&#x3089;&#x3046;
 &#x30EC;&#x30B9;&#x30C8;&#x30E9;&#x30F3;&#x306F;&#x9B5A;&#x306E;&#x7A2E;&#x985E;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;&#x4E00;&#x756A;&#x7F8E;&#x5473;&#x3057;&#x304F;&#x98DF;&#x3079;&#x3089;&#x308C;&#x308B;&#x8ABF;&#x7406;&#x65B9;&#x6CD5;&#x304C;&#x53EF;&#x80FD;&#x306A;&#x6599;&#x7406;&#x4EBA;&#x306B;&#x9B5A;&#x3092;&#x8ABF;&#x7406;&#x3055;&#x305B;&#x308B;</p>
@@ -599,11 +595,11 @@ POS&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306A;&#x3089;&#x305D;&#x306E;&#x9053;&#x30
 <li>&#x6599;&#x7406;&#x4EBA;&#xFF1A;&#x30D7;&#x30ED;&#x30C0;&#x30AF;&#x30C8;&#x306E;&#x4F5C;&#x308A;&#x624B;&#x3002;&#x30D5;&#x30A1;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;</li>
 <li>&#x6599;&#x7406;&#xFF1A;&#x30D7;&#x30ED;&#x30C0;&#x30AF;&#x30C8;</li>
 </ul>
-<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;">5. &#x30AF;&#x30E9;&#x30B9;&#x56F3;</h2>
+<h2 id="&#x30AF;&#x30E9;&#x30B9;&#x56F3;">&#x30AF;&#x30E9;&#x30B9;&#x56F3;</h2>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Factory_Method_UML_class_diagram.svg" alt=""></p>
-<h2 id="&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;_Factory_Method">6. &#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Factory Method</h2>
-<h2 id="&#x30BD;&#x30FC;&#x30B9;">7. &#x30BD;&#x30FC;&#x30B9;</h2>
-<h3 id="PHP">7.1. PHP</h3>
+<h2 id="&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;-factory-method">&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Factory Method</h2>
+<h2 id="&#x30BD;&#x30FC;&#x30B9;">&#x30BD;&#x30FC;&#x30B9;</h2>
+<h3 id="php">PHP</h3>
 <pre><code class="lang-php"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-php sunlight-highlighted"><span class="sunlight-php"><span class="sunlight-openTag">&lt;?php</span>
 <span class="sunlight-function">ini_set</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;display_errors&quot;</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-string">&quot;1&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
@@ -775,7 +771,7 @@ POS&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306A;&#x3089;&#x305D;&#x306E;&#x9053;&#x30
 <span class="sunlight-operator">&lt;</span><span class="sunlight-ident">br</span><span class="sunlight-operator">&gt;</span>
 <span class="sunlight-operator">&lt;</span><span class="sunlight-ident">a</span>&#xA0;<span class="sunlight-ident">href</span><span class="sunlight-operator">=</span><span class="sunlight-string">&quot;/docs/factoryMethod.md&quot;</span><span class="sunlight-operator">&gt;</span><span class="sunlight-punctuation">&#x8AAC;</span><span class="sunlight-punctuation">&#x660E;</span><span class="sunlight-punctuation">&#x3078;</span><span class="sunlight-operator">&lt;</span><span class="sunlight-operator">/</span><span class="sunlight-ident">a</span><span class="sunlight-operator">&gt;</span>
 </span></pre></div></div></code></pre>
-<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#Factory_Method&#x30D1;&#x30BF;&#x30FC;&#x30F3;">Factory Method&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a></p><li><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;">1. &#x30E1;&#x30EA;&#x30C3;&#x30C8;</a></li><ul><li><a href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;">1.1. &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x751F;&#x6210;&#x904E;&#x7A0B;&#x306E;&#x96A0;&#x853D;&#x3068;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;</a></li></ul><li><a href="#&#x30B7;&#x30CA;&#x30EA;&#x30AA;_CSV&#x304B;XML&#x304B;&#x306E;&#x65B9;">2. &#x30B7;&#x30CA;&#x30EA;&#x30AA; CSV&#x304B;XML&#x304B;&#x306E;&#x65B9;</a></li><li><a href="#&#x30B7;&#x30CA;&#x30EA;&#x30AA;_&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;">3. &#x30B7;&#x30CA;&#x30EA;&#x30AA; &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;</a></li><li><a href="#&#x30B7;&#x30CA;&#x30EA;&#x30AA;_&#x6599;&#x7406;">4. &#x30B7;&#x30CA;&#x30EA;&#x30AA; &#x6599;&#x7406;</a></li><li><a href="#&#x30AF;&#x30E9;&#x30B9;&#x56F3;">5. &#x30AF;&#x30E9;&#x30B9;&#x56F3;</a></li><li><a href="#&#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B;_Factory_Method">6. &#x30DE;&#x30F3;&#x30AC;&#x3067;&#x308F;&#x304B;&#x308B; Factory Method</a></li><li><a href="#&#x30BD;&#x30FC;&#x30B9;">7. &#x30BD;&#x30FC;&#x30B9;</a></li><ul><li><a href="#PHP">7.1. PHP</a></li></ul></ul></div><a href="#&#x30E1;&#x30EA;&#x30C3;&#x30C8;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+
                                 
                                 </section>
                             
@@ -818,7 +814,7 @@ POS&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306A;&#x3089;&#x305D;&#x306E;&#x9053;&#x30
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Factory Method","level":"1.4.3","depth":2,"next":{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},"previous":{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","navigator","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"navigator":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/factoryMethod.md","mtime":"2020-05-19T13:48:34.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-19T13:59:21.344Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Factory Method","level":"1.4.3","depth":2,"next":{"title":"Prototype","level":"1.4.4","depth":2,"path":"docs/生成に関するパターン/prototype.md","ref":"docs/生成に関するパターン/prototype.md","articles":[]},"previous":{"title":"Builder","level":"1.4.2","depth":2,"path":"docs/生成に関するパターン/builder.md","ref":"docs/生成に関するパターン/builder.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"docs/生成に関するパターン/factoryMethod.md","mtime":"2020-05-19T13:48:34.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-19T14:24:18.296Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
