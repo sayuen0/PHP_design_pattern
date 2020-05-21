@@ -17,6 +17,14 @@
 - Client: ConcreteCommandを生成して、Recieverを割り当てる
 - Invoker: 命令実行開始役
 
+## クラス図
+
+![Command\_Design\_Pattern\_Class\_Diagram\.png \(557×353\)](https://upload.wikimedia.org/wikipedia/commons/8/8e/Command_Design_Pattern_Class_Diagram.png)
+
+## やり方
+
+
+## メリット(用途)
 
 ## 関連
   
@@ -25,9 +33,9 @@
 - Prototype: コマンドの複製に使える
 
 
+## ソース
 
-# ソース
-
+### PHP
 
 ```php
 function main()
