@@ -10,7 +10,7 @@
     "init": "gitbook init",
     "start": "gitbook serve",
     "build": "gitbook build",
-    "publish": "gitbook build && gh-pages -d _book -m 'Auto publish book'",
+    "publish": "book sm && gitbook build && gh-pages -d _book -m 'Auto publish book'",
     "update-packages": "gitbook install && npm run publish"
   },
   "repository": {

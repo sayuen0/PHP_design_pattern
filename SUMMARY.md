@@ -1,28 +1,31 @@
-# Your Book Title
+# デザインパターンお勉強
 
-- 振る舞いに関するパターン
-  * [Command](docs/振る舞いに関するパターン/command.md)
-  * [COR](docs/振る舞いに関するパターン/COR.md)
-  * [DI](docs/振る舞いに関するパターン/DI.md)
-  * [Interpreter](docs/振る舞いに関するパターン/interpreter.md)
-  * [Iterator](docs/振る舞いに関するパターン/iterator.md)
-  * [Mediator](docs/振る舞いに関するパターン/mediator.md)
-  * [Memento](docs/振る舞いに関するパターン/memento.md)
-  * [Observer](docs/振る舞いに関するパターン/observer.md)
-  * [State](docs/振る舞いに関するパターン/state.md)
-  * [Template Method](docs/振る舞いに関するパターン/templateMethod.md)
-  * [Visitor](docs/振る舞いに関するパターン/visitor.md)
-- 構造に関するパターン
-  * [Adapter](docs/構造に関するパターン/adapter.md)
-  * [Bridge](docs/構造に関するパターン/bridge.md)
-  * [Composite](docs/構造に関するパターン/composite.md)
-  * [Decorator](docs/構造に関するパターン/decorator.md)
-  * [Facade](docs/構造に関するパターン/facade.md)
-  * [Flyweight](docs/構造に関するパターン/flyweight.md)
-  * [Proxy](docs/構造に関するパターン/proxy.md)
-- 生成に関するパターン
-  * [Abstract Factory](docs/生成に関するパターン/abstractFactory.md)
-  * [Builder](docs/生成に関するパターン/builder.md)
-  * [Factory Method](docs/生成に関するパターン/factoryMethod.md)
-  * [Prototype](docs/生成に関するパターン/prototype.md)
-  * [Singleton](docs/生成に関するパターン/singleton.md)
+- Go F
+  - Docs
+    - 振る舞いに関するパターン
+      * [Command](GoF/docs/振る舞いに関するパターン/command.md)
+      * [COR](GoF/docs/振る舞いに関するパターン/COR.md)
+      * [DI](GoF/docs/振る舞いに関するパターン/DI.md)
+      * [Interpreter](GoF/docs/振る舞いに関するパターン/interpreter.md)
+      * [Iterator](GoF/docs/振る舞いに関するパターン/Iterator.md)
+      * [Mediator](GoF/docs/振る舞いに関するパターン/mediator.md)
+      * [Memento](GoF/docs/振る舞いに関するパターン/memento.md)
+      * [Observer](GoF/docs/振る舞いに関するパターン/observer.md)
+      * [State](GoF/docs/振る舞いに関するパターン/State.md)
+      * [Strategy](GoF/docs/振る舞いに関するパターン/Strategy.md)
+      * [Template Method](GoF/docs/振る舞いに関するパターン/templateMethod.md)
+      * [Visitor](GoF/docs/振る舞いに関するパターン/visitor.md)
+    - 構造に関するパターン
+      * [Adapter](GoF/docs/構造に関するパターン/adapter.md)
+      * [Bridge](GoF/docs/構造に関するパターン/bridge.md)
+      * [Composite](GoF/docs/構造に関するパターン/composite.md)
+      * [Decorator](GoF/docs/構造に関するパターン/decorator.md)
+      * [Facade](GoF/docs/構造に関するパターン/facade.md)
+      * [Flyweight](GoF/docs/構造に関するパターン/flyweight.md)
+      * [Proxy](GoF/docs/構造に関するパターン/proxy.md)
+    - 生成に関するパターン
+      * [Abstract Factory](GoF/docs/生成に関するパターン/abstractFactory.md)
+      * [Builder](GoF/docs/生成に関するパターン/builder.md)
+      * [Factory Method](GoF/docs/生成に関するパターン/factoryMethod.md)
+      * [Prototype](GoF/docs/生成に関するパターン/prototype.md)
+      * [Singleton](GoF/docs/生成に関するパターン/singleton.md)
