@@ -70,7 +70,7 @@ Reader reader = new LineNumberReader(new BufferReader(new InputStreamReader(sock
 
 ### Java
 
-#### アイスクリームの例 1
+#### アイスクリームの例 
 
 [include](../../patterns/Decorator/java/IceCream.java)
 [include](../../patterns/Decorator/java/StrawBerryIceCream.java)

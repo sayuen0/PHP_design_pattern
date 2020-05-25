@@ -48,6 +48,15 @@
 
 ## ソース
 
+### Java
+
+[include](../../patterns/dpsrc_2009-10-10/src/Observer/Sample/Observer.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Observer/Sample/DigitObserver.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Observer/Sample/GraphObserver.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Observer/Sample/NumberGenerator.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Observer/Sample/Main.java)
+
+
 ### PHP
 
 [include](../../patterns/Observer/index.php)
