@@ -1,12 +1,22 @@
 
 # Compositeパターン
 
-> 容器と中身を同一視して再帰的構造を作る
+> *容器と中身を同一視して再帰的構造を作る*
 
+
+## 概要
 
 再帰。
 
 親と子に同じ振る舞いや属性を持たせる
+
+## 登場人物
+
+TODO: 埋める
+
+## クラス図
+
+![Composite pattern](https://upload.wikimedia.org/wikipedia/commons/5/5a/Composite_UML_class_diagram_%28fixed%29.svg)
 
 ## やり方
 
@@ -40,7 +50,7 @@ ini_set("safe_mode", 1);
  * composite: 複合
  * 入れ子構造に同じインタフェースを実装して
  * 同一に扱う
- * 
+ *
  */
 
 interface Removable
