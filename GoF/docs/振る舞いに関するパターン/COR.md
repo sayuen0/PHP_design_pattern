@@ -30,6 +30,11 @@
 
 ## ソース
 
+
 ### PHP
 
 [include](../../patterns/COR/index.php)
+
+### Java
+
+わかりやすいパターンだからなくていいっしょ?笑

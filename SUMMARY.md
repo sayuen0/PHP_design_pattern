@@ -1,9 +1,14 @@
 # デザインパターンお勉強
 
+- Book
+  - Go F
+    - Docs
+      - 振る舞いに関するパターン
+        * [Command](_book/GoF/docs/振る舞いに関するパターン/Command.md)
 - Go F
   - Docs
     - 振る舞いに関するパターン
-      * [Command](GoF/docs/振る舞いに関するパターン/command.md)
+      * [Command](GoF/docs/振る舞いに関するパターン/Command.md)
       * [COR](GoF/docs/振る舞いに関するパターン/COR.md)
       * [DI](GoF/docs/振る舞いに関するパターン/DI.md)
       * [Interpreter](GoF/docs/振る舞いに関するパターン/Interpreter.md)
