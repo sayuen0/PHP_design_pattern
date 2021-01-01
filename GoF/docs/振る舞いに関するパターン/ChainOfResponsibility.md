@@ -30,11 +30,17 @@
 
 ## ソース
 
+### Java
+
+
+[include](../../patterns/dpsrc_2009-10-10/src/ChainOfResponsibility/Sample/OddSupport.java)
+[include](../../patterns/dpsrc_2009-10-10/src/ChainOfResponsibility/Sample/Support.java)
+[include](../../patterns/dpsrc_2009-10-10/src/ChainOfResponsibility/Sample/LimitSupport.java)
+[include](../../patterns/dpsrc_2009-10-10/src/ChainOfResponsibility/Sample/NoSupport.java)
+[include](../../patterns/dpsrc_2009-10-10/src/ChainOfResponsibility/Sample/Main.java)
+[include](../../patterns/dpsrc_2009-10-10/src/ChainOfResponsibility/Sample/Trouble.java)
+[include](../../patterns/dpsrc_2009-10-10/src/ChainOfResponsibility/Sample/SpecialSupport.java)
 
 ### PHP
 
 [include](../../patterns/COR/index.php)
-
-### Java
-
-わかりやすいパターンだからなくていいっしょ?笑

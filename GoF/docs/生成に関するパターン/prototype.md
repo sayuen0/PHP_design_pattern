@@ -25,11 +25,8 @@ newするのにはものすっごい費用がかかるとまず認識する.
 - ミュータブルであること
 - 互いに異なるオブジェクトであること
 
-
 イミュータブルならそれはグローバル変数だし
 ミュータブルでも互いに同じならそれは同じ動きしかできない。棒の両端にマネキンつけるアレ。
-
-
 
 ## メリット(用途)
 
@@ -41,17 +38,13 @@ newするのにはものすっごい費用がかかるとまず認識する.
    - めちゃくちゃ複雑な過程から生成されたインスタンスが複数必要なら、一つ作ったものを保存しておいてコピーする
 3. フレームワークと生成するインスタンスを分離したいとき
 
-
 コピー機は元の書類をどうやって作ったか知らなくても、コピーをかければ同じ書類を何枚でも作れる
-
 
 ## やり方
 
 1. コピーしたいクラスにディープコピーするメソッドを用意
    - Javaなら`java.lang.Clonable`を実装して`clone()`
      - ただし**cloneはシャローコピー**であり、例えば配列プロパティは参照だけがコピーされるので、**クローン元の配列プロパティを書き換えるとクローン先も書き換わる**ため、適宜ディープコピーをオーバーライド
-
-
 
 ## 関連
 
@@ -66,116 +59,16 @@ newするのにはものすっごい費用がかかるとまず認識する.
 - Command
   - 命令を複数生成するときにPrototypeが用いられることがある
 
+## ソース
 
-# ソース
+### Java
 
-```php
-<?php
+[include](../../patterns/dpsrc_2009-10-10/src/Prototype/Sample/MessageBox.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Prototype/Sample/framework/Product.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Prototype/Sample/framework/Manager.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Prototype/Sample/UnderlinePen.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Prototype/Sample/Main.java)
 
-/**
- * クローンをいじろうが元のオブジェクトに影響を与えない
- * 
- * PHPにはもともとcloneの機能があるのでそれを用いる
- * cloneの機能がない言語においては
- * 明示的に深いコピーをしたインスタンスを返す
- * つまり、ディープコピーしないと予期せぬバグの原因になりますよということ
- * 
- * 
- */
+### PHP
 
-
-
-
-
-
-class Prototype
-{
-  private $values = array();
-  public function __set($key, $val)
-  {
-    $this->values[$key]   = $val;
-  }
-
-  public function __get($key)
-  {
-    return $this->values[$key];
-  }
-
-  /**
-   * phpのコピーはシャローコピーなので
-   * 深いコピーを作成するためにマジックメソッドcloneを作る
-   * 
-   */
-  public function __clone()
-  {
-    foreach ($this->values as $key => $val) {
-      if (is_object($val)) {
-        $this->key = clone $val;
-      } else {
-        $this->key = $val;
-      }
-    }
-  }
-}
-
-
-class Child
-{
-  private $values = array();
-  public function __set($key, $val)
-  {
-    $this->values[$key] = $val;
-  }
-
-  public function __get($key)
-  {
-    return $this->values[$key];
-  }
-}
-
-
-function say($i)
-{
-  print "$i <br>";
-}
-
-
-// オリジナル作成
-
-$originalObj = new Prototype();
-$originalObj->hoge = "fuga";
-$cloneObj = clone $originalObj;
-say($originalObj->hoge === $cloneObj->hoge ? "OK" : "NG"); //OK
-
-
-// クローンにピヨを代入
-$cloneObj->hoge = "piyo";
-
-//クローンにはhogeがあって、
-// オリジナルにはpiyoがある
-say($originalObj->hoge == $cloneObj->hoge  ? "OK" : "NG"); //NG;
-
-var_dump($originalObj->hoge);
-var_dump($cloneObj->hoge);
-
-$originalObj->child = new Child();
-$originalObj->child->xyzzy = "vim";
-$cloneObj  = clone $originalObj;
-say($originalObj->child->xyzzy == $cloneObj->child->xyzzy ? "OK" : "NG"); //OK
-
-// cloneのchildのxyzzyにemacsを代入
-
-$cloneObj->child->xyzzy = "emacs";
-
-// オリジナルとクローンが正しくディープコピーされている
-// マジックメソッドcloneを上書きしておかないと
-// オリジナルもemacsになるので気をつける
-// 以下は、Childには__cloneしてないので、
-// childのプロパティがシャローコピーされてしまった例
-say($originalObj->child->xyzzy == "vim" ? "OK" : "NG"); // NG
-say($cloneObj->child->xyzzy == "emacs" ? "OK" : "NG"); //OK
-
-var_dump($originalObj->child);
-var_dump($cloneObj->child);
-
-```
+[include](../../patterns/Prototype/index.php)

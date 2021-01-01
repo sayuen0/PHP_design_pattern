@@ -76,6 +76,12 @@ PRボット具象
 **抽象クラスのテンプレートメソッドに誤りが見つかったら、(具象には手をつけず)それだけ直せば済む。**
 もしコピペ実装していたら修正クラスファイルが増える。
 
+## ユースケース
+
+### 単体テストフレームワーク
+
+beforeEachして、testHogehogeして、afterEachする。この順番はフレームワーク内で決められているので、TemplateMethodそのものであるが、フレームワークではなくユーザが中身を書く。
+
 ## 関連パターン
 
 ### Factory Method
@@ -89,19 +95,13 @@ Template Methodをインスタンス生成に使うとFactory Method。
 - Strategy: **委譲**によりプログラムの動作を変更
   - アルゴリズム全体をごっそり切り替える
 
-
-
-
 ## ソース
 
-### Java 
+### Java
 
 [include](../../patterns/dpsrc_2009-10-10/src/TemplateMethod/Sample/AbstractDisplay.java)
-
 [include](../../patterns/dpsrc_2009-10-10/src/TemplateMethod/Sample/CharDisplay.java)
-
 [include](../../patterns/dpsrc_2009-10-10/src/TemplateMethod/Sample/StringDisplay.java)
-
 [include](../../patterns/dpsrc_2009-10-10/src/TemplateMethod/Sample/Main.java)
 
 ### PHP

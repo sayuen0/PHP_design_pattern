@@ -2,7 +2,6 @@
 
 > **アルゴリズムをごっそり切り替える**
 
-
 ## 概要
 
 データ構造に対して適用する一連のアルゴリズムをカプセル化し、アルゴリズムの切替えを容易にする。
@@ -25,16 +24,22 @@
 
 なんのクラスを呼び出すかについての指定は、**リフレクション**により動的に行うことで、Contextはクラス名を知る必要がなくなる
 
-
 ## メリット(用途)
-
 
 ## 所感
 
 これただのインタフェースの使い方では?
 
-
 ## ソース
+
+### Java
+
+[include](../../patterns/dpsrc_2009-10-10/src/Strategy/Sample/ProbStrategy.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Strategy/Sample/Strategy.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Strategy/Sample/WinningStrategy.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Strategy/Sample/Hand.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Strategy/Sample/Player.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Strategy/Sample/Main.java)
 
 ### PHP
 

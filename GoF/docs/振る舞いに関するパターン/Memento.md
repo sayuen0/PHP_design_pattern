@@ -8,15 +8,11 @@
 
 インスタンスを復元したいとき、アクセス修飾子をprivate以外にしないといけなくなる(しなくてもいいけど、内部構造に依存したプログラムになる。**カプセル化の破壊**)
 
-
-
-
 ### ミソ
 
 スナップショットは実態よりはるかに軽いもの
 なのでケアテイカーはバックアップをいくらでもスタックしておける
 オブジェクトそのものでなくその属性のコピーなどでも良し
-
 
 ## 登場人物
 
@@ -32,12 +28,9 @@
   - 広いインタフェース: メメントはケアテイカーやMainが作るのではなく、オリジネイター(同一パッケージ)しか作れない
     - 広いとは、内部状態をいじれるpackage privateなインタフェース
 
-
-
 ## クラス図
 
 ![memento\.gif \(442×157\)](https://www.dofactory.com/images/diagrams/net/memento.gif)
-
 
 ## ユースケース
 
@@ -46,6 +39,12 @@
 「スナップショット」がそのままメメントだし、オリジネイターはソースコード本体。本体のバックアップではなく圧縮ファイルを取っておいて、好きなところまで巻き戻しを行える。
 
 ## ソース
+
+### Java
+
+[include](../../patterns/dpsrc_2009-10-10/src/Memento/Sample/game/Memento.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Memento/Sample/game/Gamer.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Memento/Sample/Main.java)
 
 ### PHP
 

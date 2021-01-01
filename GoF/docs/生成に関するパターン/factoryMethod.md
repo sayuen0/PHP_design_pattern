@@ -9,7 +9,7 @@
 ## 登場人物
 
 - Product:生成されるインスタンスが持っているべきAPI
-- Creator: Productを生成する抽象クラス 
+- Creator: Productを生成する抽象クラス
   - **ConcreteProductについては何も知らない**ことがミソでありこのパターンのメリット
 - ConcreteProduct
 - ConcreteCreator
@@ -25,12 +25,9 @@
   2. それを内部で呼び出す、protectedでfinalな具象メソッド
   3. その中で毎回行いたいprotectedな抽象メソッド(インスタンス生成時に必ずさせたい動作)
 
-
 ## メリット(用途)
 
-
 ### オブジェクトの生成過程の隠蔽と集中管理
-
 
 オブジェクト生成の方法に注目したパターン
 
@@ -41,18 +38,15 @@
 
 つまり、**インスタンス生成時に決まった手順でhogehogeする**を抽象クラスから強制できる
 
-
-
 ## ソース
 
-### Java 
+### Java
 
 [include](../../patterns/dpsrc_2009-10-10/src/FactoryMethod/Sample/framework/Factory.java)
 [include](../../patterns/dpsrc_2009-10-10/src/FactoryMethod/Sample/framework/Product.java)
 [include](../../patterns/dpsrc_2009-10-10/src/FactoryMethod/Sample/idcard/IDCardFactory.java)
 [include](../../patterns/dpsrc_2009-10-10/src/FactoryMethod/Sample/idcard/IDCard.java)
 [include](../../patterns/dpsrc_2009-10-10/src/FactoryMethod/Sample/Main.java)
-
 
 ### PHP
 
@@ -62,16 +56,14 @@
 validateしてエラーがあればエラーを投げて、
 なければdoMainするという流れを踏んだ
 
-
 [include](../../patterns/FactoryMethod/index.php)
-
 
 別事例
 
 - [PHPによるデザインパターン入門 \- Factory Method〜生成処理と使用処理を分離する \- Do You PHP はてブロ](http://shimooka.hateblo.jp/entry/20141215/1418620242)
 
+## ユースケース
 
-## シナリオ
 ### CSVかXMLかの方
 
 今回の実装。上記リンクから趣旨を抜き出す
@@ -89,8 +81,6 @@ validateしてエラーがあればエラーを投げて、
 
 具体的な読み込み方法や表示方法はそれぞれのファイル形式に対応させたファクトリに任せる
 
-
-
 ### システム開発
 
 ベンダー企業とクライアントがいる
@@ -107,7 +97,6 @@ POSシステムならその道のスペシャリストに開発をさせる。
 
 ベンダーのエンジニアは共通して「開発」と「納品」ができるが、それぞれ手法は専門領域や開発スタイルから完全に異なる
 
-
 ### 料理
 
 釣りが趣味のおっさんと持込OKレストラン
@@ -115,11 +104,9 @@ POSシステムならその道のスペシャリストに開発をさせる。
 おっさんは釣った魚をレストランに渡して、調理済みの魚料理をもらう
 レストランは魚の種類によって、一番美味しく食べられる調理方法が可能な料理人に魚を調理させる
 
-
-登場人物
+#### 登場人物
 
 - おっさん: クライアント
 - レストラン：ファクトリ
 - 料理人：プロダクトの作り手。ファクトリに生成される
 - 料理：プロダクト
-

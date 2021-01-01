@@ -2,7 +2,6 @@
 
 > **命令をクラスにする**
 
-
 ## 概要
 
 命令の集まりを履歴として保存して、取り消したりやり直したりできる
@@ -21,6 +20,7 @@
 
 ## やり方
 
+(やり方いまいち理解してない...)
 
 ## メリット(用途)
 
@@ -29,7 +29,6 @@
 - Composite: マクロコマンド(コマンドの集まり)も、コマンドである
 - Memento: コマンド履歴の保存に使える
 - Prototype: コマンドの複製に使える
-
 
 ## ソース
 
@@ -49,5 +48,4 @@
 [include](../../patterns/Command/RemoveDirectoryCommand.php)
 [include](../../patterns/Command/ShellScript.php)
 [include](../../patterns/Command/FileSystem.php)
-[include](../../patterns/Command/hello.php)
 [include](../../patterns/Command/index.php)

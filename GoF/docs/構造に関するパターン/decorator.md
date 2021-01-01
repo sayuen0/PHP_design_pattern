@@ -9,7 +9,6 @@
 
 本質部分をプロパティに持って、委譲すれば良し
 
-
 ## 登場人物
 
 - Component: 機能追加のコアとしてのインタフェース。デコレーション前のスポンジケーキ
@@ -21,12 +20,10 @@
 
 ![480px\-Decorator\_UML\_class\_diagram\.svg\.png \(480×380\)](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Decorator_UML_class_diagram.svg/480px-Decorator_UML_class_diagram.svg.png)
 
-
 ## やり方
 
 - DecoratorはComponentを実装し、さらにComponentをプロパティとしてもつ
   - こうすることでConcreteDecoratorはConcreteComponentの機能を全て使うことができるようになる
-
 
 ## メリット
 
@@ -70,7 +67,7 @@ Reader reader = new LineNumberReader(new BufferReader(new InputStreamReader(sock
 
 ### Java
 
-#### アイスクリームの例 
+#### アイスクリームの例
 
 [include](../../patterns/Decorator/java/IceCream.java)
 [include](../../patterns/Decorator/java/StrawBerryIceCream.java)

@@ -19,10 +19,26 @@ KotlinでHTMLを書くための「DSL」とか
 ## ユースケース
 
 ### ゲームシナリオの分岐
-- ゲームのシナリオ分岐するにあたり、PHPで柔軟な分岐に対応するのは無理があるので、yamlで分岐内容を書いて、PHPではその解析だけを行う
+
+ゲームのシナリオ分岐するにあたり、PHPで柔軟な分岐に対応するのは無理があるので、yamlで分岐内容を書いて、PHPではその解析だけを行う
+
+### SQL
+
+ORマッパーでOOPからSQLに変換したい時とか、構文要素をオブジェクトに閉じ込めたらいいじゃない
 
 ## ソース
 
+### Java
+
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/Node.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/CommandListNode.java0)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/Context.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/ProgramNode.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/PrimitiveCommandNode.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/ParseException.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/CommandNode.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/RepeatCommandNode.java)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/Main.java)
 
 ### PHP
 

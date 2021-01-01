@@ -5,17 +5,6 @@
 
 ## 概要
 
-
-作り方より先に使い方に着目する
-
-
-漫画でわかるFactory Methodより
-
-> 作り方より先に使い方に着目する Abstract Factory とは違い、
-
-同じcreateメソッドで呼び出せれば嬉しい。使い方に着目している
-
-
 ## マンガでわかる Abstract Factory
 
 [デザインパターン](https://qiita.com/tags/デザインパターン)[GoF](https://qiita.com/tags/gof)
@@ -40,14 +29,9 @@
 
 ## ソース
 
-### PHP
-
-[include](../../patterns/AbstractFactory/php/index.php)
-
-
 ### Java
 
-テーブルページかリストページか
+#### テーブルページかリストページか
 
 [include](../../patterns/dpsrc_2009-10-10/src/AbstractFactory/Sample/factory/Factory.java)
 [include](../../patterns/dpsrc_2009-10-10/src/AbstractFactory/Sample/factory/Item.java)
@@ -65,3 +49,7 @@
 [include](../../patterns/dpsrc_2009-10-10/src/AbstractFactory/Sample/listfactory/ListTray.java)
 [include](../../patterns/dpsrc_2009-10-10/src/AbstractFactory/Sample/listfactory/ListPage.java)
 [include](../../patterns/dpsrc_2009-10-10/src/AbstractFactory/Sample/Main.java)
+
+### PHP
+
+[include](../../patterns/AbstractFactory/php/index.php)
