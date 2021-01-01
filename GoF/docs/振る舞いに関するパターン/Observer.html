@@ -25,14 +25,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
                 
             
@@ -756,22 +748,22 @@
 <span class="sunlight-keyword">import</span>&#xA0;<span class="sunlight-ident">java</span><span class="sunlight-operator">.</span><span class="sunlight-ident">util</span><span class="sunlight-operator">.</span><span class="sunlight-named-ident">Iterator</span><span class="sunlight-punctuation">;</span>
 
 <span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">NumberGenerator</span>&#xA0;<span class="sunlight-punctuation">{</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-named-ident">ArrayList</span>&#xA0;<span class="sunlight-ident">observers</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">ArrayList</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;Observer&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x77B;&#xFFFD;</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">void</span>&#xA0;<span class="sunlight-ident">addObserver</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">Observer</span>&#xA0;<span class="sunlight-ident">observer</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;Observer&#xFFFD;&#xFFFD;&#xFFFD;&#x272;&#xFFFD;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">private</span>&#xA0;<span class="sunlight-named-ident">ArrayList</span>&#xA0;<span class="sunlight-ident">observers</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-named-ident">ArrayList</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;Observer&#x305F;&#x3061;&#x3092;&#x4FDD;&#x6301;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">void</span>&#xA0;<span class="sunlight-ident">addObserver</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">Observer</span>&#xA0;<span class="sunlight-ident">observer</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;Observer&#x3092;&#x8FFD;&#x52A0;</span>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">observers</span><span class="sunlight-operator">.</span><span class="sunlight-ident">add</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">observer</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 &#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">void</span>&#xA0;<span class="sunlight-ident">deleteObserver</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">Observer</span>&#xA0;<span class="sunlight-ident">observer</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;<span class="sunlight-comment">//&#xA0;Observer&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">void</span>&#xA0;<span class="sunlight-ident">deleteObserver</span><span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">Observer</span>&#xA0;<span class="sunlight-ident">observer</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;<span class="sunlight-comment">//&#xA0;Observer&#x3092;&#x524A;&#x9664;</span>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">observers</span><span class="sunlight-operator">.</span><span class="sunlight-ident">remove</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">observer</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 &#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">void</span>&#xA0;<span class="sunlight-ident">notifyObservers</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;Observer&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">void</span>&#xA0;<span class="sunlight-ident">notifyObservers</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;Observer&#x3078;&#x901A;&#x77E5;</span>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-named-ident">Iterator</span>&#xA0;<span class="sunlight-ident">it</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-ident">observers</span><span class="sunlight-operator">.</span><span class="sunlight-ident">iterator</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">while</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-ident">it</span><span class="sunlight-operator">.</span><span class="sunlight-ident">hasNext</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-named-ident">Observer</span>&#xA0;<span class="sunlight-ident">o</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-named-ident">Observer</span><span class="sunlight-punctuation">)</span><span class="sunlight-ident">it</span><span class="sunlight-operator">.</span><span class="sunlight-ident">next</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">o</span><span class="sunlight-operator">.</span><span class="sunlight-ident">update</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 &#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">int</span>&#xA0;<span class="sunlight-ident">getNumber</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">void</span>&#xA0;<span class="sunlight-ident">execute</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">int</span>&#xA0;<span class="sunlight-ident">getNumber</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x6570;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">abstract</span>&#xA0;<span class="sunlight-keyword">void</span>&#xA0;<span class="sunlight-ident">execute</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x6570;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;</span>
 <span class="sunlight-punctuation">}</span>
 </span></pre></div></div></code></pre>
 <pre><code class="lang-java"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-java sunlight-highlighted"><span class="sunlight-java"><span class="sunlight-keyword">public</span>&#xA0;<span class="sunlight-keyword">class</span>&#xA0;<span class="sunlight-named-ident">Main</span>&#xA0;<span class="sunlight-punctuation">{</span>
@@ -949,7 +941,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Observer","level":"1.2.1.1.8","depth":4,"next":{"title":"State","level":"1.2.1.1.9","depth":4,"path":"GoF/docs/振る舞いに関するパターン/State.md","ref":"GoF/docs/振る舞いに関するパターン/State.md","articles":[]},"previous":{"title":"Memento","level":"1.2.1.1.7","depth":4,"path":"GoF/docs/振る舞いに関するパターン/Memento.md","ref":"GoF/docs/振る舞いに関するパターン/Memento.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","page-treeview","intopic-toc","back-to-top-button","expand-active-chapter","collapsible-chapters","copy-code-button"],"ignores":["node_modules","other"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"GoF/docs/振る舞いに関するパターン/Observer.md","mtime":"2020-05-25T13:24:18.437Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-26T13:59:33.232Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Observer","level":"1.2.1.1.8","depth":4,"next":{"title":"State","level":"1.2.1.1.9","depth":4,"path":"GoF/docs/振る舞いに関するパターン/State.md","ref":"GoF/docs/振る舞いに関するパターン/State.md","articles":[]},"previous":{"title":"Memento","level":"1.2.1.1.7","depth":4,"path":"GoF/docs/振る舞いに関するパターン/Memento.md","ref":"GoF/docs/振る舞いに関するパターン/Memento.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sunlight-highlighter","-highlight","-sharing","include-codeblock","hide-published-with","page-treeview","expand-active-chapter","collapsible-chapters"],"ignores":["node_modules","other"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"expand-active-chapter":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デザインパターンお勉強","language":"ja","gitbook":"*","description":"This is design pattern study site"},"file":{"path":"GoF/docs/振る舞いに関するパターン/Observer.md","mtime":"2021-01-01T03:19:14.578Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-01T04:05:20.897Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -963,31 +955,11 @@
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
-        
-    
-        
         <script src="../../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
         
     
         
         <script src="../../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
         
     
         
