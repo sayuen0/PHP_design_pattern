@@ -40,7 +40,7 @@
     "gitbook-plugin-sunlight-highlighter": "^0.4.3",
     "lodash": ">=4.17.19",
     "minimist": ">=0.2.1",
-    "npm": ">=6.13.4"
+    "npm": ">=6.14.6"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
