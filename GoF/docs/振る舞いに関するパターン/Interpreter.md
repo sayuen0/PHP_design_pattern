@@ -31,7 +31,7 @@ ORマッパーでOOPからSQLに変換したい時とか、構文要素をオブ
 ### Java
 
 [include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/Node.java)
-[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/CommandListNode.java0)
+[include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/CommandListNode.java)
 [include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/Context.java)
 [include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/ProgramNode.java)
 [include](../../patterns/dpsrc_2009-10-10/src/Interpreter/Sample/PrimitiveCommandNode.java)

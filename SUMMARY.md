@@ -1,24 +1,5 @@
 # デザインパターンお勉強
 
-- Book
-  - Go F
-    - Docs
-      - 振る舞いに関するパターン
-        * [Chain Of Responsibility](_book/GoF/docs/振る舞いに関するパターン/ChainOfResponsibility.md)
-      - 構造に関するパターン
-        * [Adapter](_book/GoF/docs/構造に関するパターン/Adapter.md)
-        * [Bridge](_book/GoF/docs/構造に関するパターン/Bridge.md)
-        * [Composite](_book/GoF/docs/構造に関するパターン/Composite.md)
-        * [Decorator](_book/GoF/docs/構造に関するパターン/Decorator.md)
-        * [Facade](_book/GoF/docs/構造に関するパターン/Facade.md)
-        * [Flyweight](_book/GoF/docs/構造に関するパターン/Flyweight.md)
-        * [Proxy](_book/GoF/docs/構造に関するパターン/Proxy.md)
-      - 生成に関するパターン
-        * [Abstract Factory](_book/GoF/docs/生成に関するパターン/AbstractFactory.md)
-        * [Builder](_book/GoF/docs/生成に関するパターン/Builder.md)
-        * [Factory Method](_book/GoF/docs/生成に関するパターン/FactoryMethod.md)
-        * [Prototype](_book/GoF/docs/生成に関するパターン/Prototype.md)
-        * [Singleton](_book/GoF/docs/生成に関するパターン/Singleton.md)
 - Go F
   - Docs
     - 振る舞いに関するパターン
